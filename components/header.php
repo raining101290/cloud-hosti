@@ -4,8 +4,8 @@
     <nav class="navbar navbar-expand-lg py-5 py-lg-0 navbar-box bg-body">
         <div class="container">
             <a class="navbar-brand logo" href="index.php">
-                <img src="assets/images/cloud-host-logo-light.png" alt="image" class="logo__img">
-                <img src="assets/images/cloud-host-logo-light.png" alt="image" class="logo__img logo__sticky">
+                <img src="assets/images/logo.png" alt="image" class="logo__img">
+                <img src="assets/images/logo.png" alt="image" class="logo__img logo__sticky">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primaryMenu"
                 aria-expanded="false">

@@ -28,7 +28,7 @@
     <!--preloader start-->
     <div class="preloader bg-light-subtle">
       <div class="preloader-wrap">
-        <img src="assets/images/cloud-host-logo-dark.png" alt="Cloud Hosti logo" class="img-fluid" width="300">
+        <img src="assets/images/logo.png" alt="Cloud Hosti logo" class="img-fluid" width="300">
         <div class="loading-bar"></div>
       </div>
     </div>
@@ -1384,7 +1384,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
-                    <img src="assets/images/cloud-host-logo-dark.png" alt="image" class="logo__img" width="210">
+                    <img src="assets/images/logo.png" alt="image" class="logo__img" width="210">
                     <p class="mt-10 mb-8">Whether you run an e-commerce site or a web business, you want to attract as many
                         visitors as s or for when you no longer want to be limited by</p>
                     <h6 class="mb-3 fs-16">Join Newsletter</h6>
