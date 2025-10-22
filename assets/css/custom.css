@@ -1,0 +1,95 @@
+@keyframes snowfall {
+    0% {
+        transform: translateY(-10vh) translateX(0)
+    }
+
+    25% {
+        transform: translateY(-5vh) translateX(5px)
+    }
+
+    50% {
+        transform: translateY(0) translateX(-5px)
+    }
+
+    75% {
+        transform: translateY(5vh) translateX(5px)
+    }
+
+    to {
+        transform: translateY(10vh) translateX(0)
+    }
+}
+
+@keyframes snowfall-deep {
+    0% {
+        transform: translateY(-15vh) translateX(0)
+    }
+
+    50% {
+        transform: translateY(0) translateX(10px)
+    }
+
+    to {
+        transform: translateY(15vh) translateX(0)
+    }
+}
+
+.btn-snowfall {
+    position: relative;
+    background: linear-gradient(135deg,#095174,#009595);
+    transform: translateY(100%);
+    transition: transform .5s cubic-bezier(.4,0,.2,1);
+    box-shadow: 0 -10px 25px -5px rgba(0,149,149,.2)
+}
+
+.btn-snowfall:after,.btn-snowfall:before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle at center,hsla(0,0%,100%,.8) .5px,transparent 1px),radial-gradient(circle at center,hsla(0,0%,100%,.6) 1px,transparent 1.5px),radial-gradient(circle at center,hsla(0,0%,100%,.4) 1.5px,transparent 2px);
+    background-size: 100px 100px,150px 150px,200px 200px;
+    animation: snowfall 15s linear infinite;
+    pointer-events: none
+}
+
+.btn-snowfall:after {
+    background-image: radial-gradient(circle at center,hsla(0,0%,100%,.8) 1px,transparent 1.5px),radial-gradient(circle at center,hsla(0,0%,100%,.6) 1.5px,transparent 2px),radial-gradient(circle at center,hsla(0,0%,100%,.4) 2px,transparent 2.5px);
+    background-size: 120px 120px,170px 170px,220px 220px;
+    animation: snowfall-deep 12s linear infinite;
+    animation-delay: -7s
+}
+
+.btn-snowfall.btn-snowfall-show {
+    transform: translateY(0)
+}
+
+.domain-name, .domain-name::placeholder, .form-control:focus{
+    color: white;
+    opacity: 1;
+}
+.logo {
+    --logo-height: 61px;
+    height: var(--logo-height);
+    display: flex;
+    flex-shrink: 0;
+}
+@media (min-width: 1400px) {
+    .hero-6 {
+        padding-top: 100px;
+    }
+}
+/* .bg-body {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-body-bg-rgb), var(--bs-bg-opacity)) !important;
+} */
+/* .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: var(--bs-navbar-active-color);
+} */
+/* .navbar-1 .nav-link {
+    color: #010101;
+    opacity: .8;
+    font-weight: bold !important;
+} */
