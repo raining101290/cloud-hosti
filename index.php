@@ -28,7 +28,7 @@
     <!--preloader start-->
     <div class="preloader bg-light-subtle">
       <div class="preloader-wrap">
-        <img src="assets/images/logo.png" alt="Cloud Hosti logo" class="img-fluid" width="300">
+        <img src="assets/images/logo.png" alt="Cloud Hosti logo" height="61px">
         <div class="loading-bar"></div>
       </div>
     </div>

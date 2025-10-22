@@ -48413,7 +48413,7 @@ body {
 .preloader .loading-bar {
     width: 100%;
     height: 3px;
-    margin-top: 30px;
+    margin-top: 0px;
     position: relative;
     overflow: hidden;
     background: #dee2e6
