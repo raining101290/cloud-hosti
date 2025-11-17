@@ -4,21 +4,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
-                    <img src="assets/img/logo-light.png" alt="image" class="logo__img">
-                    <p class="text-white text-opacity-75 mt-8">Whether you run an e-commerce site or a web business,
-                        you
-                        want to attract as
-                        many visitors as s or for when you no longer want to be limited by</p>
+                    <img src="assets/images/cloudhosti-logo.png" alt="image" class="logo__img" height="51">
+                    <p class="text-white text-opacity-75 mt-8">Welcome to Coud Hosti, The trusted provider of high-performance web hosting solutions designed to help your website succeed. Whether you're a small business owner, a blogger, or a growing enterprise, we offer secure, reliable, and scalable hosting.</p>
                     <h6 class="text-white mt-6 mb-4 fs-16">Social Media</h6>
                     <div class="d-inline-flex align-items-center justify-content-center gap-2">
-                        <a href="#" class="social-icon w-9 h-9 d-inline-flex align-items-center justify-content-center rounded-circle border border-light border-opacity-10">
+                        <a href="https://www.facebook.com/cloudhosti" class="social-icon w-9 h-9 d-inline-flex align-items-center justify-content-center rounded-circle border border-light border-opacity-10">
                             <span class="text-white"><i class="lab la-facebook-f"></i></span>
                         </a>
-                        <a href="#" class="social-icon w-9 h-9 d-inline-flex align-items-center justify-content-center rounded-circle border border-light border-opacity-10">
-                            <span class="text-white"><i class="lab la-dribbble"></i></span>
-                        </a>
-                        <a href="#" class="social-icon w-9 h-9 d-inline-flex align-items-center justify-content-center rounded-circle border border-light border-opacity-10">
-                            <span class="text-white"><i class="lab la-behance"></i></span>
+                        <a href="https://linkedin.com/company/cloudhosti" class="social-icon w-9 h-9 d-inline-flex align-items-center justify-content-center rounded-circle border border-light border-opacity-10">
+                            <span class="text-white"><i class="lab la-linkedin"></i></span>
                         </a>
                     </div>
                 </div>
@@ -76,12 +70,12 @@
             </div>
             <div class="mt-20">
                 <div class="d-flex align-items-center justify-content-between flex-wrap gap-5 pt-5 border-top border-light border-opacity-10">
-                    <p class="text-white mb-0 fs-14">&copy; 2024 CloudHosti. All rights reserved</p>
+                    <p class="text-white mb-0 fs-14">&copy; <?php echo date('Y'); ?> CloudHosti. All rights reserved</p>
                     <div class="d-inline-flex align-items-center justify-content-center gap-4 flex-wrap">
                         <a href="terms.php" class="footer-2-link">
                             Terms & Condition
                         </a>
-                        <a href="privacy.php" class="footer-2-link">
+                        <a href="" class="footer-2-link">
                             Privacy Policy
                         </a>
                     </div>
