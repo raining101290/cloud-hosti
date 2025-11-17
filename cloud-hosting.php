@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 
@@ -28,7 +27,7 @@
     <!--preloader start-->
     <div class="preloader bg-light-subtle">
         <div class="preloader-wrap">
-            <img src="assets/images/logo.png" alt="Cloud Hosti logo" height="61px">
+            <img src="assets/images/cloudhosti-logo.png" alt="Cloud Hosti logo" height="61px">
             <div class="loading-bar"></div>
         </div>
     </div>
@@ -36,7 +35,7 @@
     <?php include('./components/header.php') ?>
 
     <!-- Hero -->
-    <div class="cloud-hero">
+    <div class="cloud-hero mt-16">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -44,62 +43,58 @@
                         <div class="row g-4 align-items-center">
                             <div class="col-lg-7 col-xl-6">
                                 <span class="d-flex align-items-center gap-2 mb-3">
-                    <span class="d-block w-2 h-2 rounded-circle bg-success"></span>
-                                <span class="d-block text-white">
-                      <span class="text-success">WordPress Hosting</span> Up To 75%
-                                OFF
-                                </span>
+                                    <span class="d-block w-2 h-2 rounded-circle bg-success"></span>
+                                    <span class="d-block text-white">
+                                        <span class="text-success">WordPress Hosting</span> Up To 75%
+                                        OFF
+                                    </span>
                                 </span>
                                 <h1 class="text-white mb-6">
                                     Fast & Secure
                                     <span class="d-none d-md-inline-block position-relative z-1">
-                      <img
-                        src="assets/img/hero-title-1.png"
-                        alt="image"
-                        class="img-fluid"
-                      />
-                      <a
-                        href="https://www.youtube.com/watch?v=eoY1Mc70uTo"
-                        class="video-btn popup-init position-absolute top-50 start-50 translate-middle"
-                      >
-                        <span
-                          class="w-7 h-7 rounded-circle d-flex align-items-center justify-content-center bg-primary"
-                        >
-                          <span class="text-white fs-14">
-                            <i class="las la-play"></i>
-                          </span>
-                                    </span>
-                                    </a>
+                                        <img
+                                            src="assets/img/hero-title-1.png"
+                                            alt="image"
+                                            class="img-fluid" />
+                                        <a
+                                            href="https://www.youtube.com/watch?v=eoY1Mc70uTo"
+                                            class="video-btn popup-init position-absolute top-50 start-50 translate-middle">
+                                            <span
+                                                class="w-7 h-7 rounded-circle d-flex align-items-center justify-content-center bg-primary">
+                                                <span class="text-white fs-14">
+                                                    <i class="las la-play"></i>
+                                                </span>
+                                            </span>
+                                        </a>
                                     </span>
                                     Cloud
                                     <span class="d-none d-md-inline-block position-relative z-1">
-                      <img
-                        src="assets/img/hero-title-2.png"
-                        alt="image"
-                        class="img-fluid"
-                      />
-                    </span>
+                                        <img
+                                            src="assets/img/hero-title-2.png"
+                                            alt="image"
+                                            class="img-fluid" />
+                                    </span>
                                     Server's Solutions
                                 </h1>
                                 <p class="mb-12 fw-medium text-white max-text-56">
                                     Experience a new way to WordPress. Build, launch, and manage
                                     high-performance one powerful dashboard.
                                 </p>
-                                <div class="d-flex align-items-center gap-6 flex-wrap" data-sal="fade" data-sal-duration="300" data-sal-delay="200" data-sal-easing="ease-in-out-sine">
+                                <div class="d-flex align-items-center gap-6 flex-wrap" data-sal="fade" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                                     <a href="contact.php" class="btn btn-success btn-arrow btn-arrow-lg btn-lg fs-14 fw-semibold rounded-pill">
                                         <span class="btn-arrow__text">
-                        Get Started
-                        <span class="btn-arrow__icon">
-                          <i class="las la-arrow-right"></i>
-                        </span>
+                                            Get Started
+                                            <span class="btn-arrow__icon">
+                                                <i class="las la-arrow-right"></i>
+                                            </span>
                                         </span>
                                     </a>
                                     <a href="server-page.php" class="btn btn-light btn-arrow btn-arrow-lg btn-lg fs-14 fw-semibold rounded-pill transition">
                                         <span class="btn-arrow__text">
-                        View All Plan
-                        <span class="btn-arrow__icon">
-                          <i class="las la-arrow-right"></i>
-                        </span>
+                                            View All Plan
+                                            <span class="btn-arrow__icon">
+                                                <i class="las la-arrow-right"></i>
+                                            </span>
                                         </span>
                                     </a>
                                 </div>
@@ -111,7 +106,7 @@
                                         <a href="#" class="d-inline-block" data-sal="slide-up" data-sal-duration="300" data-sal-delay="400" data-sal-easing="ease-in-out-sine">
                                             <img src="assets/img/brand-sm-1.png" alt="image" class="img-fluid transition opacity-50 brand-img" />
                                         </a>
-                                        <a href="#" class="d-inline-block" data-sal="slide-up" data-sal-duration="300" data-sal-delay="500" data-sal-easing="ease-in-out-sine">
+                                        <a href="#" class="d-inline-block" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                                             <img src="assets/img/brand-sm-2.png" alt="image" class="img-fluid transition opacity-50 brand-img" />
                                         </a>
                                         <a href="#" class="d-inline-block" data-sal="slide-up" data-sal-duration="300" data-sal-delay="600" data-sal-easing="ease-in-out-sine">
@@ -157,50 +152,45 @@
                             <h2 class="accordion-header">
                                 <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#cloudPackageOne" aria-expanded="true">
                                     <span
-                      class="d-flex gap-4 flex-wrap justify-content-between align-items-center w-100"
-                    >
-                      <span
-                        class="d-block text-heading fs-18 fw-bolder flex-shrink-0"
-                      >
-                        Cloud-01
-                      </span>
-                                    <span class="d-block text-heading fw-bold flex-shrink-0">
-                        2 CPUs
-                      </span>
-                                    <span class="d-block text-heading fw-bold flex-shrink-0">
-                        4GB <span class="fw-normal">RAM</span>
-                                    </span>
-                                    <span class="d-block text-heading fw-bold flex-shrink-0">
-                        80 GB <span class="fw-normal">NVMe</span>
-                                    </span>
-                                    <span class="d-block flex-shrink-0">
-                        <span class="d-block fw-normal mb-2">
-                          Starting at:
-                          <span class="h6 mb-0 text-primary fw-bold">$32/mo</span>
-                                    </span>
-                                    <span class="d-flex gap-3 align-items-center">
-                          <span
-                            class="d-inline-block text-decoration-line-through text-body fw-semibold"
-                          >
-                            $56.50
-                          </span>
-                                    <span class="badge bg-warning-subtle text-warning">
-                            75% OFF
-                          </span>
-                                    <span
-                            class="d-inline-block"
-                            data-bs-toggle="modal"
-                            data-bs-target="#vpsQuery"
-                          >
-                            <i class="las la-question-circle"></i>
-                          </span>
-                                    </span>
-                                    </span>
-                                    <span
-                        class="btn btn-dark hover:bg-primary hover:border-primary rounded-1"
-                      >
-                        Order Now
-                      </span>
+                                        class="d-flex gap-4 flex-wrap justify-content-between align-items-center w-100">
+                                        <span
+                                            class="d-block text-heading fs-18 fw-bolder flex-shrink-0">
+                                            Cloud-01
+                                        </span>
+                                        <span class="d-block text-heading fw-bold flex-shrink-0">
+                                            2 CPUs
+                                        </span>
+                                        <span class="d-block text-heading fw-bold flex-shrink-0">
+                                            4GB <span class="fw-normal">RAM</span>
+                                        </span>
+                                        <span class="d-block text-heading fw-bold flex-shrink-0">
+                                            80 GB <span class="fw-normal">NVMe</span>
+                                        </span>
+                                        <span class="d-block flex-shrink-0">
+                                            <span class="d-block fw-normal mb-2">
+                                                Starting at:
+                                                <span class="h6 mb-0 text-primary fw-bold">$32/mo</span>
+                                            </span>
+                                            <span class="d-flex gap-3 align-items-center">
+                                                <span
+                                                    class="d-inline-block text-decoration-line-through text-body fw-semibold">
+                                                    $56.50
+                                                </span>
+                                                <span class="badge bg-warning-subtle text-warning">
+                                                    75% OFF
+                                                </span>
+                                                <span
+                                                    class="d-inline-block"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#vpsQuery">
+                                                    <i class="las la-question-circle"></i>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span
+                                            class="btn btn-dark hover:bg-primary hover:border-primary rounded-1">
+                                            Order Now
+                                        </span>
                                     </span>
                                 </button>
                             </h2>
@@ -217,7 +207,7 @@
                                                                     <i class="las la-check"></i>
                                                                 </div>
                                                                 <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> 4 TB </span>  Bandwidth
+                                                                    <span class="fw-bold"> 4 TB </span> Bandwidth
                                                                 </span>
                                                             </div>
                                                             <div class="d-flex align-items-center gap-2">
@@ -225,30 +215,8 @@
                                                                     <i class="las la-check"></i>
                                                                 </div>
                                                                 <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> Hassle-free </span> 
-                                                                Migrations
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="vstack gap-2">
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <div class="w-5 h-5 bg-success rounded-circle fs-10 text-white d-flex align-items-center justify-content-center">
-                                                                    <i class="las la-check"></i>
-                                                                </div>
-                                                                <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> 99% </span>
-                                                                Uptime Guarantee
-                                                                </span>
-                                                            </div>
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <div class="w-5 h-5 bg-success rounded-circle fs-10 text-white d-flex align-items-center justify-content-center">
-                                                                    <i class="las la-check"></i>
-                                                                </div>
-                                                                <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> 24/7 </span>
-                                                                Expert Support
+                                                                    <span class="fw-bold"> Hassle-free </span>
+                                                                    Migrations
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -260,8 +228,8 @@
                                                                     <i class="las la-check"></i>
                                                                 </div>
                                                                 <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> Free </span>
-                                                                cPanel/WHM
+                                                                    <span class="fw-bold"> 99% </span>
+                                                                    Uptime Guarantee
                                                                 </span>
                                                             </div>
                                                             <div class="d-flex align-items-center gap-2">
@@ -269,8 +237,30 @@
                                                                     <i class="las la-check"></i>
                                                                 </div>
                                                                 <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> Dedicated </span>
-                                                                IP Address
+                                                                    <span class="fw-bold"> 24/7 </span>
+                                                                    Expert Support
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="vstack gap-2">
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <div class="w-5 h-5 bg-success rounded-circle fs-10 text-white d-flex align-items-center justify-content-center">
+                                                                    <i class="las la-check"></i>
+                                                                </div>
+                                                                <span class="d-inline-block fs-14">
+                                                                    <span class="fw-bold"> Free </span>
+                                                                    cPanel/WHM
+                                                                </span>
+                                                            </div>
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <div class="w-5 h-5 bg-success rounded-circle fs-10 text-white d-flex align-items-center justify-content-center">
+                                                                    <i class="las la-check"></i>
+                                                                </div>
+                                                                <span class="d-inline-block fs-14">
+                                                                    <span class="fw-bold"> Dedicated </span>
+                                                                    IP Address
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -281,8 +271,8 @@
                                         <div class="col-xl-4">
                                             <div class="cloud-package__box h-100">
                                                 <span class="d-block fw-bold fs-12 mb-2">
-                            Server location
-                          </span>
+                                                    Server location
+                                                </span>
                                                 <div class="hstack gap-3 flex-wrap">
                                                     <div class="d-inline-block flex-shrink-0">
                                                         <img src="assets/img/flag-sm-1.png" alt="image" class="img-fluid" />
@@ -316,50 +306,45 @@
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cloudPackageTwo" aria-expanded="false">
                                     <span
-                      class="d-flex gap-4 flex-wrap justify-content-between align-items-center w-100"
-                    >
-                      <span
-                        class="d-block text-heading fs-18 fw-bolder flex-shrink-0"
-                      >
-                        Cloud-02
-                      </span>
-                                    <span class="d-block text-heading fw-bold flex-shrink-0">
-                        2 CPUs
-                      </span>
-                                    <span class="d-block text-heading fw-bold flex-shrink-0">
-                        4GB <span class="fw-normal">RAM</span>
-                                    </span>
-                                    <span class="d-block text-heading fw-bold flex-shrink-0">
-                        80 GB <span class="fw-normal">NVMe</span>
-                                    </span>
-                                    <span class="d-block flex-shrink-0">
-                        <span class="d-block fw-normal mb-2">
-                          Starting at:
-                          <span class="h6 mb-0 text-primary fw-bold">$32/mo</span>
-                                    </span>
-                                    <span class="d-flex gap-3 align-items-center">
-                          <span
-                            class="d-inline-block text-decoration-line-through text-body fw-semibold"
-                          >
-                            $56.50
-                          </span>
-                                    <span class="badge bg-warning-subtle text-warning">
-                            75% OFF
-                          </span>
-                                    <span
-                            class="d-inline-block"
-                            data-bs-toggle="modal"
-                            data-bs-target="#vpsQuery"
-                          >
-                            <i class="las la-question-circle"></i>
-                          </span>
-                                    </span>
-                                    </span>
-                                    <span
-                        class="btn btn-dark hover:bg-primary hover:border-primary rounded-1"
-                      >
-                        Order Now
-                      </span>
+                                        class="d-flex gap-4 flex-wrap justify-content-between align-items-center w-100">
+                                        <span
+                                            class="d-block text-heading fs-18 fw-bolder flex-shrink-0">
+                                            Cloud-02
+                                        </span>
+                                        <span class="d-block text-heading fw-bold flex-shrink-0">
+                                            2 CPUs
+                                        </span>
+                                        <span class="d-block text-heading fw-bold flex-shrink-0">
+                                            4GB <span class="fw-normal">RAM</span>
+                                        </span>
+                                        <span class="d-block text-heading fw-bold flex-shrink-0">
+                                            80 GB <span class="fw-normal">NVMe</span>
+                                        </span>
+                                        <span class="d-block flex-shrink-0">
+                                            <span class="d-block fw-normal mb-2">
+                                                Starting at:
+                                                <span class="h6 mb-0 text-primary fw-bold">$32/mo</span>
+                                            </span>
+                                            <span class="d-flex gap-3 align-items-center">
+                                                <span
+                                                    class="d-inline-block text-decoration-line-through text-body fw-semibold">
+                                                    $56.50
+                                                </span>
+                                                <span class="badge bg-warning-subtle text-warning">
+                                                    75% OFF
+                                                </span>
+                                                <span
+                                                    class="d-inline-block"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#vpsQuery">
+                                                    <i class="las la-question-circle"></i>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span
+                                            class="btn btn-dark hover:bg-primary hover:border-primary rounded-1">
+                                            Order Now
+                                        </span>
                                     </span>
                                 </button>
                             </h2>
@@ -376,7 +361,7 @@
                                                                     <i class="las la-check"></i>
                                                                 </div>
                                                                 <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> 4 TB </span>  Bandwidth
+                                                                    <span class="fw-bold"> 4 TB </span> Bandwidth
                                                                 </span>
                                                             </div>
                                                             <div class="d-flex align-items-center gap-2">
@@ -384,30 +369,8 @@
                                                                     <i class="las la-check"></i>
                                                                 </div>
                                                                 <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> Hassle-free </span> 
-                                                                Migrations
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="vstack gap-2">
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <div class="w-5 h-5 bg-success rounded-circle fs-10 text-white d-flex align-items-center justify-content-center">
-                                                                    <i class="las la-check"></i>
-                                                                </div>
-                                                                <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> 99% </span>
-                                                                Uptime Guarantee
-                                                                </span>
-                                                            </div>
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <div class="w-5 h-5 bg-success rounded-circle fs-10 text-white d-flex align-items-center justify-content-center">
-                                                                    <i class="las la-check"></i>
-                                                                </div>
-                                                                <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> 24/7 </span>
-                                                                Expert Support
+                                                                    <span class="fw-bold"> Hassle-free </span>
+                                                                    Migrations
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -419,8 +382,8 @@
                                                                     <i class="las la-check"></i>
                                                                 </div>
                                                                 <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> Free </span>
-                                                                cPanel/WHM
+                                                                    <span class="fw-bold"> 99% </span>
+                                                                    Uptime Guarantee
                                                                 </span>
                                                             </div>
                                                             <div class="d-flex align-items-center gap-2">
@@ -428,8 +391,30 @@
                                                                     <i class="las la-check"></i>
                                                                 </div>
                                                                 <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> Dedicated </span>
-                                                                IP Address
+                                                                    <span class="fw-bold"> 24/7 </span>
+                                                                    Expert Support
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="vstack gap-2">
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <div class="w-5 h-5 bg-success rounded-circle fs-10 text-white d-flex align-items-center justify-content-center">
+                                                                    <i class="las la-check"></i>
+                                                                </div>
+                                                                <span class="d-inline-block fs-14">
+                                                                    <span class="fw-bold"> Free </span>
+                                                                    cPanel/WHM
+                                                                </span>
+                                                            </div>
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <div class="w-5 h-5 bg-success rounded-circle fs-10 text-white d-flex align-items-center justify-content-center">
+                                                                    <i class="las la-check"></i>
+                                                                </div>
+                                                                <span class="d-inline-block fs-14">
+                                                                    <span class="fw-bold"> Dedicated </span>
+                                                                    IP Address
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -440,8 +425,8 @@
                                         <div class="col-xl-4">
                                             <div class="cloud-package__box h-100">
                                                 <span class="d-block fw-bold fs-12 mb-2">
-                            Server location
-                          </span>
+                                                    Server location
+                                                </span>
                                                 <div class="hstack gap-3 flex-wrap">
                                                     <div class="d-inline-block flex-shrink-0">
                                                         <img src="assets/img/flag-sm-1.png" alt="image" class="img-fluid" />
@@ -475,50 +460,45 @@
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cloudPackageThree" aria-expanded="false">
                                     <span
-                      class="d-flex gap-4 flex-wrap justify-content-between align-items-center w-100"
-                    >
-                      <span
-                        class="d-block text-heading fs-18 fw-bolder flex-shrink-0"
-                      >
-                        Cloud-03
-                      </span>
-                                    <span class="d-block text-heading fw-bold flex-shrink-0">
-                        2 CPUs
-                      </span>
-                                    <span class="d-block text-heading fw-bold flex-shrink-0">
-                        4GB <span class="fw-normal">RAM</span>
-                                    </span>
-                                    <span class="d-block text-heading fw-bold flex-shrink-0">
-                        80 GB <span class="fw-normal">NVMe</span>
-                                    </span>
-                                    <span class="d-block flex-shrink-0">
-                        <span class="d-block fw-normal mb-2">
-                          Starting at:
-                          <span class="h6 mb-0 text-primary fw-bold">$32/mo</span>
-                                    </span>
-                                    <span class="d-flex gap-3 align-items-center">
-                          <span
-                            class="d-inline-block text-decoration-line-through text-body fw-semibold"
-                          >
-                            $56.50
-                          </span>
-                                    <span class="badge bg-warning-subtle text-warning">
-                            75% OFF
-                          </span>
-                                    <span
-                            class="d-inline-block"
-                            data-bs-toggle="modal"
-                            data-bs-target="#vpsQuery"
-                          >
-                            <i class="las la-question-circle"></i>
-                          </span>
-                                    </span>
-                                    </span>
-                                    <span
-                        class="btn btn-dark hover:bg-primary hover:border-primary rounded-1"
-                      >
-                        Order Now
-                      </span>
+                                        class="d-flex gap-4 flex-wrap justify-content-between align-items-center w-100">
+                                        <span
+                                            class="d-block text-heading fs-18 fw-bolder flex-shrink-0">
+                                            Cloud-03
+                                        </span>
+                                        <span class="d-block text-heading fw-bold flex-shrink-0">
+                                            2 CPUs
+                                        </span>
+                                        <span class="d-block text-heading fw-bold flex-shrink-0">
+                                            4GB <span class="fw-normal">RAM</span>
+                                        </span>
+                                        <span class="d-block text-heading fw-bold flex-shrink-0">
+                                            80 GB <span class="fw-normal">NVMe</span>
+                                        </span>
+                                        <span class="d-block flex-shrink-0">
+                                            <span class="d-block fw-normal mb-2">
+                                                Starting at:
+                                                <span class="h6 mb-0 text-primary fw-bold">$32/mo</span>
+                                            </span>
+                                            <span class="d-flex gap-3 align-items-center">
+                                                <span
+                                                    class="d-inline-block text-decoration-line-through text-body fw-semibold">
+                                                    $56.50
+                                                </span>
+                                                <span class="badge bg-warning-subtle text-warning">
+                                                    75% OFF
+                                                </span>
+                                                <span
+                                                    class="d-inline-block"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#vpsQuery">
+                                                    <i class="las la-question-circle"></i>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span
+                                            class="btn btn-dark hover:bg-primary hover:border-primary rounded-1">
+                                            Order Now
+                                        </span>
                                     </span>
                                 </button>
                             </h2>
@@ -535,7 +515,7 @@
                                                                     <i class="las la-check"></i>
                                                                 </div>
                                                                 <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> 4 TB </span>  Bandwidth
+                                                                    <span class="fw-bold"> 4 TB </span> Bandwidth
                                                                 </span>
                                                             </div>
                                                             <div class="d-flex align-items-center gap-2">
@@ -543,30 +523,8 @@
                                                                     <i class="las la-check"></i>
                                                                 </div>
                                                                 <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> Hassle-free </span> 
-                                                                Migrations
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="vstack gap-2">
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <div class="w-5 h-5 bg-success rounded-circle fs-10 text-white d-flex align-items-center justify-content-center">
-                                                                    <i class="las la-check"></i>
-                                                                </div>
-                                                                <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> 99% </span>
-                                                                Uptime Guarantee
-                                                                </span>
-                                                            </div>
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <div class="w-5 h-5 bg-success rounded-circle fs-10 text-white d-flex align-items-center justify-content-center">
-                                                                    <i class="las la-check"></i>
-                                                                </div>
-                                                                <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> 24/7 </span>
-                                                                Expert Support
+                                                                    <span class="fw-bold"> Hassle-free </span>
+                                                                    Migrations
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -578,8 +536,8 @@
                                                                     <i class="las la-check"></i>
                                                                 </div>
                                                                 <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> Free </span>
-                                                                cPanel/WHM
+                                                                    <span class="fw-bold"> 99% </span>
+                                                                    Uptime Guarantee
                                                                 </span>
                                                             </div>
                                                             <div class="d-flex align-items-center gap-2">
@@ -587,8 +545,30 @@
                                                                     <i class="las la-check"></i>
                                                                 </div>
                                                                 <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> Dedicated </span>
-                                                                IP Address
+                                                                    <span class="fw-bold"> 24/7 </span>
+                                                                    Expert Support
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="vstack gap-2">
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <div class="w-5 h-5 bg-success rounded-circle fs-10 text-white d-flex align-items-center justify-content-center">
+                                                                    <i class="las la-check"></i>
+                                                                </div>
+                                                                <span class="d-inline-block fs-14">
+                                                                    <span class="fw-bold"> Free </span>
+                                                                    cPanel/WHM
+                                                                </span>
+                                                            </div>
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <div class="w-5 h-5 bg-success rounded-circle fs-10 text-white d-flex align-items-center justify-content-center">
+                                                                    <i class="las la-check"></i>
+                                                                </div>
+                                                                <span class="d-inline-block fs-14">
+                                                                    <span class="fw-bold"> Dedicated </span>
+                                                                    IP Address
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -599,8 +579,8 @@
                                         <div class="col-xl-4">
                                             <div class="cloud-package__box h-100">
                                                 <span class="d-block fw-bold fs-12 mb-2">
-                            Server location
-                          </span>
+                                                    Server location
+                                                </span>
                                                 <div class="hstack gap-3 flex-wrap">
                                                     <div class="d-inline-block flex-shrink-0">
                                                         <img src="assets/img/flag-sm-1.png" alt="image" class="img-fluid" />
@@ -634,50 +614,45 @@
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cloudPackageFour" aria-expanded="false">
                                     <span
-                      class="d-flex gap-4 flex-wrap justify-content-between align-items-center w-100"
-                    >
-                      <span
-                        class="d-block text-heading fs-18 fw-bolder flex-shrink-0"
-                      >
-                        Cloud-04
-                      </span>
-                                    <span class="d-block text-heading fw-bold flex-shrink-0">
-                        2 CPUs
-                      </span>
-                                    <span class="d-block text-heading fw-bold flex-shrink-0">
-                        4GB <span class="fw-normal">RAM</span>
-                                    </span>
-                                    <span class="d-block text-heading fw-bold flex-shrink-0">
-                        80 GB <span class="fw-normal">NVMe</span>
-                                    </span>
-                                    <span class="d-block flex-shrink-0">
-                        <span class="d-block fw-normal mb-2">
-                          Starting at:
-                          <span class="h6 mb-0 text-primary fw-bold">$32/mo</span>
-                                    </span>
-                                    <span class="d-flex gap-3 align-items-center">
-                          <span
-                            class="d-inline-block text-decoration-line-through text-body fw-semibold"
-                          >
-                            $56.50
-                          </span>
-                                    <span class="badge bg-warning-subtle text-warning">
-                            75% OFF
-                          </span>
-                                    <span
-                            class="d-inline-block"
-                            data-bs-toggle="modal"
-                            data-bs-target="#vpsQuery"
-                          >
-                            <i class="las la-question-circle"></i>
-                          </span>
-                                    </span>
-                                    </span>
-                                    <span
-                        class="btn btn-dark hover:bg-primary hover:border-primary rounded-1"
-                      >
-                        Order Now
-                      </span>
+                                        class="d-flex gap-4 flex-wrap justify-content-between align-items-center w-100">
+                                        <span
+                                            class="d-block text-heading fs-18 fw-bolder flex-shrink-0">
+                                            Cloud-04
+                                        </span>
+                                        <span class="d-block text-heading fw-bold flex-shrink-0">
+                                            2 CPUs
+                                        </span>
+                                        <span class="d-block text-heading fw-bold flex-shrink-0">
+                                            4GB <span class="fw-normal">RAM</span>
+                                        </span>
+                                        <span class="d-block text-heading fw-bold flex-shrink-0">
+                                            80 GB <span class="fw-normal">NVMe</span>
+                                        </span>
+                                        <span class="d-block flex-shrink-0">
+                                            <span class="d-block fw-normal mb-2">
+                                                Starting at:
+                                                <span class="h6 mb-0 text-primary fw-bold">$32/mo</span>
+                                            </span>
+                                            <span class="d-flex gap-3 align-items-center">
+                                                <span
+                                                    class="d-inline-block text-decoration-line-through text-body fw-semibold">
+                                                    $56.50
+                                                </span>
+                                                <span class="badge bg-warning-subtle text-warning">
+                                                    75% OFF
+                                                </span>
+                                                <span
+                                                    class="d-inline-block"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#vpsQuery">
+                                                    <i class="las la-question-circle"></i>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span
+                                            class="btn btn-dark hover:bg-primary hover:border-primary rounded-1">
+                                            Order Now
+                                        </span>
                                     </span>
                                 </button>
                             </h2>
@@ -694,7 +669,7 @@
                                                                     <i class="las la-check"></i>
                                                                 </div>
                                                                 <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> 4 TB </span>  Bandwidth
+                                                                    <span class="fw-bold"> 4 TB </span> Bandwidth
                                                                 </span>
                                                             </div>
                                                             <div class="d-flex align-items-center gap-2">
@@ -702,30 +677,8 @@
                                                                     <i class="las la-check"></i>
                                                                 </div>
                                                                 <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> Hassle-free </span> 
-                                                                Migrations
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="vstack gap-2">
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <div class="w-5 h-5 bg-success rounded-circle fs-10 text-white d-flex align-items-center justify-content-center">
-                                                                    <i class="las la-check"></i>
-                                                                </div>
-                                                                <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> 99% </span>
-                                                                Uptime Guarantee
-                                                                </span>
-                                                            </div>
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <div class="w-5 h-5 bg-success rounded-circle fs-10 text-white d-flex align-items-center justify-content-center">
-                                                                    <i class="las la-check"></i>
-                                                                </div>
-                                                                <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> 24/7 </span>
-                                                                Expert Support
+                                                                    <span class="fw-bold"> Hassle-free </span>
+                                                                    Migrations
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -737,8 +690,8 @@
                                                                     <i class="las la-check"></i>
                                                                 </div>
                                                                 <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> Free </span>
-                                                                cPanel/WHM
+                                                                    <span class="fw-bold"> 99% </span>
+                                                                    Uptime Guarantee
                                                                 </span>
                                                             </div>
                                                             <div class="d-flex align-items-center gap-2">
@@ -746,8 +699,30 @@
                                                                     <i class="las la-check"></i>
                                                                 </div>
                                                                 <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> Dedicated </span>
-                                                                IP Address
+                                                                    <span class="fw-bold"> 24/7 </span>
+                                                                    Expert Support
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="vstack gap-2">
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <div class="w-5 h-5 bg-success rounded-circle fs-10 text-white d-flex align-items-center justify-content-center">
+                                                                    <i class="las la-check"></i>
+                                                                </div>
+                                                                <span class="d-inline-block fs-14">
+                                                                    <span class="fw-bold"> Free </span>
+                                                                    cPanel/WHM
+                                                                </span>
+                                                            </div>
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <div class="w-5 h-5 bg-success rounded-circle fs-10 text-white d-flex align-items-center justify-content-center">
+                                                                    <i class="las la-check"></i>
+                                                                </div>
+                                                                <span class="d-inline-block fs-14">
+                                                                    <span class="fw-bold"> Dedicated </span>
+                                                                    IP Address
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -758,8 +733,8 @@
                                         <div class="col-xl-4">
                                             <div class="cloud-package__box h-100">
                                                 <span class="d-block fw-bold fs-12 mb-2">
-                            Server location
-                          </span>
+                                                    Server location
+                                                </span>
                                                 <div class="hstack gap-3 flex-wrap">
                                                     <div class="d-inline-block flex-shrink-0">
                                                         <img src="assets/img/flag-sm-1.png" alt="image" class="img-fluid" />
@@ -793,50 +768,45 @@
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cloudPackageFive" aria-expanded="false">
                                     <span
-                      class="d-flex gap-4 flex-wrap justify-content-between align-items-center w-100"
-                    >
-                      <span
-                        class="d-block text-heading fs-18 fw-bolder flex-shrink-0"
-                      >
-                        Cloud-05
-                      </span>
-                                    <span class="d-block text-heading fw-bold flex-shrink-0">
-                        2 CPUs
-                      </span>
-                                    <span class="d-block text-heading fw-bold flex-shrink-0">
-                        4GB <span class="fw-normal">RAM</span>
-                                    </span>
-                                    <span class="d-block text-heading fw-bold flex-shrink-0">
-                        80 GB <span class="fw-normal">NVMe</span>
-                                    </span>
-                                    <span class="d-block flex-shrink-0">
-                        <span class="d-block fw-normal mb-2">
-                          Starting at:
-                          <span class="h6 mb-0 text-primary fw-bold">$32/mo</span>
-                                    </span>
-                                    <span class="d-flex gap-3 align-items-center">
-                          <span
-                            class="d-inline-block text-decoration-line-through text-body fw-semibold"
-                          >
-                            $56.50
-                          </span>
-                                    <span class="badge bg-warning-subtle text-warning">
-                            75% OFF
-                          </span>
-                                    <span
-                            class="d-inline-block"
-                            data-bs-toggle="modal"
-                            data-bs-target="#vpsQuery"
-                          >
-                            <i class="las la-question-circle"></i>
-                          </span>
-                                    </span>
-                                    </span>
-                                    <span
-                        class="btn btn-dark hover:bg-primary hover:border-primary rounded-1"
-                      >
-                        Order Now
-                      </span>
+                                        class="d-flex gap-4 flex-wrap justify-content-between align-items-center w-100">
+                                        <span
+                                            class="d-block text-heading fs-18 fw-bolder flex-shrink-0">
+                                            Cloud-05
+                                        </span>
+                                        <span class="d-block text-heading fw-bold flex-shrink-0">
+                                            2 CPUs
+                                        </span>
+                                        <span class="d-block text-heading fw-bold flex-shrink-0">
+                                            4GB <span class="fw-normal">RAM</span>
+                                        </span>
+                                        <span class="d-block text-heading fw-bold flex-shrink-0">
+                                            80 GB <span class="fw-normal">NVMe</span>
+                                        </span>
+                                        <span class="d-block flex-shrink-0">
+                                            <span class="d-block fw-normal mb-2">
+                                                Starting at:
+                                                <span class="h6 mb-0 text-primary fw-bold">$32/mo</span>
+                                            </span>
+                                            <span class="d-flex gap-3 align-items-center">
+                                                <span
+                                                    class="d-inline-block text-decoration-line-through text-body fw-semibold">
+                                                    $56.50
+                                                </span>
+                                                <span class="badge bg-warning-subtle text-warning">
+                                                    75% OFF
+                                                </span>
+                                                <span
+                                                    class="d-inline-block"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#vpsQuery">
+                                                    <i class="las la-question-circle"></i>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span
+                                            class="btn btn-dark hover:bg-primary hover:border-primary rounded-1">
+                                            Order Now
+                                        </span>
                                     </span>
                                 </button>
                             </h2>
@@ -853,7 +823,7 @@
                                                                     <i class="las la-check"></i>
                                                                 </div>
                                                                 <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> 4 TB </span>  Bandwidth
+                                                                    <span class="fw-bold"> 4 TB </span> Bandwidth
                                                                 </span>
                                                             </div>
                                                             <div class="d-flex align-items-center gap-2">
@@ -861,30 +831,8 @@
                                                                     <i class="las la-check"></i>
                                                                 </div>
                                                                 <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> Hassle-free </span> 
-                                                                Migrations
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="vstack gap-2">
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <div class="w-5 h-5 bg-success rounded-circle fs-10 text-white d-flex align-items-center justify-content-center">
-                                                                    <i class="las la-check"></i>
-                                                                </div>
-                                                                <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> 99% </span>
-                                                                Uptime Guarantee
-                                                                </span>
-                                                            </div>
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <div class="w-5 h-5 bg-success rounded-circle fs-10 text-white d-flex align-items-center justify-content-center">
-                                                                    <i class="las la-check"></i>
-                                                                </div>
-                                                                <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> 24/7 </span>
-                                                                Expert Support
+                                                                    <span class="fw-bold"> Hassle-free </span>
+                                                                    Migrations
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -896,8 +844,8 @@
                                                                     <i class="las la-check"></i>
                                                                 </div>
                                                                 <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> Free </span>
-                                                                cPanel/WHM
+                                                                    <span class="fw-bold"> 99% </span>
+                                                                    Uptime Guarantee
                                                                 </span>
                                                             </div>
                                                             <div class="d-flex align-items-center gap-2">
@@ -905,8 +853,30 @@
                                                                     <i class="las la-check"></i>
                                                                 </div>
                                                                 <span class="d-inline-block fs-14">
-                                    <span class="fw-bold"> Dedicated </span>
-                                                                IP Address
+                                                                    <span class="fw-bold"> 24/7 </span>
+                                                                    Expert Support
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="vstack gap-2">
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <div class="w-5 h-5 bg-success rounded-circle fs-10 text-white d-flex align-items-center justify-content-center">
+                                                                    <i class="las la-check"></i>
+                                                                </div>
+                                                                <span class="d-inline-block fs-14">
+                                                                    <span class="fw-bold"> Free </span>
+                                                                    cPanel/WHM
+                                                                </span>
+                                                            </div>
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <div class="w-5 h-5 bg-success rounded-circle fs-10 text-white d-flex align-items-center justify-content-center">
+                                                                    <i class="las la-check"></i>
+                                                                </div>
+                                                                <span class="d-inline-block fs-14">
+                                                                    <span class="fw-bold"> Dedicated </span>
+                                                                    IP Address
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -917,8 +887,8 @@
                                         <div class="col-xl-4">
                                             <div class="cloud-package__box h-100">
                                                 <span class="d-block fw-bold fs-12 mb-2">
-                            Server location
-                          </span>
+                                                    Server location
+                                                </span>
                                                 <div class="hstack gap-3 flex-wrap">
                                                     <div class="d-inline-block flex-shrink-0">
                                                         <img src="assets/img/flag-sm-1.png" alt="image" class="img-fluid" />
@@ -1138,10 +1108,10 @@
                 <div class="row">
                     <div class="col-md-10 col-lg-8 col-xl-6" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                         <span class="d-flex align-items-center gap-2 mb-3">
-                <span class="d-block w-2 h-2 rounded-circle bg-success"></span>
-                        <span class="d-block text-white">
-                  <span class="text-success">WordPress Hosting</span> Up To 75% OFF
-                        </span>
+                            <span class="d-block w-2 h-2 rounded-circle bg-success"></span>
+                            <span class="d-block text-white">
+                                <span class="text-success">WordPress Hosting</span> Up To 75% OFF
+                            </span>
                         </span>
                         <h2 class="mb-0 text-white">
                             Why choose Hostingard For Your Cloud Server?
@@ -1204,7 +1174,7 @@
                     <div class="col-md-8 col-lg-7 col-xl-5">
                         <h2 class="h5 mb-4">
                             Round-the-Clock Customer <br />
-                Support Availability 24/7
+                            Support Availability 24/7
                         </h2>
                         <p class="mb-0 max-text-48">
                             Our high-performance storage network, combined with enterprise all-
@@ -1223,10 +1193,10 @@
                                         <p>24/7/365 Through the Chat Widget</p>
                                         <a href="contact.php" class="text-decoration-none d-inline-flex align-items-center gap-2 text-dark fw-semibold btn-arrow">
                                             <span class="d-inline-block btn-arrow__text">
-                          Chat Now
-                          <span class="btn-arrow__icon">
-                            <i class="las la-arrow-right"></i>
-                          </span>
+                                                Chat Now
+                                                <span class="btn-arrow__icon">
+                                                    <i class="las la-arrow-right"></i>
+                                                </span>
                                             </span>
                                         </a>
                                     </div>
@@ -1242,10 +1212,10 @@
                                         <p>9.00AM to 8.00PM Through the Call Center</p>
                                         <a href="contact.php" class="text-decoration-none d-inline-flex align-items-center gap-2 text-dark fw-semibold btn-arrow">
                                             <span class="d-inline-block btn-arrow__text">
-                          Get in touch
-                          <span class="btn-arrow__icon">
-                            <i class="las la-arrow-right"></i>
-                          </span>
+                                                Get in touch
+                                                <span class="btn-arrow__icon">
+                                                    <i class="las la-arrow-right"></i>
+                                                </span>
                                             </span>
                                         </a>
                                     </div>
@@ -1261,10 +1231,10 @@
                                         <p>+880 1633 082 302</p>
                                         <a href="contact.php" class="text-decoration-none d-inline-flex align-items-center gap-2 text-dark fw-semibold btn-arrow">
                                             <span class="d-inline-block btn-arrow__text">
-                          Get in touch
-                          <span class="btn-arrow__icon">
-                            <i class="las la-arrow-right"></i>
-                          </span>
+                                                Get in touch
+                                                <span class="btn-arrow__icon">
+                                                    <i class="las la-arrow-right"></i>
+                                                </span>
                                             </span>
                                         </a>
                                     </div>
@@ -1290,7 +1260,7 @@
                                 Build Locally, Launch Worldwide
                             </h2>
                             <p class="mb-0" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                                Hostcity offers the largest worldwide network, enabling you to
+                                CloudHosti offers the largest worldwide network, enabling you to
                                 spin up and easily scale a low latency infrastructure solution no
                                 matter where you or your customers may be!
                             </p>
@@ -1450,30 +1420,29 @@
                                                 <ul class="list-unstyled p-0 m-0 hstack justify-content-center mb-6">
                                                     <li>
                                                         <span class="d-inline-block text-warning">
-                                <i class="las la-star"></i>
-                              </span>
+                                                            <i class="las la-star"></i>
+                                                        </span>
                                                     </li>
                                                     <li>
                                                         <span class="d-inline-block text-warning">
-                                <i class="las la-star"></i>
-                              </span>
+                                                            <i class="las la-star"></i>
+                                                        </span>
                                                     </li>
                                                     <li>
                                                         <span class="d-inline-block text-warning">
-                                <i class="las la-star"></i>
-                              </span>
+                                                            <i class="las la-star"></i>
+                                                        </span>
                                                     </li>
                                                     <li>
                                                         <span class="d-inline-block text-warning">
-                                <i class="las la-star"></i>
-                              </span>
+                                                            <i class="las la-star"></i>
+                                                        </span>
                                                     </li>
                                                     <li>
                                                         <span
-                                class="d-inline-block text-dark text-opacity-25"
-                              >
-                                <i class="las la-star"></i>
-                              </span>
+                                                            class="d-inline-block text-dark text-opacity-25">
+                                                            <i class="las la-star"></i>
+                                                        </span>
                                                     </li>
                                                 </ul>
                                                 <h6 class="mb-3">Awesome Services!</h6>
@@ -1497,30 +1466,29 @@
                                                 <ul class="list-unstyled p-0 m-0 hstack justify-content-center mb-6">
                                                     <li>
                                                         <span class="d-inline-block text-warning">
-                                <i class="las la-star"></i>
-                              </span>
+                                                            <i class="las la-star"></i>
+                                                        </span>
                                                     </li>
                                                     <li>
                                                         <span class="d-inline-block text-warning">
-                                <i class="las la-star"></i>
-                              </span>
+                                                            <i class="las la-star"></i>
+                                                        </span>
                                                     </li>
                                                     <li>
                                                         <span class="d-inline-block text-warning">
-                                <i class="las la-star"></i>
-                              </span>
+                                                            <i class="las la-star"></i>
+                                                        </span>
                                                     </li>
                                                     <li>
                                                         <span class="d-inline-block text-warning">
-                                <i class="las la-star"></i>
-                              </span>
+                                                            <i class="las la-star"></i>
+                                                        </span>
                                                     </li>
                                                     <li>
                                                         <span
-                                class="d-inline-block text-dark text-opacity-25"
-                              >
-                                <i class="las la-star"></i>
-                              </span>
+                                                            class="d-inline-block text-dark text-opacity-25">
+                                                            <i class="las la-star"></i>
+                                                        </span>
                                                     </li>
                                                 </ul>
                                                 <h6 class="mb-3">Awesome Services!</h6>
@@ -1544,30 +1512,29 @@
                                                 <ul class="list-unstyled p-0 m-0 hstack justify-content-center mb-6">
                                                     <li>
                                                         <span class="d-inline-block text-warning">
-                                <i class="las la-star"></i>
-                              </span>
+                                                            <i class="las la-star"></i>
+                                                        </span>
                                                     </li>
                                                     <li>
                                                         <span class="d-inline-block text-warning">
-                                <i class="las la-star"></i>
-                              </span>
+                                                            <i class="las la-star"></i>
+                                                        </span>
                                                     </li>
                                                     <li>
                                                         <span class="d-inline-block text-warning">
-                                <i class="las la-star"></i>
-                              </span>
+                                                            <i class="las la-star"></i>
+                                                        </span>
                                                     </li>
                                                     <li>
                                                         <span class="d-inline-block text-warning">
-                                <i class="las la-star"></i>
-                              </span>
+                                                            <i class="las la-star"></i>
+                                                        </span>
                                                     </li>
                                                     <li>
                                                         <span
-                                class="d-inline-block text-dark text-opacity-25"
-                              >
-                                <i class="las la-star"></i>
-                              </span>
+                                                            class="d-inline-block text-dark text-opacity-25">
+                                                            <i class="las la-star"></i>
+                                                        </span>
                                                     </li>
                                                 </ul>
                                                 <h6 class="mb-3">Awesome Services!</h6>
@@ -1591,30 +1558,29 @@
                                                 <ul class="list-unstyled p-0 m-0 hstack justify-content-center mb-6">
                                                     <li>
                                                         <span class="d-inline-block text-warning">
-                                <i class="las la-star"></i>
-                              </span>
+                                                            <i class="las la-star"></i>
+                                                        </span>
                                                     </li>
                                                     <li>
                                                         <span class="d-inline-block text-warning">
-                                <i class="las la-star"></i>
-                              </span>
+                                                            <i class="las la-star"></i>
+                                                        </span>
                                                     </li>
                                                     <li>
                                                         <span class="d-inline-block text-warning">
-                                <i class="las la-star"></i>
-                              </span>
+                                                            <i class="las la-star"></i>
+                                                        </span>
                                                     </li>
                                                     <li>
                                                         <span class="d-inline-block text-warning">
-                                <i class="las la-star"></i>
-                              </span>
+                                                            <i class="las la-star"></i>
+                                                        </span>
                                                     </li>
                                                     <li>
                                                         <span
-                                class="d-inline-block text-dark text-opacity-25"
-                              >
-                                <i class="las la-star"></i>
-                              </span>
+                                                            class="d-inline-block text-dark text-opacity-25">
+                                                            <i class="las la-star"></i>
+                                                        </span>
                                                     </li>
                                                 </ul>
                                                 <h6 class="mb-3">Awesome Services!</h6>
@@ -1651,16 +1617,15 @@
                             </div>
                             <div class="col-lg-8 col-xl-7">
                                 <span
-                    class="d-flex align-items-center gap-2 mb-2"
-                    data-sal="slide-up"
-                    data-sal-duration="300"
-                    data-sal-delay="300"
-                    data-sal-easing="ease-in-out-sine"
-                  >
-                    <span class="d-block w-2 h-2 rounded-circle bg-success"></span>
-                                <span class="d-block text-white">
-                      <span class="text-success fw-medium">Included Features</span>
-                                </span>
+                                    class="d-flex align-items-center gap-2 mb-2"
+                                    data-sal="slide-up"
+                                    data-sal-duration="300"
+                                    data-sal-delay="300"
+                                    data-sal-easing="ease-in-out-sine">
+                                    <span class="d-block w-2 h-2 rounded-circle bg-success"></span>
+                                    <span class="d-block text-white">
+                                        <span class="text-success fw-medium">Included Features</span>
+                                    </span>
                                 </span>
                                 <h2 class="h3 mb-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                                     Why Hostingard Cloud Server Included Feature?
@@ -1677,8 +1642,8 @@
                                                     <i class="las la-check"></i>
                                                 </div>
                                                 <span class="d-block fw-medium fs-14">
-                            Instant Deployment
-                          </span>
+                                                    Instant Deployment
+                                                </span>
                                             </div>
                                             <div class="d-flex align-items-center gap-2">
                                                 <div class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center">
@@ -1691,16 +1656,16 @@
                                                     <i class="las la-check"></i>
                                                 </div>
                                                 <span class="d-block fw-medium fs-14">
-                            Premium Resources
-                          </span>
+                                                    Premium Resources
+                                                </span>
                                             </div>
                                             <div class="d-flex align-items-center gap-2">
                                                 <div class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center">
                                                     <i class="las la-check"></i>
                                                 </div>
                                                 <span class="d-block fw-medium fs-14">
-                            Grow With Ease
-                          </span>
+                                                    Grow With Ease
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -1711,42 +1676,42 @@
                                                     <i class="las la-check"></i>
                                                 </div>
                                                 <span class="d-block fw-medium fs-14">
-                            All-In-One Platform Panel
-                          </span>
+                                                    All-In-One Platform Panel
+                                                </span>
                                             </div>
                                             <div class="d-flex align-items-center gap-2">
                                                 <div class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center">
                                                     <i class="las la-check"></i>
                                                 </div>
                                                 <span class="d-block fw-medium fs-14">
-                            High-Performance Hardware
-                          </span>
+                                                    High-Performance Hardware
+                                                </span>
                                             </div>
                                             <div class="d-flex align-items-center gap-2">
                                                 <div class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center">
                                                     <i class="las la-check"></i>
                                                 </div>
                                                 <span class="d-block fw-medium fs-14">
-                            Powered by NVMe SSDs
-                          </span>
+                                                    Powered by NVMe SSDs
+                                                </span>
                                             </div>
                                             <div class="d-flex align-items-center gap-2">
                                                 <div class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center">
                                                     <i class="las la-check"></i>
                                                 </div>
                                                 <span class="d-block fw-medium fs-14">
-                            Easy Configuration
-                          </span>
+                                                    Easy Configuration
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <a href="contact.php" class="btn btn-success btn-arrow btn-arrow-lg btn-lg fs-14 fw-semibold rounded-pill mt-8" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                                     <span class="btn-arrow__text">
-                      Explore More
-                      <span class="btn-arrow__icon">
-                        <i class="las la-arrow-right"></i>
-                      </span>
+                                        Explore More
+                                        <span class="btn-arrow__icon">
+                                            <i class="las la-arrow-right"></i>
+                                        </span>
                                     </span>
                                 </a>
                             </div>
@@ -1763,8 +1728,8 @@
                     </div>
                     <div class="card-body">
                         <span class="d-flex align-items-center gap-2 mb-2">
-                <span class="d-block w-2 h-2 rounded-circle bg-success"></span>
-                        <span class="d-block text-success fs-14">Cloud Server Feature</span>
+                            <span class="d-block w-2 h-2 rounded-circle bg-success"></span>
+                            <span class="d-block text-success fs-14">Cloud Server Feature</span>
                         </span>
                         <h6 class="mb-4">
                             <a href="blog-details.php" class="text-decoration-none text-dark hover:text-primary">
@@ -1777,10 +1742,10 @@
                         </p>
                         <a href="blog-details.php" class="btn btn-dark btn-arrow btn-arrow-md fs-14 fw-semibold rounded-pill">
                             <span class="btn-arrow__text">
-                  Explore More
-                  <span class="btn-arrow__icon">
-                    <i class="las la-arrow-right"></i>
-                  </span>
+                                Explore More
+                                <span class="btn-arrow__icon">
+                                    <i class="las la-arrow-right"></i>
+                                </span>
                             </span>
                         </a>
                     </div>
@@ -1795,8 +1760,8 @@
                     </div>
                     <div class="card-body">
                         <span class="d-flex align-items-center gap-2 mb-2">
-                <span class="d-block w-2 h-2 rounded-circle bg-success"></span>
-                        <span class="d-block text-success fs-14">Cloud Server Feature</span>
+                            <span class="d-block w-2 h-2 rounded-circle bg-success"></span>
+                            <span class="d-block text-success fs-14">Cloud Server Feature</span>
                         </span>
                         <h6 class="mb-4">
                             <a href="blog-details.php" class="text-decoration-none text-dark hover:text-primary">
@@ -1809,16 +1774,16 @@
                         </p>
                         <a href="blog-details.php" class="btn btn-dark btn-arrow btn-arrow-md fs-14 fw-semibold rounded-pill">
                             <span class="btn-arrow__text">
-                  Explore More
-                  <span class="btn-arrow__icon">
-                    <i class="las la-arrow-right"></i>
-                  </span>
+                                Explore More
+                                <span class="btn-arrow__icon">
+                                    <i class="las la-arrow-right"></i>
+                                </span>
                             </span>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="500" data-sal-easing="ease-in-out-sine">
+            <div class="col-md-6 col-lg-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                 <div class="card rounded-3 h-100">
                     <div class="card-header pt-4 border-bottom-0">
                         <a href="blog-details.php" class="d-block text-decoration-none">
@@ -1827,8 +1792,8 @@
                     </div>
                     <div class="card-body">
                         <span class="d-flex align-items-center gap-2 mb-2">
-                <span class="d-block w-2 h-2 rounded-circle bg-success"></span>
-                        <span class="d-block text-success fs-14">Cloud Server Feature</span>
+                            <span class="d-block w-2 h-2 rounded-circle bg-success"></span>
+                            <span class="d-block text-success fs-14">Cloud Server Feature</span>
                         </span>
                         <h6 class="mb-4">
                             <a href="blog-details.php" class="text-decoration-none text-dark hover:text-primary">
@@ -1841,10 +1806,10 @@
                         </p>
                         <a href="blog-details.php" class="btn btn-dark btn-arrow btn-arrow-md fs-14 fw-semibold rounded-pill">
                             <span class="btn-arrow__text">
-                  Explore More
-                  <span class="btn-arrow__icon">
-                    <i class="las la-arrow-right"></i>
-                  </span>
+                                Explore More
+                                <span class="btn-arrow__icon">
+                                    <i class="las la-arrow-right"></i>
+                                </span>
                             </span>
                         </a>
                     </div>
@@ -1868,10 +1833,10 @@
                     </p>
                     <a href="contact.php" class="btn btn-success btn-arrow btn-arrow-md fs-14 fw-semibold rounded-pill" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                         <span class="btn-arrow__text">
-                Live Chat Support
-                <span class="btn-arrow__icon">
-                  <i class="las la-arrow-right"></i>
-                </span>
+                            Live Chat Support
+                            <span class="btn-arrow__icon">
+                                <i class="las la-arrow-right"></i>
+                            </span>
                         </span>
                     </a>
                 </div>
@@ -1895,8 +1860,7 @@
                         <div class="accordion-item border rounded-3 mb-4">
                             <h2 class="accordion-header" id="faq-headingOne">
                                 <button class="accordion-button bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapseOne" aria-expanded="false" aria-controls="faq-collapseOne">
-                                    <span class="text-body fs-16 fw-bold"
-                      >What is Shared hosting?</span>
+                                    <span class="text-body fs-16 fw-bold">What is Shared hosting?</span>
                                 </button>
                             </h2>
                             <div id="faq-collapseOne" class="accordion-collapse collapse show" aria-labelledby="faq-headingOne" data-bs-parent="#accordionFaq">
@@ -1913,8 +1877,7 @@
                         <div class="accordion-item border rounded-3 mb-4">
                             <h2 class="accordion-header" id="faq-headingTwo">
                                 <button class="accordion-button bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapseTwo" aria-expanded="false" aria-controls="faq-collapseTwo">
-                                    <span class="text-body fs-16 fw-bold"
-                      >How many websites can I host?</span>
+                                    <span class="text-body fs-16 fw-bold">How many websites can I host?</span>
                                 </button>
                             </h2>
                             <div id="faq-collapseTwo" class="accordion-collapse collapse" aria-labelledby="faq-headingTwo" data-bs-parent="#accordionFaq">
@@ -1931,8 +1894,7 @@
                         <div class="accordion-item border rounded-3 mb-4">
                             <h2 class="accordion-header" id="faq-heading3">
                                 <button class="accordion-button bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse3" aria-expanded="false" aria-controls="faq-collapse3">
-                                    <span class="text-body fs-16 fw-bold"
-                      >Do you include SSL Certificates?</span>
+                                    <span class="text-body fs-16 fw-bold">Do you include SSL Certificates?</span>
                                 </button>
                             </h2>
                             <div id="faq-collapse3" class="accordion-collapse collapse" aria-labelledby="faq-heading3" data-bs-parent="#accordionFaq">
@@ -1949,8 +1911,7 @@
                         <div class="accordion-item border rounded-3 mb-4">
                             <h2 class="accordion-header" id="faq-heading4">
                                 <button class="accordion-button bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse4" aria-expanded="false" aria-controls="faq-collapse4">
-                                    <span class="text-body fs-16 fw-bold"
-                      >ow to use the Track Delivery feature in the cPanel?</span>
+                                    <span class="text-body fs-16 fw-bold">ow to use the Track Delivery feature in the cPanel?</span>
                                 </button>
                             </h2>
                             <div id="faq-collapse4" class="accordion-collapse collapse" aria-labelledby="faq-heading4" data-bs-parent="#accordionFaq">
@@ -1970,105 +1931,6 @@
         </div>
     </div>
     <!-- /FAQ -->
-
-    <!-- Footer  -->
-    <footer class="footer-5">
-        <div class="py-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="hstack justify-content-lg-end gap-2 flex-wrap">
-                            <img src="assets/img/pg-1.png" alt="image" class="img-fluid" />
-                            <img src="assets/img/pg-2.png" alt="image" class="img-fluid" />
-                            <img src="assets/img/pg-3.png" alt="image" class="img-fluid" />
-                            <img src="assets/img/pg-4.png" alt="image" class="img-fluid" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="pt-120 pb-120">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <img src="assets/img/logo-light.png" alt="image" class="logo__img" />
-                        <p class="text-white text-opacity-75 mt-8">
-                            Whether you run an e-commerce site or a web business, you want to
-                            attract as many visitors as s or for when you no longer want to be
-                            limited by
-                        </p>
-                        <h6 class="text-white mt-6 mb-4 fs-16">Social Media</h6>
-                        <div class="d-inline-flex align-items-center justify-content-center gap-2">
-                            <a href="#" class="social-icon w-9 h-9 d-inline-flex align-items-center justify-content-center rounded-circle border border-light border-opacity-10">
-                                <span class="text-white"><i class="lab la-twitter"></i></span>
-                            </a>
-                            <a href="#" class="social-icon w-9 h-9 d-inline-flex align-items-center justify-content-center rounded-circle border border-light border-opacity-10">
-                                <span class="text-white"><i class="lab la-facebook-f"></i></span>
-                            </a>
-                            <a href="#" class="social-icon w-9 h-9 d-inline-flex align-items-center justify-content-center rounded-circle border border-light border-opacity-10">
-                                <span class="text-white"><i class="lab la-dribbble"></i></span>
-                            </a>
-                            <a href="#" class="social-icon w-9 h-9 d-inline-flex align-items-center justify-content-center rounded-circle border border-light border-opacity-10">
-                                <span class="text-white"><i class="lab la-behance"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="ps-xl-10">
-                            <h6 class="text-white fs-16 mt-3 mb-8">Product & Solutions</h6>
-                            <ul class="list-unstyled d-flex flex-column gap-2">
-                                <li><a href="#" class="footer-2-link">Shared Hosting</a></li>
-                                <li><a href="#" class="footer-2-link">WordPress Hosting</a></li>
-                                <li><a href="#" class="footer-2-link">VPS Hosting</a></li>
-                                <li><a href="#" class="footer-2-link">Cloud Servers</a></li>
-                                <li><a href="#" class="footer-2-link">Dedicated Servers</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="ps-xl-5">
-                            <h6 class="text-white fs-16 mt-3 mb-8">Hostcity Feature</h6>
-                            <ul class="list-unstyled d-flex flex-column gap-2">
-                                <li><a href="#" class="footer-2-link">Data Center</a></li>
-                                <li><a href="#" class="footer-2-link">Control Panel</a></li>
-                                <li><a href="#" class="footer-2-link">Operating System</a></li>
-                                <li><a href="#" class="footer-2-link">Uptime Guarantee</a></li>
-                                <li><a href="#" class="footer-2-link">DDOS Protection</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-6">
-                        <div class="ps-xl-5">
-                            <h6 class="text-white fs-16 mt-3 mb-8">Company Info</h6>
-                            <ul class="list-unstyled d-flex flex-column gap-2">
-                                <li><a href="#" class="footer-2-link">About Us</a></li>
-                                <li><a href="#" class="footer-2-link">Partners</a></li>
-                                <li><a href="#" class="footer-2-link">Knowledgebase</a></li>
-                                <li><a href="#" class="footer-2-link">Contact Us</a></li>
-                                <li><a href="#" class="footer-2-link">News</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="py-4">
-            <div class="container">
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <p class="mb-0 fs-14">&copy; 2024 CloudHosti. All rights reserved</p>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="d-flex align-items-center justify-content-center justify-content-md-end gap-4 flex-wrap">
-                            <a href="terms.php" class="footer-2-link"> Terms & Condition </a>
-                            <a href="privacy.php" class="footer-2-link"> Privacy Policy </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- /Footer  -->
 
     <!-- Modal -->
     <div class="modal fade" id="vpsQuery" aria-hidden="true">
@@ -2107,21 +1969,7 @@
         </div>
     </div>
 
-
-    <div class="scroll-top scroll-to-target bg-primary text-white" data-target="html">
-        <span class="las la-hand-point-up"></span>
-    </div>
-
-    <!--build:js-->
-    <script src="assets/js/vendors/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/vendors/jquery-ui.min.js"></script>
-    <script src="assets/js/vendors/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/vendors/swiper-bundle.min.js"></script>
-    <script src="assets/js/vendors/simplebar.min.js"></script>
-    <script src="assets/js/vendors/sal.js"></script>
-    <script src="assets/js/vendors/jquery.magnific-popup.min.js"></script>
-
-    <script src="assets/js/app.js"></script>
+    <?php include('./components/footer.php') ?>
 </body>
 
 </html>

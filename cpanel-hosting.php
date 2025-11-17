@@ -28,7 +28,7 @@
     <!--preloader start-->
     <div class="preloader bg-light-subtle">
         <div class="preloader-wrap">
-            <img src="assets/images/logo.png" alt="Cloud Hosti logo" height="61px">
+            <img src="assets/images/cloudhosti-logo.png" alt="Cloud Hosti logo" height="61px">
             <div class="loading-bar"></div>
         </div>
     </div>
@@ -836,7 +836,7 @@
                         <p>Need help? We will set up and install your SSL
                             certificate free of charge!*</p>
                     </div>
-                    <div class="col-lg-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="200" data-sal-easing="ease-in-out-sine">
+                    <div class="col-lg-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                         <h6>24x7 Support</h6>
                         <p>Need help? We will set up and install your SSL
                             certificate free of charge!*</p>
@@ -915,7 +915,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="500" data-sal-easing="ease-in-out-sine">
+                <div class="col-md-6 col-lg-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                     <div class="card border-0 shadow-sm rounded-4 h-100">
                         <div class="card-body p-md-6 p-xl-8">
                             <div class="mb-8">
@@ -963,7 +963,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="500" data-sal-easing="ease-in-out-sine">
+                <div class="col-md-6 col-lg-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                     <div class="card border-0 shadow-sm rounded-4 h-100">
                         <div class="card-body p-md-6 p-xl-8">
                             <div class="mb-8">
@@ -1425,7 +1425,7 @@
                                 Domain Registration FAQ’s
                             </h2>
                             <p class="mb-0 max-text-52 mx-auto">
-                                The best thing we love about Hostcity is it does two-way sync with Google us to better
+                                The best thing we love about CloudHosti is it does two-way sync with Google us to better
                                 organize & keep everything on track.
                             </p>
                         </div>
@@ -1530,114 +1530,7 @@
         </div>
     </div><!-- /Footer CTA -->
 
-    <!-- Footer -->
-    <footer class="footer-2-area pt-120 pb-5 bg-dark position-relative z-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <img src="assets/img/logo-light.png" alt="image" class="logo__img">
-                    <p class="text-white text-opacity-75 mt-8">Whether you run an e-commerce site or a web business,
-                        you
-                        want to attract as
-                        many visitors as s or for when you no longer want to be limited by</p>
-                    <h6 class="text-white mt-6 mb-4 fs-16">Social Media</h6>
-                    <div class="d-inline-flex align-items-center justify-content-center gap-2">
-                        <a href="#" class="social-icon w-9 h-9 d-inline-flex align-items-center justify-content-center rounded-circle border border-light border-opacity-10">
-                            <span class="text-white"><i class="lab la-twitter"></i></span>
-                        </a>
-                        <a href="#" class="social-icon w-9 h-9 d-inline-flex align-items-center justify-content-center rounded-circle border border-light border-opacity-10">
-                            <span class="text-white"><i class="lab la-facebook-f"></i></span>
-                        </a>
-                        <a href="#" class="social-icon w-9 h-9 d-inline-flex align-items-center justify-content-center rounded-circle border border-light border-opacity-10">
-                            <span class="text-white"><i class="lab la-dribbble"></i></span>
-                        </a>
-                        <a href="#" class="social-icon w-9 h-9 d-inline-flex align-items-center justify-content-center rounded-circle border border-light border-opacity-10">
-                            <span class="text-white"><i class="lab la-behance"></i></span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="ps-xl-10">
-                        <h6 class="text-white fs-16 mt-3 mb-8">Product & Solutions</h6>
-                        <ul class="list-unstyled d-flex flex-column gap-2">
-                            <li><a href="#" class="footer-2-link">Shared
-                                    Hosting</a></li>
-                            <li><a href="#" class="footer-2-link">WordPress
-                                    Hosting</a></li>
-                            <li><a href="#" class="footer-2-link">VPS
-                                    Hosting</a></li>
-                            <li><a href="#" class="footer-2-link">Cloud
-                                    Servers</a></li>
-                            <li><a href="#" class="footer-2-link">Dedicated
-                                    Servers</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="ps-xl-5">
-                        <h6 class="text-white fs-16 mt-3 mb-8">Hostcity Feature</h6>
-                        <ul class="list-unstyled d-flex flex-column gap-2">
-                            <li><a href="#" class="footer-2-link">Data
-                                    Center</a></li>
-                            <li><a href="#" class="footer-2-link">Control
-                                    Panel</a></li>
-                            <li><a href="#" class="footer-2-link">Operating
-                                    System</a></li>
-                            <li><a href="#" class="footer-2-link">Uptime
-                                    Guarantee</a></li>
-                            <li><a href="#" class="footer-2-link">DDOS
-                                    Protection</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <div class="ps-xl-5">
-                        <h6 class="text-white fs-16 mt-3 mb-8">Company Info</h6>
-                        <ul class="list-unstyled d-flex flex-column gap-2">
-                            <li><a href="#" class="footer-2-link">About
-                                    Us</a></li>
-                            <li><a href="#" class="footer-2-link">Partners</a>
-                            </li>
-                            <li><a href="#" class="footer-2-link">Knowledgebase</a>
-                            </li>
-                            <li><a href="#" class="footer-2-link">Contact
-                                    Us</a></li>
-                            <li><a href="#" class="footer-2-link">News</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-20">
-                <div class="d-flex align-items-center justify-content-between flex-wrap gap-5 pt-5 border-top border-light border-opacity-10">
-                    <p class="text-white mb-0 fs-14">&copy; 2024 CloudHosti. All rights reserved</p>
-                    <div class="d-inline-flex align-items-center justify-content-center gap-4 flex-wrap">
-                        <a href="terms.php" class="footer-2-link">
-                            Terms & Condition
-                        </a>
-                        <a href="privacy.php" class="footer-2-link">
-                            Privacy Policy
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer><!-- /Footer -->
-
-    <div class="scroll-top scroll-to-target bg-primary text-white" data-target="html">
-        <span class="las la-hand-point-up"></span>
-    </div>
-
-    <!--build:js-->
-    <script src="assets/js/vendors/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/vendors/jquery-ui.min.js"></script>
-    <script src="assets/js/vendors/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/vendors/swiper-bundle.min.js"></script>
-    <script src="assets/js/vendors/simplebar.min.js"></script>
-    <script src="assets/js/vendors/sal.js"></script>
-    <script src="assets/js/vendors/jquery.magnific-popup.min.js"></script>
-
-    <script src="assets/js/app.js"></script>
+    <?php include('./components/footer.php') ?>
 </body>
 
 </html>

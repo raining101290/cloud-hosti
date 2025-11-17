@@ -28,8 +28,8 @@
     <!--preloader start-->
     <div class="preloader bg-light-subtle">
         <div class="preloader-wrap">
-            <img src="assets/images/logo.png" alt="Cloud Hosti logo" height="61px">
-            <img src="assets/images/logo.png" alt="Cloud Hosti logo" height="61px">
+            <img src="assets/images/cloudhosti-logo.png" alt="Cloud Hosti logo" height="61px">
+            <img src="assets/images/cloudhosti-logo.png" alt="Cloud Hosti logo" height="61px">
             <div class="loading-bar"></div>
         </div>
     </div>
@@ -245,7 +245,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-sal="slide-up" data-sal-duration="300" data-sal-delay="500" data-sal-easing="ease-in-out-sine">
+                <div class="col-lg-4 col-md-6" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                     <div class="card border-0">
                         <div class="card-body position-relative overflow-hidden px-4 px-md-6 px-xl-8 px-xxl-10 py-8 py-md-10 shadow-lg rounded-3 text-center">
                             <h6 class="mb-1">WordPress Premium</h6>
@@ -379,7 +379,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4 feature-list__item" data-sal="slide-up" data-sal-duration="300" data-sal-delay="500" data-sal-easing="ease-in-out-sine">
+                <div class="col-sm-6 col-md-4 feature-list__item" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                     <div class="feature-list__card border text-center">
                         <div class="mb-8">
                             <img src="assets/img/icon-features-9.png" alt="image" class="img-fluid">
@@ -454,7 +454,7 @@
                         <a href="#" class="d-inline-block" data-sal="slide-up" data-sal-duration="300" data-sal-delay="400" data-sal-easing="ease-in-out-sine">
                             <img src="assets/img/hero-logo-3-dark.png" alt="image" class="img-fluid transition opacity-50 brand-img">
                         </a>
-                        <a href="#" class="d-inline-block" data-sal="slide-up" data-sal-duration="300" data-sal-delay="500" data-sal-easing="ease-in-out-sine">
+                        <a href="#" class="d-inline-block" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                             <img src="assets/img/hero-logo-2-dark.png" alt="image" class="img-fluid transition opacity-50 brand-img">
                         </a>
                         <a href="#" class="d-inline-block" data-sal="slide-up" data-sal-duration="300" data-sal-delay="600" data-sal-easing="ease-in-out-sine">
@@ -479,7 +479,7 @@
                 <div class="row g-4 justify-content-center">
                     <div class="col-md-10 col-lg-8">
                         <h2 class="text-center" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                            Why Choose WordPress Hosting From HostCity
+                            Why Choose WordPress Hosting From CloudHosti
                         </h2>
                     </div>
                     <div class="col-12">
@@ -1784,7 +1784,7 @@
                                         <img src="assets/img/feedback-5-user-1.png" alt="img" class="img-fluid">
                                         <img src="assets/img/feedback-5-logo-1.png" alt="img" class="img-fluid">
                                     </div>
-                                    <p class="fs-16 fw-semibold mb-6">“Hostcity has been instrumental in helping me plan for my retirement. Their expert financial advisors provided personalized guidance, and I feel confident about my financial future.”</p>
+                                    <p class="fs-16 fw-semibold mb-6">“CloudHosti has been instrumental in helping me plan for my retirement. Their expert financial advisors provided personalized guidance, and I feel confident about my financial future.”</p>
                                     <div>
                                         <h6 class="fs-16 mb-0">Saiful Talukdar</h6>
                                         <small>Dubai</small>
@@ -1798,7 +1798,7 @@
                                         <img src="assets/img/feedback-5-user-2.png" alt="img" class="img-fluid">
                                         <img src="assets/img/feedback-5-logo-2.png" alt="img" class="img-fluid">
                                     </div>
-                                    <p class="fs-16 fw-semibold mb-6">“Hostcity has been instrumental in helping me plan for my retirement. Their expert financial advisors provided personalized guidance, and I feel confident about my financial future.”</p>
+                                    <p class="fs-16 fw-semibold mb-6">“CloudHosti has been instrumental in helping me plan for my retirement. Their expert financial advisors provided personalized guidance, and I feel confident about my financial future.”</p>
                                     <div>
                                         <h6 class="fs-16 mb-0">Saiful Talukdar</h6>
                                         <small>Dubai</small>
@@ -1812,7 +1812,7 @@
                                         <img src="assets/img/feedback-5-user-1.png" alt="img" class="img-fluid">
                                         <img src="assets/img/feedback-5-logo-1.png" alt="img" class="img-fluid">
                                     </div>
-                                    <p class="fs-16 fw-semibold mb-6">“Hostcity has been instrumental in helping me plan for my retirement. Their expert financial advisors provided personalized guidance, and I feel confident about my financial future.”</p>
+                                    <p class="fs-16 fw-semibold mb-6">“CloudHosti has been instrumental in helping me plan for my retirement. Their expert financial advisors provided personalized guidance, and I feel confident about my financial future.”</p>
                                     <div>
                                         <h6 class="fs-16 mb-0">Saiful Talukdar</h6>
                                         <small>Dubai</small>
@@ -1921,113 +1921,7 @@
         </div>
     </div><!-- FAQ -->
 
-    <!-- Footer -->
-    <footer class="footer-4 pb-5 bg-gray-900 position-relative z-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <a href="#" class="logo mb-10">
-                        <img src="assets/img/logo-light.png" alt="image" class="logo__img">
-                    </a>
-                    <p class="text-white text-opacity-75">Whether you run an e-commerce site or a web business, you want to attract as
-                        many visitors as s or for when you no longer want to be limited by</p>
-                    <h6 class="text-white mt-6 mb-4 fs-16">We Accepted </h6>
-                    <div class="d-inline-flex align-items-center justify-content-center gap-2">
-                        <a href="#" class="social-icon w-9 h-9 d-grid place-content-center rounded-circle border border-light border-opacity-10 text-white text-decoration-none">
-                            <i class="lab la-twitter"></i>
-                        </a>
-                        <a href="#" class="social-icon w-9 h-9 d-grid place-content-center rounded-circle border border-light border-opacity-10 text-white text-decoration-none">
-                            <i class="lab la-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-icon w-9 h-9 d-grid place-content-center rounded-circle border border-light border-opacity-10 text-white text-decoration-none">
-                            <i class="lab la-dribbble"></i>
-                        </a>
-                        <a href="#" class="social-icon w-9 h-9 d-grid place-content-center rounded-circle border border-light border-opacity-10 text-white text-decoration-none">
-                            <i class="lab la-behance"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="ps-xl-10">
-                        <h6 class="text-white fs-16 mt-3 mb-11">Product & Solutions</h6>
-                        <ul class="list-unstyled d-flex flex-column gap-2">
-                            <li><a href="#" class="footer-2-link">Shared
-                                    Hosting</a></li>
-                            <li><a href="#" class="footer-2-link">WordPress
-                                    Hosting</a></li>
-                            <li><a href="#" class="footer-2-link">VPS
-                                    Hosting</a></li>
-                            <li><a href="#" class="footer-2-link">Cloud
-                                    Servers</a></li>
-                            <li><a href="#" class="footer-2-link">Dedicated
-                                    Servers</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="ps-xl-5">
-                        <h6 class="text-white fs-16 mt-3 mb-11">Hostcity Feature</h6>
-                        <ul class="list-unstyled d-flex flex-column gap-2">
-                            <li><a href="#" class="footer-2-link">Data
-                                    Center</a></li>
-                            <li><a href="#" class="footer-2-link">Control
-                                    Panel</a></li>
-                            <li><a href="#" class="footer-2-link">Operating
-                                    System</a></li>
-                            <li><a href="#" class="footer-2-link">Uptime
-                                    Guarantee</a></li>
-                            <li><a href="#" class="footer-2-link">DDOS
-                                    Protection</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <div class="ps-xl-5">
-                        <h6 class="text-white fs-16 mt-3 mb-11">Company Info</h6>
-                        <ul class="list-unstyled d-flex flex-column gap-2">
-                            <li><a href="#" class="footer-2-link">About
-                                    Us</a></li>
-                            <li><a href="#" class="footer-2-link">Partners</a>
-                            </li>
-                            <li><a href="#" class="footer-2-link">Knowledgebase</a>
-                            </li>
-                            <li><a href="#" class="footer-2-link">Contact
-                                    Us</a></li>
-                            <li><a href="#" class="footer-2-link">News</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-20">
-                <div class="d-flex align-items-center justify-content-between flex-wrap gap-5 pt-5 border-top border-light border-opacity-10">
-                    <p class="text-white mb-0 fs-14">&copy; 2024 CloudHosti. All rights reserved</p>
-                    <div class="d-inline-flex align-items-center justify-content-center gap-4 flex-wrap">
-                        <a href="terms.php" class="footer-2-link">
-                            Terms & Condition
-                        </a>
-                        <a href="privacy.php" class="footer-2-link">
-                            Privacy Policy
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer><!-- /Footer -->
-
-    <div class="scroll-top scroll-to-target bg-primary text-white" data-target="html">
-        <span class="las la-hand-point-up"></span>
-    </div>
-    <!--build:js-->
-    <script src="assets/js/vendors/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/vendors/jquery-ui.min.js"></script>
-    <script src="assets/js/vendors/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/vendors/swiper-bundle.min.js"></script>
-    <script src="assets/js/vendors/simplebar.min.js"></script>
-    <script src="assets/js/vendors/sal.js"></script>
-    <script src="assets/js/vendors/jquery.magnific-popup.min.js"></script>
-
-    <script src="assets/js/app.js"></script>
+    <?php include('./components/footer.php') ?>
 </body>
 
 </html>

@@ -1,4 +1,7 @@
-@import"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap";@import"https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap";.bg-warning-2 {
+@import"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap";
+@import"https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap";
+
+.bg-warning-2 {
     background-color: #fffbef
 }
 
@@ -44727,11 +44730,6 @@ body .ui-tooltip {
     transition-timing-function: var(--sal-easing, ease)
 }
 
-[data-sal][data-sal-duration="200"] {
-    -webkit-transition-duration: .2s;
-    transition-duration: .2s
-}
-
 [data-sal][data-sal-duration="250"] {
     -webkit-transition-duration: .25s;
     transition-duration: .25s
@@ -44755,11 +44753,6 @@ body .ui-tooltip {
 [data-sal][data-sal-duration="450"] {
     -webkit-transition-duration: .45s;
     transition-duration: .45s
-}
-
-[data-sal][data-sal-duration="500"] {
-    -webkit-transition-duration: .05s;
-    transition-duration: .05s
 }
 
 [data-sal][data-sal-duration="550"] {
@@ -44857,9 +44850,9 @@ body .ui-tooltip {
     transition-duration: 1.45s
 }
 
-[data-sal][data-sal-duration="500"] {
-    -webkit-transition-duration: 1.5s;
-    transition-duration: 1.5s
+[data-sal][data-sal-duration="1500"] {
+    -webkit-transition-duration: 1.50s;
+    transition-duration: 1.50s
 }
 
 [data-sal][data-sal-duration="1550"] {
@@ -44927,11 +44920,6 @@ body .ui-tooltip {
     transition-delay: .15s
 }
 
-[data-sal][data-sal-delay="200"] {
-    -webkit-transition-delay: .2s;
-    transition-delay: .2s
-}
-
 [data-sal][data-sal-delay="250"] {
     -webkit-transition-delay: .25s;
     transition-delay: .25s
@@ -44958,8 +44946,8 @@ body .ui-tooltip {
 }
 
 [data-sal][data-sal-delay="500"] {
-    -webkit-transition-delay: .5s;
-    transition-delay: .5s
+    -webkit-transition-delay: .50s;
+    transition-delay: .50s
 }
 
 [data-sal][data-sal-delay="550"] {
@@ -52682,14 +52670,14 @@ body {
 .hero-1 {
     padding-top: clamp(9rem,11.5vw + 1rem,12rem);
     padding-bottom: clamp(9rem,11.5vw + 1rem,12rem);
-    -webkit-mask-image: url(../img/shape/hero-1-shape.svg);
+    /* -webkit-mask-image: url(../img/shape/hero-1-shape.svg);
     mask-image: url(../img/shape/hero-1-shape.svg);
     -webkit-mask-size: cover;
     mask-size: cover;
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: center bottom;
-    mask-position: center bottom
+    mask-position: center bottom */
 }
 
 .hero-1__map {

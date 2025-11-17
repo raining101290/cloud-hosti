@@ -1,0 +1,848 @@
+<?php
+require_once 'helper/utils.php';
+include_once 'includes/meta.php';
+$currentPage = basename($_SERVER['PHP_SELF'], '.php');
+$meta = getMetaData($currentPage);
+?>
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <!--required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--title-->
+    <title><?php echo htmlspecialchars($meta['title']); ?></title>
+    <meta name="description" content="<?php echo htmlspecialchars($meta['description']); ?>">
+    <meta name="author" content="Cloud Hosti">
+    <meta name="keywords" content="">
+    <!--favicon icon-->
+    <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="16x16" />
+    <!--build:css-->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <!-- endbuild -->
+</head>
+
+<body>
+
+    <!--preloader start-->
+    <div class="preloader bg-light-subtle">
+        <div class="preloader-wrap">
+            <img src="assets/images/cloudhosti-logo.png" alt="Cloud Hosti logo" height="61px">
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+    <!--preloader end-->
+    <?php include('./components/header.php') ?>
+
+    <!-- Banner  -->
+    <section class="banner banner-security bg-dark control-panel-banner">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <span class="fs-18 fw-semibold text-primary mb-2" data-sal="slide-up" data-sal-duration="1000"
+                        data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                        Security & Technology
+                    </span>
+                    <h1 class="text-white mb-3" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                        Register Your Domain Name
+                        Quickly & Easily
+                    </h1>
+                    <p class="mb-8 text-white max-text-72 text-opacity-75 mx-auto" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                        Consistently low latency times and zero packet loss are the results of overprovisioned 
+                        150+ Tbps network, real‑time network Monitoring.
+                    </p>
+                    <div class="d-flex justify-content-center mx-auto max-text-72 border border-primary border-opacity-25 rounded p-2" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                        <input type="text" class="form-control search-input search-input--light flex-grow-1" placeholder="Search Domain...">
+                        <button type="button" class="btn btn-primary btn-arrow btn-arrow-sm btn-lg fs-14 fw-semibold rounded flex-shrink-0">
+                            <span class="btn-arrow__text">
+                                Search
+                                <span class="btn-arrow__icon">
+                                    <i class="las la-arrow-right"></i>
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                    <span class="d-block text-center text-white text-opacity-75 mt-4" data-sal="slide-up"
+                        data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                        Already bought domain? <a href="#" class="text-decoration-none">Transfer it</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Banner  -->
+
+    <!-- Technology Overview  -->
+    <div class="pt-120 pb-80">
+        <div class="pb-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-lg-8 col-xl-6" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                        <span class="fs-18 fw-semibold text-primary mb-2">
+                            Technology Overview
+                        </span>
+                        <h2 class="mb-0">
+                            Transfer a Domain Name
+                            in 4 Simple Steps
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12" data-sal="fade" data-sal-duration="1500" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                    <div class="card rounded-3">
+                        <div class="card-body p-md-6 p-xl-10">
+                            <div class="tab-content pb-40">
+                                <div class="tab-pane fade show active" id="validDomain">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-md-6">
+                                            <img src="assets/img/setp-img-1.png" alt="image" class="img-fluid">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <span class="badge fw-medium text-bg-primary">
+                                                Step 01
+                                            </span>
+                                            <h5 class="mt-3 mb-4">
+                                                Domain Name you want to transfer
+                                            </h5>
+                                            <p class="mb-8">
+                                                To initiate the transfer of your domain name, please enter the domain name
+                                                you wish to transfer in the field provided below. Ensure that your domain
+                                                name is unlocked and that you have access.
+                                            </p>
+                                            <ul class="list-unstyled p-0 m-0">
+                                                <li class="d-flex align-items-start gap-2 mb-4 max-text-36">
+                                                    <div class="w-5 h-5 d-grid place-content-center bg-primary rounded-circle fs-10 text-white flex-shrink-0">
+                                                        <i class="las la-check"></i>
+                                                    </div>
+                                                    <span class="d-block">
+                                                        <strong>Domain Name:</strong> Enter the full domain name you want to
+                                                        transfer
+                                                    </span>
+                                                </li>
+                                                <li class="d-flex align-items-start gap-2 max-text-36">
+                                                    <div class="w-5 h-5 d-grid place-content-center bg-primary rounded-circle fs-10 text-white flex-shrink-0">
+                                                        <i class="las la-check"></i>
+                                                    </div>
+                                                    <span class="d-block">
+                                                        <strong>Domain Unlock:</strong> Ensure your domain is unlocked for
+                                                        transfer
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="unlockedDomain">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-md-6">
+                                            <img src="assets/img/setp-img-1.png" alt="image" class="img-fluid">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <span class="badge fw-medium text-bg-primary">
+                                                Step 02
+                                            </span>
+                                            <h5 class="mt-3 mb-4">
+                                                Domain Name you want to transfer
+                                            </h5>
+                                            <p class="mb-8">
+                                                To initiate the transfer of your domain name, please enter the domain name
+                                                you wish to transfer in the field provided below. Ensure that your domain
+                                                name is unlocked and that you have access.
+                                            </p>
+                                            <ul class="list-unstyled p-0 m-0">
+                                                <li class="d-flex align-items-start gap-2 mb-4 max-text-36">
+                                                    <div class="w-5 h-5 d-grid place-content-center bg-primary rounded-circle fs-10 text-white flex-shrink-0">
+                                                        <i class="las la-check"></i>
+                                                    </div>
+                                                    <span class="d-block">
+                                                        <strong>Domain Name:</strong> Enter the full domain name you want to
+                                                        transfer
+                                                    </span>
+                                                </li>
+                                                <li class="d-flex align-items-start gap-2 max-text-36">
+                                                    <div class="w-5 h-5 d-grid place-content-center bg-primary rounded-circle fs-10 text-white flex-shrink-0">
+                                                        <i class="las la-check"></i>
+                                                    </div>
+                                                    <span class="d-block">
+                                                        <strong>Domain Unlock:</strong> Ensure your domain is unlocked for
+                                                        transfer
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="actNow">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-md-6">
+                                            <img src="assets/img/setp-img-1.png" alt="image" class="img-fluid">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <span class="badge fw-medium text-bg-primary">
+                                                Step 03
+                                            </span>
+                                            <h5 class="mt-3 mb-4">
+                                                Domain Name you want to transfer
+                                            </h5>
+                                            <p class="mb-8">
+                                                To initiate the transfer of your domain name, please enter the domain name
+                                                you wish to transfer in the field provided below. Ensure that your domain
+                                                name is unlocked and that you have access.
+                                            </p>
+                                            <ul class="list-unstyled p-0 m-0">
+                                                <li class="d-flex align-items-start gap-2 mb-4 max-text-36">
+                                                    <div class="w-5 h-5 d-grid place-content-center bg-primary rounded-circle fs-10 text-white flex-shrink-0">
+                                                        <i class="las la-check"></i>
+                                                    </div>
+                                                    <span class="d-block">
+                                                        <strong>Domain Name:</strong> Enter the full domain name you want to
+                                                        transfer
+                                                    </span>
+                                                </li>
+                                                <li class="d-flex align-items-start gap-2 max-text-36">
+                                                    <div class="w-5 h-5 d-grid place-content-center bg-primary rounded-circle fs-10 text-white flex-shrink-0">
+                                                        <i class="las la-check"></i>
+                                                    </div>
+                                                    <span class="d-block">
+                                                        <strong>Domain Unlock:</strong> Ensure your domain is unlocked for
+                                                        transfer
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="optionDomain">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-md-6">
+                                            <img src="assets/img/setp-img-1.png" alt="image" class="img-fluid">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <span class="badge fw-medium text-bg-primary">
+                                                Step 04
+                                            </span>
+                                            <h5 class="mt-3 mb-4">
+                                                Domain Name you want to transfer
+                                            </h5>
+                                            <p class="mb-8">
+                                                To initiate the transfer of your domain name, please enter the domain name
+                                                you wish to transfer in the field provided below. Ensure that your domain
+                                                name is unlocked and that you have access.
+                                            </p>
+                                            <ul class="list-unstyled p-0 m-0">
+                                                <li class="d-flex align-items-start gap-2 mb-4 max-text-36">
+                                                    <div class="w-5 h-5 d-grid place-content-center bg-primary rounded-circle fs-10 text-white flex-shrink-0">
+                                                        <i class="las la-check"></i>
+                                                    </div>
+                                                    <span class="d-block">
+                                                        <strong>Domain Name:</strong> Enter the full domain name you want to
+                                                        transfer
+                                                    </span>
+                                                </li>
+                                                <li class="d-flex align-items-start gap-2 max-text-36">
+                                                    <div class="w-5 h-5 d-grid place-content-center bg-primary rounded-circle fs-10 text-white flex-shrink-0">
+                                                        <i class="las la-check"></i>
+                                                    </div>
+                                                    <span class="d-block">
+                                                        <strong>Domain Unlock:</strong> Ensure your domain is unlocked for
+                                                        transfer
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="nav nav-pills nav-tab-list justify-content-center">
+                                <li class="nav-item">
+                                    <button class="nav-tab__btn nav-link active" data-bs-toggle="pill" data-bs-target="#validDomain" type="button">
+                                        <span class="d-flex align-items-center gap-1">
+                                            <span class="nav-tab__line flex-shrink-0"></span>
+                                        <span
+                                                class="d-inline-block fw-medium fs-14 text-primary nav-tab__subtitle">01</span>
+                                        </span>
+                                        <span class="nav-tab__title d-block fw-semibold h6 fs-14 mb-0">
+                                            Domain is Valid
+                                        </span>
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-tab__btn nav-link" data-bs-toggle="pill" data-bs-target="#unlockedDomain" type="button">
+                                        <span class="d-flex align-items-center gap-1">
+                                            <span class="nav-tab__line flex-shrink-0"></span>
+                                        <span
+                                                class="d-inline-block fw-medium fs-14 text-primary nav-tab__subtitle">02</span>
+                                        </span>
+                                        <span class="nav-tab__title d-block fw-semibold h6 fs-14 mb-0">
+                                            Domain is Unlocked
+                                        </span>
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-tab__btn nav-link" data-bs-toggle="pill" data-bs-target="#actNow" type="button">
+                                        <span class="d-flex align-items-center gap-1">
+                                            <span class="nav-tab__line flex-shrink-0"></span>
+                                        <span
+                                                class="d-inline-block fw-medium fs-14 text-primary nav-tab__subtitle">03</span>
+                                        </span>
+                                        <span class="nav-tab__title d-block fw-semibold h6 fs-14 mb-0">
+                                            Act Now
+                                        </span>
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-tab__btn nav-link" data-bs-toggle="pill" data-bs-target="#optionDomain" type="button">
+                                        <span class="d-flex align-items-center gap-1">
+                                            <span class="nav-tab__line flex-shrink-0"></span>
+                                        <span
+                                                class="d-inline-block fw-medium fs-14 text-primary nav-tab__subtitle">04</span>
+                                        </span>
+                                        <span class="nav-tab__title d-block fw-semibold h6 fs-14 mb-0">
+                                            Available Options
+                                        </span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Technology Overview  -->
+
+    <!-- CTA  -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-6">
+                <div class="text-center" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                    <h2 class="mb-4">
+                        Register a Domain For Free
+                    </h2>
+                    <p class="mb-8 max-text-56 mx-auto" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                        Grab a 36-month hosting plan and get a <a href="#" class="text-decoration-none text-warning d-inline-block">free
+                            domain </a> for one year. You can get popular generic top-level
+                        domain names like .com, .net, .org, and other extensions for free.
+                    </p>
+                    <a href="price.html" class="btn btn-lg btn-primary btn-arrow btn-arrow-md fs-14 fw-medium rounded">
+                        <span class="btn-arrow__text">
+                            View Plan
+                            <span class="btn-arrow__icon">
+                                <i class="las la-arrow-right"></i>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /CTA  -->
+
+    <!-- Extension List  -->
+    <div class="pt-60 pb-120">
+        <div class="pb-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-lg-8 col-xl-6" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                        <span class="fs-18 fw-semibold text-primary mb-2">
+                            TLD List
+                        </span>
+                        <h2 class="mb-0" data-sal="slide-up">
+                            Explore the Possibilities from Our TLD List
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-8 col-lg-9" data-sal="fade" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                    <div class="card rounded-3">
+                        <div class="card-body p-xl-6">
+                            <div class="position-relative">
+                                <input type="text" class="form-control bg-transparent py-2 px-8" placeholder="Search Extensions">
+                                <span class="text-body position-absolute start-3 lh-1 top-3"><i
+                                        class="las la-search"></i></span>
+                            </div>
+                            <div class="table-responsive mt-6">
+                                <table class="table table-borderless domain-list-table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <div class="h6 mb-0 fs-16">Extension</div>
+                                            </th>
+                                            <th>
+                                                <div class="h6 mb-0 fs-16">Registration</div>
+                                            </th>
+                                            <th>
+                                                <div class="h6 mb-0 fs-16">Renewal</div>
+                                            </th>
+                                            <th>
+                                                <div class="h6 mb-0 fs-16">Transfer</div>
+                                            </th>
+                                            <th>
+                                                <div class="h6 mb-0 fs-16">ID Protection</div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">.accountant</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">.actor</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">.adult</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">.ae</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">.agency</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">.ae</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">.agency</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">.asia</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">.ae</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">.agency</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                            <th class="shadow-none">
+                                                <p class="text-body fw-semibold mb-0">$35.70</p>
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3" data-sal="fade" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                    <div class="card rounded-3">
+                        <div class="card-body p-xl-6">
+                            <h6 class="mb-6">Categories</h6>
+                            <div class="vstack gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="cat-1">
+                                    <label class="form-check-label" for="cat-1">
+                                        Popular
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="cat-2">
+                                    <label class="form-check-label" for="cat-2">
+                                        Americas
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="cat-3">
+                                    <label class="form-check-label" for="cat-3">
+                                        Asia
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="cat-4">
+                                    <label class="form-check-label" for="cat-4">
+                                        Business
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="cat-5">
+                                    <label class="form-check-label" for="cat-5">
+                                        City
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="cat-6">
+                                    <label class="form-check-label" for="cat-6">
+                                        Europe
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="cat-7">
+                                    <label class="form-check-label" for="cat-7">
+                                        Fun
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="cat-8">
+                                    <label class="form-check-label" for="cat-8">
+                                        Legal
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Extension List  -->
+
+    <!-- Buy Domain  -->
+    <div class="pt-120 pb-120 bg-primary bg-opacity-5">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-xxl-5" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                    <h2 class="h3 mb-3">
+                        Why Buy Domains at
+                        Hostingard?
+                    </h2>
+                    <p class="mb-8 max-text-48">
+                        Grab a 36-month hosting plan and get a free domain for one year. You can
+                        get popular generic
+                        top-level domain names like .com, .net, .org, and other extensions for free.
+                    </p>
+                    <a href="price.html" class="btn btn-primary btn-arrow btn-arrow-lg btn-lg fs-14 fw-semibold rounded transition">
+                        <span class="btn-arrow__text">
+                            View Pricing
+                            <span class="btn-arrow__icon">
+                                <i class="las la-arrow-right"></i>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-xxl-7">
+                    <div class="row g-4">
+                        <div class="col-md-6" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                            <div class="card hover-shadow rounded-3 border border-secondary transition">
+                                <div class="card-body">
+                                    <div class="mb-4">
+                                        <img src="assets/img/domain-icon-1.png" alt="icon" class="img-fluid">
+                                    </div>
+                                    <h6 class="mb-4">
+                                        Domain Locking
+                                    </h6>
+                                    <p class="mb-0">We offer a large number of supported domain extensions, can match the
+                                        demand
+                                        of every customer competitive prices!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                            <div class="card hover-shadow rounded-3 border border-secondary transition">
+                                <div class="card-body">
+                                    <div class="mb-4">
+                                        <img src="assets/img/domain-icon-2.png" alt="icon" class="img-fluid">
+                                    </div>
+                                    <h6 class="mb-4">
+                                        Great Renewal Rates
+                                    </h6>
+                                    <p class="mb-0">We offer a large number of supported domain extensions, can match the
+                                        demand
+                                        of every customer competitive prices!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                            <div class="card hover-shadow rounded-3 border border-secondary transition">
+                                <div class="card-body">
+                                    <div class="mb-4">
+                                        <img src="assets/img/domain-icon-3.png" alt="icon" class="img-fluid">
+                                    </div>
+                                    <h6 class="mb-4">
+                                        Low prices & huge selection
+                                    </h6>
+                                    <p class="mb-0">We offer a large number of supported domain extensions, can match the
+                                        demand
+                                        of every customer competitive prices!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                            <div class="card hover-shadow rounded-3 border border-secondary transition">
+                                <div class="card-body">
+                                    <div class="mb-4">
+                                        <img src="assets/img/domain-icon-1.png" alt="icon" class="img-fluid">
+                                    </div>
+                                    <h6 class="mb-4">
+                                        Easy management
+                                    </h6>
+                                    <p class="mb-0">We offer a large number of supported domain extensions, can match the
+                                        demand
+                                        of every customer competitive prices!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Buy Domain  -->
+
+    <!-- FAQ  -->
+    <div class="pt-120 pb-120">
+        <div class="pb-40">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="text-center" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                            <span class="fs-18 fw-semibold text-primary mb-2" data-sal="slide-up" data-sal-duration="1000"
+                                data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                                FAQ
+                            </span>
+                            <h2>
+                                Domain Registration FAQ’s
+                            </h2>
+                            <p class="mb-0 max-text-52 mx-auto">
+                                The best thing we love about Hostcity is it does two-way sync with Google us to better
+                                organize & keep everything on track.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-10 col-xl-8">
+                    <div class="accordion border-0 vps-hosting-accordion" id="accordionFaq2">
+                        <div class="accordion-item border rounded-3 mb-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapseOneA" aria-expanded="false" aria-controls="faq-collapseOneA">
+                                    <span class="text-body fs-16 fw-bold">What is Shared hosting?</span>
+                                </button>
+                            </h2>
+                            <div id="faq-collapseOneA" class="accordion-collapse collapse show" data-bs-parent="#accordionFaq2">
+                                <div class="accordion-body pt-0">We care about safety big time — and so do your site's
+                                    visitors. With a Shared Hosting account, you get an SSL certificate for free to add to
+                                    your site. In this day and age, having an SSL for your site is a no-brainer best
+                                    practice. Not only does an SSL help your visitors feel safe interacting with your site —
+                                    this is particularly important if you run an e-commerce site.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapseTwoA" aria-expanded="false" aria-controls="faq-collapseTwoA">
+                                    <span class="text-body fs-16 fw-bold">How many websites can I host?</span>
+                                </button>
+                            </h2>
+                            <div id="faq-collapseTwoA" class="accordion-collapse collapse" data-bs-parent="#accordionFaq2">
+                                <div class="accordion-body pt-0">We care about safety big time — and so do your site's
+                                    visitors. With a Shared Hosting account, you get an SSL certificate for free to add to
+                                    your site. In this day and age, having an SSL for your site is a no-brainer best
+                                    practice. Not only does an SSL help your visitors feel safe interacting with your site —
+                                    this is particularly important if you run an e-commerce site.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse3A" aria-expanded="false" aria-controls="faq-collapse3A">
+                                    <span class="text-body fs-16 fw-bold">Do you include SSL Certificates?</span>
+                                </button>
+                            </h2>
+                            <div id="faq-collapse3A" class="accordion-collapse collapse" data-bs-parent="#accordionFaq2">
+                                <div class="accordion-body pt-0">We care about safety big time — and so do your site's
+                                    visitors. With a Shared Hosting account, you get an SSL certificate for free to add to
+                                    your site. In this day and age, having an SSL for your site is a no-brainer best
+                                    practice. Not only does an SSL help your visitors feel safe interacting with your site —
+                                    this is particularly important if you run an e-commerce site.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse4A" aria-expanded="false" aria-controls="faq-collapse4A">
+                                    <span class="text-body fs-16 fw-bold">ow to use the Track Delivery feature in the
+                                        cPanel?</span>
+                                </button>
+                            </h2>
+                            <div id="faq-collapse4A" class="accordion-collapse collapse" data-bs-parent="#accordionFaq2">
+                                <div class="accordion-body pt-0">We care about safety big time — and so do your site's
+                                    visitors. With a Shared Hosting account, you get an SSL certificate for free to add to
+                                    your site. In this day and age, having an SSL for your site is a no-brainer best
+                                    practice. Not only does an SSL help your visitors feel safe interacting with your site —
+                                    this is particularly important if you run an e-commerce site.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /FAQ  -->
+
+    <!-- Footer CTA -->
+    <div class="footer-cta">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-10">
+                    <div class="bg-primary pt-60 pb-60 px-6 px-md-12 rounded-3 overflow-hidden position-relative z-1 text-center" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8 col-xl-7 col-xxl-6">
+                                <h4 class="text-white mb-4">
+                                    Experience Our Service with a
+                                    7-Day Risk-Free Trial
+                                </h4>
+                                <a href="contact.php" class="btn btn-light btn-arrow btn-arrow-xl btn-lg fs-14 fw-semibold rounded">
+                                    <span class="btn-arrow__text">
+                                        Sign up - Free Trial
+                                        <span class="btn-arrow__icon">
+                                            <i class="las la-arrow-right"></i>
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <img src="assets/img/footer-cta-left.png" alt="image" class="img-fluid d-none d-md-block position-absolute top-0 start-0 z-n1 opacity-75">
+                        <img src="assets/img/footer-cta-right.png" alt="image" class="img-fluid d-none d-md-block position-absolute end-0 top-0 z-n1 opacity-75">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /Footer CTA -->
+
+    <?php include('./components/footer.php') ?>
+</body>
+
+</html>
