@@ -1,7 +1,7 @@
 <!-- Header -->
-<div class="navbar-overlay bg-body bg-opacity-5">
+<div class="navbar-overlay glass-box">
     <!-- Primary Header -->
-    <nav class="navbar navbar-expand-lg py-5 py-lg-0 navbar-box bg-body">
+    <nav class="navbar navbar-expand-lg py-5 py-lg-0 navbar-box">
         <div class="container">
             <a class="navbar-brand logo" href="index.php">
                 <img src="assets/images/cloudhosti-logo.png" alt="image" class="logo__img">

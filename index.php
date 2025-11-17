@@ -238,7 +238,7 @@ if (file_exists($cacheFile)) {
                                                 class="text-primary fw-bold"><?= $formattedPrice ?></span>
                                         </h6> -->
 
-                                        <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="<?= htmlspecialchars($product['product_url']) ?>">
+                                        <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="<?= htmlspecialchars($product['product_url']).'?promocode=20OFF' ?>">
                                             <span class="btn-arrow__text">
                                                 Buy Now
                                                 <span class="btn-arrow__icon">
@@ -1297,7 +1297,7 @@ if (file_exists($cacheFile)) {
                     if (data.status === "available") {
                         resultBox.innerHTML = `
                              <div class='alert alert-success' role='alert'><p class="text-success mb-0 d-flex justify-content-between align-items-center" style="font-weight:bold;">
-                                ✔ ${domain} is available <a class="btn btn-sm btn-success" href="https://portal.cloudhosti.com/cart.php?a=add&domain=register&query=${domain}">Buy Now</a>
+                                ✔ ${domain} is available <a class="btn btn-sm btn-success" href="https://portal.cloudhosti.com/cart.php?a=add&domain=register&query=${domain}&promocode=20OFF">Buy Now</a>
                             </p></div>
                         `;
                     }
