@@ -97,6 +97,10 @@
     background: -webkit-gradient(linear, right top, left top, from(rgb(96.9879518072, 64.0963855422, 145.9036144578)), to(rgb(35.6334661355, 67.1235059761, 172.3665338645)));
     background: linear-gradient(to left, rgb(96.9879518072, 64.0963855422, 145.9036144578) 0%, rgb(35.6334661355, 67.1235059761, 172.3665338645) 100%);
 }
+.bg-gradient-success {
+    background: -webkit-gradient(linear, right top, left top, from(rgb(34, 197, 94)), to(rgb(16, 185, 129)));
+    background: linear-gradient(to left, rgb(34, 197, 94) 0%, rgb(16, 185, 129) 100%);
+}
 .position-relative {
     position: relative !important;
 }
@@ -124,11 +128,23 @@
     transition: all .3s ease-in-out
 }
 .glass-box {
-  background: rgba(255, 255, 255, 0.30);  
+  background: rgba(255, 255, 255, 0.50);  
   backdrop-filter: blur(25px);            
   -webkit-backdrop-filter: blur(25px);    
-  border: 1px solid rgba(255, 255, 255, 0.5); 
-  border-radius: 16px; 
+  border: 1px solid rgba(255, 255, 255, 0.6); 
+  border-radius: 16px;
+}
+.navbar-sticky-init .navbar-overlay{
+    background-color: #fcfdfe !important;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.80) 50%,
+        rgba(86, 151, 255, 0.8) 100% 
+    );
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 16px;
 }
 .blob {
   position: absolute;

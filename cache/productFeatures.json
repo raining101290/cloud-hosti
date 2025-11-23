@@ -1,0 +1,100 @@
+{
+  "1": {
+    "tagline": "Perfect for beginners and small websites",
+    "promo": "20OFF",
+    "percentage": 20,
+    "features": [
+      "Super Performance",
+      "1 Website",
+      "1 GB SSD Storage",
+      "5 FTP Accounts",
+      "12 MySQL Databases",
+      "30 Email Accounts",
+      "Free SSL",
+      "15 Sub-domains",
+      "Unlimited Bandwidth"
+    ]
+  },
+
+  "2": {
+    "tagline": "Perfect for medium and growing business",
+    "promo": "20OFF",
+    "percentage": 20,
+    "features": [
+      "Super Performance",
+      "Unlimited Websites",
+      "5 GB SSD Storage",
+      "20 FTP Accounts",
+      "Unlimited MySQL Databases",
+      "Unlimited Email Accounts",
+      "Free SSL",
+      "Unlimited Sub-domains",
+      "Unlimited Bandwidth"
+    ]
+  },
+
+  "3": {
+    "tagline": "High performance hosting + Free Domain",
+    "promo": "20OFF",
+    "percentage": 20,
+    "features": [
+      "Super Performance",
+      "Unlimited Websites",
+      "10 GB SSD Storage",
+      "Unlimited FTP Accounts",
+      "Unlimited MySQL Databases",
+      "Unlimited Email Accounts",
+      "Free Domain (.com, .net, .info, .xyz)",
+      "Free SSL",
+      "Unlimited Bandwidth"
+    ]
+  },
+
+  "5": {
+    "tagline": "Business class hosting for small companies",
+    "promo": "50OFF",
+    "percentage": 50,
+    "features": [
+      "Super Performance",
+      "Unlimited Websites",
+      "50 GB SSD Storage",
+      "Unlimited Email Accounts",
+      "Unlimited MySQL Databases",
+      "Free Domain (.com, .net, .info, .xyz)",
+      "Free SSL",
+      "Unlimited Bandwidth"
+    ]
+  },
+
+  "6": {
+    "tagline": "Standard business hosting with higher resources",
+    "promo": "50OFF",
+    "percentage": 50,
+    "features": [
+      "Super Performance",
+      "Unlimited Websites",
+      "80 GB SSD Storage",
+      "Unlimited Email Accounts",
+      "Unlimited MySQL Databases",
+      "Free Domain (.com, .net, .info, .xyz)",
+      "Free SSL",
+      "Unlimited Bandwidth"
+    ]
+  },
+
+  "7": {
+    "tagline": "Advanced business hosting for high-traffic websites",
+    "promo": "50OFF",
+    "percentage": 50,
+    "features": [
+      "Super Performance",
+      "Unlimited Websites",
+      "120 GB SSD Storage",
+      "Unlimited Email Accounts",
+      "Unlimited MySQL Databases",
+      "Free Domain (.com, .net, .info, .xyz)",
+      "Free SSL",
+      "Unlimited Bandwidth"
+    ]
+  }
+}

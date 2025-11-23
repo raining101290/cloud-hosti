@@ -14,10 +14,10 @@
             <div class="collapse navbar-collapse" id="primaryMenu">
                 <ul class="navbar-nav align-items-lg-center gap-lg-3 ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link fw-medium active" aria-current="page" href="index.php">Home</a>
+                        <a class="nav-link fw-bold active" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item contain-mega-menu">
-                        <a class="nav-link fw-medium" href="#">
+                        <a class="nav-link fw-bold" href="#">
                             Domain
                         </a>
                         <div class="contain-mega-menu__content">
@@ -128,7 +128,7 @@
                                                             class="w-4 h-4 bg-success flex-shrink-0 bg-opacity-75 rounded-circle fs-10 lh-1 text-white d-flex align-items-center justify-content-center">
                                                             <i class="las la-check"></i>
                                                         </div>
-                                                        <small class="fw-medium">Up to 32 Cores</small>
+                                                        <small class="fw-bold">Up to 32 Cores</small>
                                                     </div>
                                                     <a href="domain-registration.php" class="btn btn-sm btn-primary">
                                                         Explore Now
@@ -146,7 +146,7 @@
                         </div>
                     </li>
                     <li class="nav-item contain-sub-1">
-                        <a class="nav-link fw-medium" href="#">
+                        <a class="nav-link fw-bold" href="#">
                             Hosting
                         </a>
                         <ul class="contain-sub-1__content contain-sub-1__content-xl list-unstyled">
@@ -287,7 +287,7 @@
                         </ul>
                     </li>
                     <li class="nav-item contain-sub-1">
-                        <a class="nav-link fw-medium" href="#">
+                        <a class="nav-link fw-bold" href="#">
                             Servers
                         </a>
                         <ul class="contain-sub-1__content list-unstyled">
@@ -325,13 +325,13 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-medium" href="price.php">
+                        <a class="nav-link fw-bold" href="price.php">
                             Pricing
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="contact.php"
-                            class="link btn btn-sm btn-primary hover:bg-dark hover:border-dark fw-medium rounded-1">
+                            class="link btn btn-sm btn-primary hover:bg-dark hover:border-dark fw-bold rounded-1">
                             Get Started
                         </a>
                     </li>

@@ -10,15 +10,26 @@ include 'includes/apis/productPricing.php';
 $currentPage = basename($_SERVER['PHP_SELF'], '.php');
 $meta = getMetaData($currentPage);
 
+$cacheFile       = __DIR__ . "/cache/domainPricing.json";
+$productFile     = __DIR__ . "/cache/products.json";
+$featuresFile    = __DIR__ . "/cache/productFeatures.json";
 
-$cacheFile = __DIR__ . "/cache/domainPricing.json";
+// Load domain pricing
+$tlds = file_exists($cacheFile)
+    ? json_decode(file_get_contents($cacheFile), true)
+    : [];
 
-if (file_exists($cacheFile)) {
-    $tlds = json_decode(file_get_contents($cacheFile), true);
-} else {
-    $tlds = [];
-}
+// Load WHMCS products
+$products = file_exists($productFile)
+    ? json_decode(file_get_contents($productFile), true)
+    : [];
+
+// Load your custom features JSON
+$features = file_exists($featuresFile)
+    ? json_decode(file_get_contents($featuresFile), true)
+    : [];
 ?>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 <head>
@@ -151,7 +162,7 @@ if (file_exists($cacheFile)) {
         </div>
     </section>
     
-    <div class="pt-120 pb-60">
+    <!-- <div class="pt-120 pb-60">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12">
@@ -194,10 +205,10 @@ if (file_exists($cacheFile)) {
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     
     <!-- Service -->
-    <section class="service-area pt-60">
+    <!-- <section class="service-area pt-60">
         <div class="pb-40">
             <div class="container">
                 <div class="row">
@@ -234,9 +245,6 @@ if (file_exists($cacheFile)) {
                                             <span>Starting at: </span>
                                             <h4><?= $formattedPrice ?></h4>
                                         </div>
-                                        <!-- <h6 class="fs-16 fw-normal mb-0">Starting at: <span
-                                                class="text-primary fw-bold"><?= $formattedPrice ?></span>
-                                        </h6> -->
 
                                         <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="<?= htmlspecialchars($product['product_url']).'?promocode=20OFF' ?>">
                                             <span class="btn-arrow__text">
@@ -251,543 +259,180 @@ if (file_exists($cacheFile)) {
                             </div>
                         </div>
                     </div>
-
                 <?php endforeach; ?>
-                <!-- <div class="col-lg-6 col-xl-4">
-                    <div class="card service-card-item shadow-sm rounded-3 h-100" data-sal="slide-up"
-                        data-sal-duration="400" data-sal-delay="100" data-sal-easing="ease-in-out-sine">
-                        <div class="card-body px-md-7 py-md-8">
-                            <h6>WordPress Hosting</h6>
-                            <div class="d-flex gap-5 flex-wrap flex-sm-nowrap mt-6">
-                                <div>
-                                    <img src="assets/img/service-icon-1.png" alt="">
-                                </div>
-                                <div>
-                                    <p>WordPress Hosting prov environment tailored to the needs of WordPress
-                                        websitesoptimized servers</p>
-                                    <h6 class="fs-16 fw-normal mb-0">Starting at: <span
-                                            class="text-primary fw-bold">$20.00/mo</span>
-                                    </h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-xl-4">
-                    <div class="card service-card-item shadow-sm rounded-3 h-100" data-sal="slide-up"
-                        data-sal-duration="450" data-sal-delay="150" data-sal-easing="ease-in-out-sine">
-                        <div class="card-body px-md-7 py-md-8">
-                            <h6>Shared Hosting</h6>
-                            <div class="d-flex gap-5 flex-wrap flex-sm-nowrap mt-6">
-                                <div>
-                                    <img src="assets/img/service-icon-2.png" alt="">
-                                </div>
-                                <div>
-                                    <p>WordPress Hosting prov environment tailored to the needs of WordPress
-                                        websites optimized</p>
-                                    <h6 class="fs-16 fw-normal mb-0">Starting at: <span
-                                            class="text-primary fw-bold">$20.00/mo</span>
-                                    </h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-xl-4">
-                    <div class="card service-card-item shadow-sm rounded-3 h-100" data-sal="slide-up"
-                        data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                        <div class="card-body px-md-7 py-md-8">
-                            <h6>Cloud Servers</h6>
-                            <div class="d-flex flex-wrap flex-sm-nowrap gap-5 mt-6">
-                                <div>
-                                    <img src="assets/img/service-icon-3.png" alt="">
-                                </div>
-                                <div>
-                                    <p>WordPress Hosting prov environment tailored to the needs of WordPress
-                                        websites optimized</p>
-                                    <h6 class="fs-16 fw-normal mb-0">Starting at: <span
-                                            class="text-primary fw-bold">$20.00/mo</span>
-                                    </h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-xl-6">
-                    <div class="card service-card-item shadow-sm rounded-3 h-100" data-sal="slide-up"
-                        data-sal-duration="450" data-sal-delay="150" data-sal-easing="ease-in-out-sine">
-                        <div class="card-body px-md-7 py-md-8">
-                            <div class="row align-items-center g-4">
-                                <div class="col-md-4">
-                                    <img src="assets/img/service-img.png" alt="" class="img-fluid">
-                                </div>
-                                <div class="col-md-8">
-                                    <h6>Free 24/7 Support </h6>
-                                    <p>WordPress Hosting prov environment tailored to the needs of WordPress
-                                        websitesoptimized servers</p>
-                                    <a href="contact.php" class="btn btn-primary btn-arrow btn-arrow-sm fs-14 fw-medium rounded">
-                                        <span class="btn-arrow__text">
-                                            Live Chat
-                                            <span class="btn-arrow__icon">
-                                                <i class="las la-arrow-right"></i>
-                                            </span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-xl-6">
-                    <div class="card service-card-item shadow-sm rounded-3 h-100" data-sal="slide-up"
-                        data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                        <div class="card-body px-md-7 py-md-8">
-                            <h6>Virtual Private Service</h6>
-                            <div class="d-flex flex-wrap flex-sm-nowrap gap-5 mt-6">
-                                <div>
-                                    <img src="assets/img/service-icon-4.png" alt="">
-                                </div>
-                                <div>
-                                    <p>WordPress Hosting prov environment tailored to the needs of WordPress
-                                        websitesoptimized servers</p>
-                                    <h6 class="fs-16 fw-normal mb-0">Starting at: <span
-                                            class="text-primary fw-bold">$20.00/mo</span>
-                                    </h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
-    </section><!-- Service -->
+    </section> -->
     
     <!-- Price -->
     <section class="pt-120 pb-120">
-        <div class="pb-40">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-8">
-                        <div class="text-center">
-                            <h2 data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine"> Webhosting Plan for Your Site</h2>
-                            <p class="mb-0 max-text-56 mx-auto" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">SSL is industry-standard encryption! Protect important data,
-                                win visitors Pick a
-                                plan from the SSL certificates below.</p>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center gap-3 mt-5" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                            <small class="fw-semibold">Monthly</small>
-                            <div class="form-check form-switch toggle-switch">
-                                <input class="form-check-input pricing-toggle" type="checkbox" role="switch"
-                                    id="flexSwitchCheckDefault">
-                            </div>
-                            <small class="fw-semibold">Yearly</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="pb-40">
         <div class="container">
-            <div class="row g-4 g-xl-0">
-                <div class="col-xl-3 col-md-6">
-                    <div class="price-card-item-one position-relative overflow-hidden bg-white px-7 py-9 border-end" data-sal="slide-up" data-sal-duration="350" data-sal-delay="50" data-sal-easing="ease-in-out-sine">
-                        <h6 class="mb-1">SSL Starter</h6>
-                        <small>Our most affordable, single domain,
-                            WordPress Hosting plan.</small>
-                        <div class="mt-5">
-                            <div class="monthly-price">
-                                <h4>$30.99</h4>
-                                <small class="fw-bold">Normally $99.99</small>
-                            </div>
-                            <div class="yearly-price">
-                                <h4>$299.00</h4>
-                                <small class="fw-bold">Normally $24.91</small>
-                            </div>
-                        </div>
-                        <div class="monthly-price">
-                            <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="#">
-                                <span class="btn-arrow__text">
-                                    Add to Cart
-                                    <span class="btn-arrow__icon">
-                                        <i class="las la-arrow-right"></i>
-                                    </span>
-                                </span>
-                            </a>
-                            <small class="d-block fw-medium mt-2">$7.99/mo when you renew</small>
-                        </div>
-                        <div class="yearly-price">
-                            <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="#">
-                                <span class="btn-arrow__text">
-                                    Add to Cart
-                                    <span class="btn-arrow__icon">
-                                        <i class="las la-arrow-right"></i>
-                                    </span>
-                                </span>
-                            </a>
-                            <small class="d-block fw-medium mt-2">$7.99/mo when you renew</small>
-                        </div>
-    
-                        <div class="mt-6">
-                            <h6 class="mb-5">Top Featured</h6>
-                            <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>Standard  <span class="fw-bold">Performance</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>100 <span class="fw-bold">Websites</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>100 GB <span class="fw-bold">SSD Storage</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>100 GB <span class="fw-bold">SSD Storage</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>Unlimited <span class="fw-bold">Bandwidth</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>Unlimited <span class="fw-bold"> Free SSL</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>Warranty <span class="fw-bold"> 10,000</span></small>
-                                </li>
-                            </ul>
-                        </div>
+            <div class="row justify-content-center">
+                <div class="col-xl-8">
+                    <div class="text-center">
+                        <h2>Web Hosting Plans for Your Website</h2>
+                        <p class="mb-0 max-text-56 mx-auto">
+                            Launch your website with powerful hosting optimized for speed, security, and reliability. Choose the perfect plan and get online today.
+                        </p>
                     </div>
-                </div>
-                <div class="col-xl-3 col-md-6">
-                    <div class="price-card-item-one position-relative overflow-hidden bg-white px-7 py-9 border-end" data-sal="slide-up" data-sal-duration="400" data-sal-delay="100" data-sal-easing="ease-in-out-sine">
-                        <h6 class="mb-1">SSL Silver</h6>
-                        <small>Our most affordable, single domain,
-                            WordPress Hosting plan.</small>
-                        <div class="mt-5">
-                            <div class="monthly-price">
-                                <h4>$30.99</h4>
-                                <small class="fw-bold">Normally $99.99</small>
-                            </div>
-                            <div class="yearly-price">
-                                <h4>$299.00</h4>
-                                <small class="fw-bold">Normally $24.91</small>
-                            </div>
+
+                    <div class="d-flex align-items-center justify-content-center gap-3 mt-5">
+                        <small class="fw-semibold">Monthly</small>
+                        <div class="form-check form-switch toggle-switch">
+                            <input class="form-check-input pricing-toggle" type="checkbox" id="flexSwitchCheckDefault">
                         </div>
-                        <div class="monthly-price">
-                            <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="#">
-                                <span class="btn-arrow__text">
-                                    Add to Cart
-                                    <span class="btn-arrow__icon">
-                                        <i class="las la-arrow-right"></i>
-                                    </span>
-                                </span>
-                            </a>
-                            <small class="d-block fw-medium mt-2">$7.99/mo when you renew</small>
-                        </div>
-                        <div class="yearly-price">
-                            <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="#">
-                                <span class="btn-arrow__text">
-                                    Add to Cart
-                                    <span class="btn-arrow__icon">
-                                        <i class="las la-arrow-right"></i>
-                                    </span>
-                                </span>
-                            </a>
-                            <small class="d-block fw-medium mt-2">$7.99/mo when you renew</small>
-                        </div>
-                        <div class="mt-6">
-                            <h6 class="mb-5">Top Featured</h6>
-                            <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>Standard  <span class="fw-bold">Performance</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>100 <span class="fw-bold">Websites</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>100 GB <span class="fw-bold">SSD Storage</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>100 GB <span class="fw-bold">SSD Storage</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>Unlimited <span class="fw-bold">Bandwidth</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>Unlimited <span class="fw-bold"> Free SSL</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>Warranty <span class="fw-bold"> 10,000</span></small>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6">
-                    <div class="price-card-item-one position-relative overflow-hidden bg-white px-7 py-9 border-end" data-sal="slide-up" data-sal-duration="450" data-sal-delay="150" data-sal-easing="ease-in-out-sine">
-                        <div class="discount-badge gradient-bg">
-                            <p class="text-white fw-bold mb-0">30% Sale</p>
-                        </div>
-                        <h6 class="mb-1">SSL Gold</h6>
-                        <small>Our most affordable, single domain,
-                            WordPress Hosting plan.</small>
-                        <div class="mt-5">
-                            <div class="monthly-price">
-                                <h4>$30.99</h4>
-                                <small class="fw-bold">Normally $99.99</small>
-                            </div>
-                            <div class="yearly-price">
-                                <h4>$299.00</h4>
-                                <small class="fw-bold">Normally $24.91</small>
-                            </div>
-                        </div>
-                        <div class="monthly-price">
-                            <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="#">
-                                <span class="btn-arrow__text">
-                                    Add to Cart
-                                    <span class="btn-arrow__icon">
-                                        <i class="las la-arrow-right"></i>
-                                    </span>
-                                </span>
-                            </a>
-                            <small class="d-block fw-medium mt-2">$7.99/mo when you renew</small>
-                        </div>
-                        <div class="yearly-price">
-                            <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="#">
-                                <span class="btn-arrow__text">
-                                    Add to Cart
-                                    <span class="btn-arrow__icon">
-                                        <i class="las la-arrow-right"></i>
-                                    </span>
-                                </span>
-                            </a>
-                            <small class="d-block fw-medium mt-2">$7.99/mo when you renew</small>
-                        </div>
-                        <div class="mt-6">
-                            <h6 class="mb-5">Top Featured</h6>
-                            <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>Standard  <span class="fw-bold">Performance</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>100 <span class="fw-bold">Websites</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>100 GB <span class="fw-bold">SSD Storage</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>100 GB <span class="fw-bold">SSD Storage</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>Unlimited <span class="fw-bold">Bandwidth</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>Unlimited <span class="fw-bold"> Free SSL</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>Warranty <span class="fw-bold"> 10,000</span></small>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6">
-                    <div class="price-card-item-one bg-white px-7 py-9" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                        <h6 class="mb-1">SSL Diamond</h6>
-                        <small>Our most affordable, single domain,
-                            WordPress Hosting plan.</small>
-                        <div class="mt-5">
-                            <div class="monthly-price">
-                                <h4>$30.99</h4>
-                                <small class="fw-bold">Normally $99.99</small>
-                            </div>
-                            <div class="yearly-price">
-                                <h4>$299.00</h4>
-                                <small class="fw-bold">Normally $24.91</small>
-                            </div>
-                        </div>
-                        <div class="monthly-price">
-                            <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="#">
-                                <span class="btn-arrow__text">
-                                    Add to Cart
-                                    <span class="btn-arrow__icon">
-                                        <i class="las la-arrow-right"></i>
-                                    </span>
-                                </span>
-                            </a>
-                            <small class="d-block fw-medium mt-2">$7.99/mo when you renew</small>
-                        </div>
-                        <div class="yearly-price">
-                            <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="#">
-                                <span class="btn-arrow__text">
-                                    Add to Cart
-                                    <span class="btn-arrow__icon">
-                                        <i class="las la-arrow-right"></i>
-                                    </span>
-                                </span>
-                            </a>
-                            <small class="d-block fw-medium mt-2">$5.99/mo when you renew</small>
-                        </div>
-                        <div class="mt-6">
-                            <h6 class="mb-5">Top Featured</h6>
-                            <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>Standard  <span class="fw-bold">Performance</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>100 <span class="fw-bold">Websites</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>100 GB <span class="fw-bold">SSD Storage</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>100 GB <span class="fw-bold">SSD Storage</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>Unlimited <span class="fw-bold">Bandwidth</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>Unlimited <span class="fw-bold"> Free SSL</span></small>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="w-4 h-4 bg-success rounded-circle fs-12 text-white d-flex align-items-center justify-content-center flex-shrink-0">
-                                        <i class="las la-check"></i>
-                                    </div>
-                                    <small>Warranty <span class="fw-bold"> 10,000</span></small>
-                                </li>
-                            </ul>
-                        </div>
+                        <small class="fw-semibold">Yearly</small>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="pt-40">
-            <div class="container">
-                <div class="row g-4">
-                    <div class="col-lg-4" data-sal="slide-up" data-sal-duration="400" data-sal-delay="100" data-sal-easing="ease-in-out-sine">
-                        <h6>Free Setup & Installation*</h6>
-                        <p>Need help? We will set up and install your SSL
-                            certificate free of charge!*</p>
-                    </div>
-                    <div class="col-lg-4" data-sal="slide-up" data-sal-duration="450" data-sal-delay="150" data-sal-easing="ease-in-out-sine">
-                        <h6>Best in Class Encryption</h6>
-                        <p>Need help? We will set up and install your SSL
-                            certificate free of charge!*</p>
-                    </div>
-                    <div class="col-lg-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                        <h6>24x7 Support</h6>
-                        <p>Need help? We will set up and install your SSL
-                            certificate free of charge!*</p>
+    </div>
+
+
+    <div class="container">
+        <div class="row g-4 g-xl-0">
+
+            <?php foreach ($products as $product): ?>
+                <?php
+                    $pid = $product['pid'];
+
+                    // Skip if no features for this product
+                    if (!isset($features[$pid])) continue;
+
+                    $f = $features[$pid];
+
+                    // --- Extract WHMCS values ---
+                    $title   = $product['name'] ?? 'Hosting Plan';
+                    $monthly = floatval($product['pricing']['USD']['monthly'] ?? -1);
+                    $yearly  = floatval($product['pricing']['USD']['annually'] ?? -1);
+
+                    // Normal / original price (optional field inside your features JSON)
+                    $normal  = $f['normal_price'] ?? '';
+
+                    $discountPercent = $f['percentage'] ?? 0;
+
+                    $monthly_discounted = ($monthly > 0)
+                        ? $monthly - (($monthly * $discountPercent) / 100)
+                        : -1;
+
+                    $yearly_discounted = ($yearly > 0)
+                        ? $yearly - (($yearly * $discountPercent) / 100)
+                        : -1;
+                    
+                    // Tagline from features.json
+                    $tagline = $f['tagline'] ?? '';
+
+                    // Renewal text (optional)
+                    $renew   = $f['renew_text'] ?? '';
+
+                    // Features list
+                    $featList = $f['features'] ?? [];
+                ?>
+
+                <div class="col-xl-4 col-md-4 col-12 mb-3">
+                    <div class="price-card-item-one position-relative overflow-hidden bg-white px-7 py-9 border-end">
+
+                        <!-- Optional Discount Badge -->
+                        <?php if ($discountPercent > 0): ?>
+                            <div class="discount-badge gradient-bg">
+                                <p class="text-white fw-bold mb-0"><?= $discountPercent ?>% OFF</p>
+                            </div>
+                        <?php endif; ?>
+
+                        <!-- Title -->
+                        <h6 class="mb-1 text-truncate"><?= htmlspecialchars($title) ?></h6>
+                        <!-- Tagline (optional) -->
+                        <?php if (!empty($tagline)): ?>
+                            <small class="d-block mb-1"><?= htmlspecialchars($tagline) ?></small>
+                        <?php endif; ?>
+                        <!-- Pricing -->
+                        <div class="mt-5">
+                            <?php if ($monthly > 0): ?>
+                            <div class="monthly-price">
+                                <?php if ($discountPercent > 0): ?>
+                                    <!-- Discounted monthly price -->
+                                    <h4>
+                                        $<?= number_format($monthly_discounted, 2) ?>
+                                        <span class="fs-14 text-muted">/month</span>
+                                    </h4>
+                                    <!-- Original price -->
+                                    <h4 class="text-decoration-line-through">
+                                        Normally $<?= number_format($monthly, 2) ?>
+                                    </h4>
+                                <?php endif; ?>
+                            </div>
+                            <?php endif; ?>
+                            <?php if ($yearly > 0): ?>
+                            <div class="yearly-price">
+                                <?php if ($discountPercent > 0): ?>
+                                    <!-- Discounted yearly price -->
+                                    <h4>
+                                        $<?= number_format($yearly_discounted, 2) ?>
+                                        <span class="fs-14 text-muted">/year</span>
+                                    </h4>
+                                    <!-- Original yearly price -->
+                                    <h4 class="text-decoration-line-through">
+                                        Normally $<?= number_format($yearly, 2) ?>
+                                    </h4>
+                                <?php endif; ?>
+                            </div>
+                            <?php endif; ?>
+                        </div>
+                        <?php if ($monthly > 0): ?>
+                        <div class="monthly-price">
+                            <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="https://portal.cloudhosti.com/cart.php?a=add&pid=<?= $pid ?>&billingcycle=monthly&promocode=<?= $f['promo'] ?>">
+                                <span class="btn-arrow__text">
+                                    Add to Cart
+                                    <span class="btn-arrow__icon">
+                                        <i class="las la-arrow-right"></i>
+                                    </span>
+                                </span>
+                            </a>
+                            <!-- <small class="d-block fw-medium mt-2">$<?= $monthly ?></small> -->
+                        </div>
+                        <?php endif; ?>
+                        <?php if ($yearly > 0): ?>
+                        <div class="yearly-price">
+                            <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="https://portal.cloudhosti.com/cart.php?a=add&pid=<?= $pid ?>&billingcycle=annually&promocode=<?= $f['promo'] ?>">
+                                <span class="btn-arrow__text">
+                                    Add to Cart
+                                    <span class="btn-arrow__icon">
+                                        <i class="las la-arrow-right"></i>
+                                    </span>
+                                </span>
+                            </a>
+                            <!-- <small class="d-block fw-medium mt-2">$<?= $yearly ?></small> -->
+                        </div>
+                        <?php endif; ?>
+
+                        <!-- Features Section -->
+                        <div class="mt-6">
+                            <h6 class="mb-5">Top Featured</h6>
+                            <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+
+                                <?php foreach ($featList as $feature): ?>
+                                    <?php if (!empty($feature)): ?>
+                                    <li class="d-flex align-items-center gap-3">
+                                        <div class="w-4 h-4 bg-success rounded-circle fs-12 text-white 
+                                            d-flex align-items-center justify-content-center flex-shrink-0">
+                                            <i class="las la-check"></i>
+                                        </div>
+                                        <small><?= htmlspecialchars($feature) ?></small>
+                                    </li>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php endforeach; ?>
+
         </div>
-    </section><!-- Price -->
+    </div>
+</section>
+
     
     <!-- Why -->
     <section class="why-area-one bg-dark pt-120 pb-120 position-relative z-1">
@@ -1326,9 +971,6 @@ if (file_exists($cacheFile)) {
                 });
         });
         </script>
-
-
-
 </body>
 
 </html>
