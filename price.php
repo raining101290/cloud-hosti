@@ -1,4 +1,13 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
+require 'helper/utils.php';
+include 'includes/meta.php';
+
+$currentPage = basename($_SERVER['PHP_SELF'], '.php');
+$meta = getMetaData($currentPage);
+?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 
@@ -7,20 +16,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--meta-->
-    <meta name="description" content="WriteBot ai content generator and writing assistant for saas platform">
-    <meta name="author" content="ThemeTags">
-    <meta name="keywords" content="ai, ai assistant, ai content writer, ai copywriting">
+    <title><?php echo htmlspecialchars($meta['title']); ?></title>
+    <meta name="description" content="<?php echo htmlspecialchars($meta['description']); ?>">
+    <meta name="author" content="CloudHosti">
+    <meta name="keywords" content="">
     <!--favicon icon-->
     <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="16x16">
-
-    <!--title-->
-    <title>Home - Hostingard</title>
 
     <!--build:css-->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/custom.css">
     <!-- endbuild -->
+    <link href="assets/lib/@iconscout/unicons/css/line.css" type="text/css" rel="stylesheet">
+    <!-- endbuild -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -28,7 +37,7 @@
     <!--preloader start-->
     <div class="preloader bg-light-subtle">
         <div class="preloader-wrap">
-            <img src="assets/images/cloudhosti-logo.png" alt="Cloud Hosti logo" height="61px">
+            <img class="mb-2" src="assets/images/cloudhosti-logo.png" alt="CloudHosti logo" height="41px">
             <div class="loading-bar"></div>
         </div>
     </div>
@@ -36,18 +45,18 @@
     <?php include('./components/header.php') ?>
 
     <!-- Breadcrumb -->
-    <section class="banner-bg bg-dark price-banner">
+    <section class="banner-bg bg-custom-5 price-banner">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-7 col-lg-9">
                     <div class="pb-60">
-                        <span class="fs-18 fw-bold text-primary mb-2" data-sal="slide-up" data-sal-duration="1000"
+                        <span class="fs-18 fw-bold text-success mb-2" data-sal="slide-up" data-sal-duration="1000"
                             data-sal-delay="300" data-sal-easing="ease-in-out-sine">SSL CERTIFICATE</span>
                         <h1 class="text-white mb-3" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">A Simple Price Structure for Great Products</h1>
                         <p class="text-white mb-8 max-text-60 text-opacity-75" data-sal="slide-up" data-sal-duration="800" data-sal-delay="300" data-sal-easing="ease-in-out-sine">Keep your site secure! Build trust among
                             visitors and
                             outperform in the search
-                            engines with an SSL certificate <span class="text-warning fw-semibold">Starting
+                            engines with an SSL certificate <span class="text-success fw-semibold">Starting
                                 @just&nbsp;$11/Yr.</span></p>
                         <a href="price.html" class="btn btn-primary btn-arrow btn-arrow-md fs-14 fw-medium rounded" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                             <span class="btn-arrow__text">
@@ -90,92 +99,88 @@
                     </div>
                     <div class="tab-content" data-sal="fade" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                         <div class="tab-pane fade show active" id="linuxHosting" role="tabpanel">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card border-0">
-                                        <div class="card-body p-0">
-                                            <div class="table-responsive">
-                                                <table class="table table-bordered table-collapsible mb-0">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>
-                                                                <div class="h5 mb-0">
-                                                                    Compare Our Cloud VPS Hosting Plans
-                                                                </div>
-                                                            </th>
-                                                            <th>
-                                                                <div class="text-center">
-                                                                    <p class="mb-1 fw-bold text-light-emphasis">
-                                                                        Cloud VPS_1
-                                                                    </p>
-                                                                    <div class="h5">
-                                                                        $27.40
-                                                                    </div>
-                                                                    <span
-                                                                        class="d-block fw-normal mb-4 fs-12 text-light-emphasis">
-                                                                        (on a 12 month plan)
-                                                                    </span>
-                                                                    <button type="button" class="btn btn-sm btn-primary hover:bg-dark hover:border-dark">
-                                                                        Get Started
-                                                                    </button>
-                                                                </div>
-                                                            </th>
-                                                            <th>
-                                                                <div class="text-center">
-                                                                    <p class="mb-1 fw-bold text-light-emphasis">
-                                                                        Cloud VPS_2
-                                                                    </p>
-                                                                    <div class="h5">
-                                                                        $40.40
-                                                                    </div>
-                                                                    <span
-                                                                        class="d-block fw-normal mb-4 fs-12 text-light-emphasis">
-                                                                        (on a 12 month plan)
-                                                                    </span>
-                                                                    <button type="button" class="btn btn-sm btn-dark hover:bg-primary hover:border-primary">
-                                                                        Get Started
-                                                                    </button>
-                                                                </div>
-                                                            </th>
-                                                            <th>
-                                                                <div class="text-center">
-                                                                    <p class="mb-1 fw-bold text-light-emphasis">
-                                                                        Cloud VPS_3
-                                                                    </p>
-                                                                    <div class="h5">
-                                                                        $48.50
-                                                                    </div>
-                                                                    <span
-                                                                        class="d-block fw-normal mb-4 fs-12 text-light-emphasis">
-                                                                        (on a 12 month plan)
-                                                                    </span>
-                                                                    <button type="button" class="btn btn-sm btn-dark hover:bg-primary hover:border-primary">
-                                                                        Get Started
-                                                                    </button>
-                                                                </div>
-                                                            </th>
-                                                            <th>
-                                                                <div class="text-center">
-                                                                    <p class="mb-1 fw-bold text-light-emphasis">
-                                                                        Cloud VPS_4
-                                                                    </p>
-                                                                    <div class="h5">
-                                                                        $90.00
-                                                                    </div>
-                                                                    <span
-                                                                        class="d-block fw-normal mb-4 fs-12 text-light-emphasis">
-                                                                        (on a 12 month plan)
-                                                                    </span>
-                                                                    <button type="button" class="btn btn-sm btn-dark hover:bg-primary hover:border-primary">
-                                                                        Get Started
-                                                                    </button>
-                                                                </div>
-                                                            </th>
-                                                        </tr>
-                                                    </thead>
-                                                </table>
-                                            </div>
-                                        </div>
+                            <div class="card border-0">
+                                <div class="card-body p-0">
+                                    <div class="table-responsive ">
+                                        <table class="table table-bordered table-collapsible mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <div class="h5 mb-0">
+                                                            Compare Our Cloud VPS Hosting Plans
+                                                        </div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="text-center">
+                                                            <p class="mb-1 fw-bold text-light-emphasis">
+                                                                Cloud VPS_1
+                                                            </p>
+                                                            <div class="h5">
+                                                                $27.40
+                                                            </div>
+                                                            <span
+                                                                class="d-block fw-normal mb-4 fs-12 text-light-emphasis">
+                                                                (on a 12 month plan)
+                                                            </span>
+                                                            <button type="button" class="btn btn-sm btn-primary hover:bg-dark hover:border-dark">
+                                                                Get Started
+                                                            </button>
+                                                        </div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="text-center">
+                                                            <p class="mb-1 fw-bold text-light-emphasis">
+                                                                Cloud VPS_2
+                                                            </p>
+                                                            <div class="h5">
+                                                                $40.40
+                                                            </div>
+                                                            <span
+                                                                class="d-block fw-normal mb-4 fs-12 text-light-emphasis">
+                                                                (on a 12 month plan)
+                                                            </span>
+                                                            <button type="button" class="btn btn-sm btn-dark hover:bg-primary hover:border-primary">
+                                                                Get Started
+                                                            </button>
+                                                        </div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="text-center">
+                                                            <p class="mb-1 fw-bold text-light-emphasis">
+                                                                Cloud VPS_3
+                                                            </p>
+                                                            <div class="h5">
+                                                                $48.50
+                                                            </div>
+                                                            <span
+                                                                class="d-block fw-normal mb-4 fs-12 text-light-emphasis">
+                                                                (on a 12 month plan)
+                                                            </span>
+                                                            <button type="button" class="btn btn-sm btn-dark hover:bg-primary hover:border-primary">
+                                                                Get Started
+                                                            </button>
+                                                        </div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="text-center">
+                                                            <p class="mb-1 fw-bold text-light-emphasis">
+                                                                Cloud VPS_4
+                                                            </p>
+                                                            <div class="h5">
+                                                                $90.00
+                                                            </div>
+                                                            <span
+                                                                class="d-block fw-normal mb-4 fs-12 text-light-emphasis">
+                                                                (on a 12 month plan)
+                                                            </span>
+                                                            <button type="button" class="btn btn-sm btn-dark hover:bg-primary hover:border-primary">
+                                                                Get Started
+                                                            </button>
+                                                        </div>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                        </table>
                                     </div>
                                     <div class="accordion accordion-table-pricing">
                                         <div class="accordion-item">
@@ -3681,7 +3686,7 @@
                 <div class="col-lg-7">
                     <div class="text-center" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                         <h2 class="mb-4">SSL Security Certificate FAQ’s</h2>
-                        <p class="mb-0 max-text-56 mx-auto">The best thing we love about Hostcity is it does two-way sync
+                        <p class="mb-0 max-text-56 mx-auto">The best thing we love about CloudHosti is it does two-way sync
                             with Google us to
                             better organize & keep everything on track.</p>
                     </div>

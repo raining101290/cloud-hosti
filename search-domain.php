@@ -1,3 +1,34 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+require 'helper/utils.php';
+include 'includes/meta.php';
+include 'includes/apis/domainPricing.php';
+include 'includes/apis/productPricing.php';
+
+$currentPage = basename($_SERVER['PHP_SELF'], '.php');
+$meta = getMetaData($currentPage);
+
+$cacheFile       = __DIR__ . "/cache/domainPricing.json";
+$productFile     = __DIR__ . "/cache/products.json";
+$featuresFile    = __DIR__ . "/cache/productFeatures.json";
+
+// Load domain pricing
+$tlds = file_exists($cacheFile)
+    ? json_decode(file_get_contents($cacheFile), true)
+    : [];
+
+// Load WHMCS products
+$products = file_exists($productFile)
+    ? json_decode(file_get_contents($productFile), true)
+    : [];
+
+// Load your custom features JSON
+$features = file_exists($featuresFile)
+    ? json_decode(file_get_contents($featuresFile), true)
+    : [];
+?>
 
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
@@ -6,21 +37,20 @@
     <!--required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--meta-->
-    <meta name="description" content="WriteBot ai content generator and writing assistant for saas platform">
-    <meta name="author" content="ThemeTags">
-    <meta name="keywords" content="ai, ai assistant, ai content writer, ai copywriting">
+    <!--title-->
+    <title><?php echo htmlspecialchars($meta['title']); ?></title>
+    <meta name="description" content="<?php echo htmlspecialchars($meta['description']); ?>">
+    <meta name="author" content="CloudHosti">
+    <meta name="keywords" content="">
     <!--favicon icon-->
     <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="16x16">
-
-    <!--title-->
-    <title>Home - Hostingard</title>
-
     <!--build:css-->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/custom.css">
     <!-- endbuild -->
+    <link href="assets/lib/@iconscout/unicons/css/line.css" type="text/css" rel="stylesheet">
+    <!-- endbuild -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -28,7 +58,7 @@
     <!--preloader start-->
     <div class="preloader bg-light-subtle">
         <div class="preloader-wrap">
-            <img src="assets/images/cloudhosti-logo.png" alt="Cloud Hosti logo" height="61px">
+            <img class="mb-2" src="assets/images/cloudhosti-logo.png" alt="CloudHosti logo" height="41px">
             <div class="loading-bar"></div>
         </div>
     </div>
@@ -36,102 +66,97 @@
     <?php include('./components/header.php') ?>
 
     <!-- Hero -->
-    <section class="hero-domain-area bg-white position-relative z-1 overflow-hidden">
+    <section class="hero-1 pb-32 bg-gradient-primary position-relative z-1 overflow-hidden">
         <div class="container">
             <div class="row g-4 align-items-center">
                 <div class="col-lg-6">
                     <div class="d-inline-flex align-items-center gap-2 mb-2" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                        <div class="w-2 h-2 rounded-circle bg-primary"></div>
-                        <small class="text-primary fw-bold">Domain Management Panel</small>
+                        <div class="w-2 h-2 rounded-circle bg-success"></div>
+                        <small class="text-success fw-bold">Domain Management Panel</small>
                     </div>
-                    <h1 class="mb-2" data-sal="slide-up" data-sal-duration="700" data-sal-delay="300" data-sal-easing="ease-in-out-sine">Every Website
-                        Needs a Great Name!</h1>
-                    <p class="max-text-52 fw-semibold mb-8" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                    <h1 class="text-white mb-2" data-sal="slide-up" data-sal-duration="700" data-sal-delay="300" data-sal-easing="ease-in-out-sine">Every Website
+                        Needs a Great Name!
+                    </h1>
+                    <p class="text-white max-text-52 fw-semibold mb-8" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                         Powerful Bare Metal Servers at low prices, so you can do more for less.
-                        Starting<a href="#" class="text-decoration-none fw-bold">$2.49&nbsp;including</a>
+                        
                     </p>
-                    <div class="hstack gap-4 flex-wrap" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                        <a href="contact.html" class="btn btn-primary btn-arrow btn-arrow-lg btn-lg fs-14 fw-semibold rounded">
-                            <span class="btn-arrow__text">
-                                Create Accout
-                                <span class="btn-arrow__icon">
-                                    <i class="las la-arrow-right"></i>
-                                </span>
-                            </span>
-                        </a>
-                        <a href="price.html" class="btn btn-dark btn-arrow btn-arrow-lg btn-lg fs-14 fw-semibold rounded transition">
-                            <span class="btn-arrow__text">
-                                View Pricing
-                                <span class="btn-arrow__icon">
-                                    <i class="las la-arrow-right"></i>
-                                </span>
-                            </span>
-                        </a>
-                    </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="position-relative">
-                        <img src="assets/img/hero-domain.png" alt="image" class="img-fluid" data-sal="fade" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                        <img src="assets/img/hero-6-shape-1.png" alt="image" class="img-fluid position-absolute hero-6-shape-1 d-none d-xxl-block" data-sal="fade" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                        <img src="assets/img/hero-6-shape-2.png" alt="image" class="img-fluid position-absolute hero-6-shape-2 d-none d-sm-block" data-sal="fade" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                        <img src="assets/img/hero-6-shape-3.png" alt="image" class="img-fluid position-absolute hero-6-shape-3 z-n1" data-sal="fade" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section><!-- /Hero -->
-
-    <!-- Domain -->
-    <section class="bg-white">
-        <div class="container">
-            <div class="bg-dark rounded-3 py-16 px-6">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="text-center" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                            <h2 class="h3 text-white max-text-24 mx-auto">Find the Right Plan & Register a Domain Now!</h2>
+                    <div class="position-relative z-1">
+                        <div class="hero-1__map">
+                            <img class="img-fluid hero-1__map-img" src="assets/img/shape/hero-map.png" alt="image">
                         </div>
-                        <form action="#" class="domain-form-one mx-auto position-relative mt-8" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                            <input type="text" class="form-control p-4" placeholder="Domain Name">
-                            <div class="domain-submit-box d-flex align-items-center gap-3 position-absolute">
-                                <select class="border-0 bg-transparent">
-                                    <option value=".com">.com</option>
-                                    <option value=".net">.net</option>
-                                    <option value=".org">.org</option>
-                                </select>
-                                <button class="btn btn-primary rounded-2 fw-bold" type="submit">Search</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-center gap-4 flex-wrap flex-xl-nowrap mt-6">
-                        <button type="button" class="btn btn-sm d-inline-flex align-items-center gap-2" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                            <span class="h6 mb-1 text-primary d-inline-bloock">.com</span>
-                            <small class="text-white fw-medium d-inline-block">$9.56/Year</small>
-                        </button>
-                        <button type="button" class="btn btn-sm d-inline-flex align-items-center gap-2" data-sal="slide-up" data-sal-duration="300" data-sal-delay="400" data-sal-easing="ease-in-out-sine">
-                            <span class="h6 mb-1 text-danger d-inline-bloock">.co</span>
-                            <small class="text-white fw-medium d-inline-block">$4.56/Year</small>
-                        </button>
-                        <button type="button" class="btn btn-sm d-inline-flex align-items-center gap-2" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                            <span class="h6 mb-1 text-warning d-inline-bloock">.info</span>
-                            <small class="text-white fw-medium d-inline-block">$9.56/Year</small>
-                        </button>
-                        <button type="button" class="btn btn-sm d-inline-flex align-items-center gap-2" data-sal="slide-up" data-sal-duration="300" data-sal-delay="600" data-sal-easing="ease-in-out-sine">
-                            <span class="h6 mb-1 text-warning d-inline-bloock">.info</span>
-                            <small class="text-white fw-medium d-inline-block">$9.56/Year</small>
-                        </button>
-                        <button type="button" class="btn btn-sm d-inline-flex align-items-center gap-2" data-sal="slide-up" data-sal-duration="300" data-sal-delay="700" data-sal-easing="ease-in-out-sine">
-                            <span class="h6 mb-1 text-success d-inline-bloock">.org</span>
-                            <small class="text-white fw-medium d-inline-block">$6.56/Year</small>
-                        </button>
-                        <button type="button" class="btn btn-sm d-inline-flex align-items-center gap-2" data-sal="slide-up" data-sal-duration="300" data-sal-delay="800" data-sal-easing="ease-in-out-sine">
-                            <span class="h6 mb-1 text-info d-inline-bloock">.biz</span>
-                            <small class="text-white fw-medium d-inline-block">$6.56/Year</small>
-                        </button>
                     </div>
                 </div>
             </div>
         </div>
-    </section><!-- /Domain -->
+    </section>
+    
+    <!-- Domain -->
+    <section class="domain-container position-relative z-1 overflow-hidden">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-10">
+                    <div class="card rounded-4 glass-box">
+                        <div class="card-body pt-60 pb-60">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <h2 class="text-center h4 text-white" data-sal="slide-up" data-sal-duration="300"
+                                        data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                                        Find the Right Plan & Register a Domain Now!</h2>
+                                    <form id="domainSearchForm" class="domain-form-one mx-auto position-relative mt-8">
+                                        <input name="domain-name" type="text" class="form-control p-4 domain-name"
+                                            placeholder="Domain Name">
+                                        <div class="domain-submit-box d-flex align-items-center gap-3 position-absolute">
+                                            <select id="extSelect" class="tld-dropdown form-control">
+                                                <option value=".com">.com</option>
+                                                <option value=".net">.net</option>
+                                                <option value=".org">.org</option>
+                                                <option value=".info">.info</option>
+                                                <option value=".biz">.biz</option>
+                                                <option value=".me">.me</option>
+                                                <option value=".xyz">.xyz</option>
+                                            </select>
+                                            <button class="btn btn-primary rounded-2 fw-bold" type="submit">Search</button>
+                                        </div>
+                                        <div id="domainResult" class="mt-4"></div>
+                                    </form>
+
+                                    <div class="d-flex align-items-center justify-content-center gap-4 flex-wrap flex-xl-nowrap mt-6">
+                                        <?php foreach ($featuredTLDs as $tld => $color): ?>
+                                            <?php 
+                                                $oldPrice = $tlds[$tld]['register'][1] ?? null; 
+                                                $newPrice = $discounts[$tld] ?? $oldPrice;
+                                                if (!$oldPrice) continue;
+                                            ?>
+                                            
+                                            <button type="button"
+                                                class="btn btn-sm btn-light d-inline-flex align-items-center gap-2 border border-gray-100">
+
+                                                <span class="h6 mb-1 <?= $color ?> d-inline-block">.<?= $tld ?></span>
+                                                <?php if ($newPrice < $oldPrice): ?>
+                                                    <small class="fw-medium d-inline-block">
+                                                        <s class="text-danger">$<?= number_format($oldPrice, 2) ?></s>
+                                                        <span class="text-success fw-bold">$<?= number_format($newPrice, 2) ?></span>/Year
+                                                    </small>
+                                                <?php else: ?>
+                                                    <small class="fw-medium d-inline-block">
+                                                        $<?= number_format($oldPrice, 2) ?>/Year
+                                                    </small>
+                                                <?php endif; ?>
+                                            </button>
+                                        <?php endforeach; ?>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Why -->
     <section class="bg-white pt-120 pb-120 position-relative z-1">
@@ -139,18 +164,18 @@
         <div class="container">
             <div class="row align-items-center g-4">
                 <div class="col-xxl-5">
-                    <h2 class="h3 mb-3" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">Why Choose HostCity for your Domain Name Registar?</h2>
+                    <h2 class="h3 mb-3" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">Why Choose CloudHosti for your Domain Name Registar?</h2>
                     <p class="mb-8 fw-semibold max-text-44" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">We are confident that we can Provide the best Domain Name
                         Services
                         for our customers!</p>
-                    <a href="price.html" class="btn btn-primary btn-arrow btn-arrow-lg btn-lg fs-14 fw-semibold rounded transition">
+                    <!-- <a href="price.php" class="btn btn-primary btn-arrow btn-arrow-lg btn-lg fs-14 fw-semibold rounded transition">
                         <span class="btn-arrow__text">
                                 View Pricing
                                 <span class="btn-arrow__icon">
                                     <i class="las la-arrow-right"></i>
                                 </span>
                         </span>
-                    </a>
+                    </a> -->
                 </div>
                 <div class="col-xxl-7">
                     <div class="row g-4">
@@ -213,19 +238,19 @@
                             Hosting Plans*</h5>
                         <p class="fw-medium mb-6">Experience our high-speed web hosting, with 24/7
                             a novice or a thriving e-commerce enterprise, our hosting solutions are tailored to you!"</p>
-                        <a href="price.html" class="text-decoration-none d-inline-flex align-items-center gap-2 text-primary fw-medium btn-arrow">
+                        <!-- <a href="price.html" class="text-decoration-none d-inline-flex align-items-center gap-2 text-primary fw-medium btn-arrow">
                             <span class="d-inline-block btn-arrow__text">
                                 Explore Hosting Plans
                                 <span class="btn-arrow__icon">
                                     <i class="las la-arrow-right"></i>
                                 </span>
                             </span>
-                        </a>
+                        </a> -->
                     </div>
                 </div>
             </div>
         </div>
-    </section><!-- Domain -->
+    </section>
 
     <!-- Domain List -->
     <section class="pt-120 pb-40">
@@ -460,7 +485,7 @@
                 </div>
             </div>
         </div>
-    </section><!-- /Domain List -->
+    </section>
 
     <!-- About -->
     <section class="pt-40 pb-60">
@@ -487,7 +512,7 @@
                 </div>
             </div>
         </div>
-    </section><!-- /About -->
+    </section>
 
     <!-- 3 Step With About -->
     <section class="about-section bg-white pt-120 pb-120 position-relative z-1">
@@ -544,7 +569,7 @@
                             <div class="w-2 h-2 rounded-circle bg-primary"></div>
                             <small class="text-primary fw-bold">Transfer Domain</small>
                         </div>
-                        <h2 class="mb-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">Transfer Your Domain to Hostcity</h2>
+                        <h2 class="mb-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">Transfer Your Domain to CloudHosti</h2>
                         <p class="mb-6" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">Contact one of our friendly technical advisors now. Our team
                             is available live chat
                             and is ready to answer any questions you may have.
@@ -572,7 +597,7 @@
                         <div class="w-2 h-2 rounded-circle bg-primary"></div>
                         <small class="text-primary fw-bold">Transfer Domain</small>
                     </div>
-                    <h2 class="mb-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">Easy Domain Management Powered by Hostcity</h2>
+                    <h2 class="mb-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">Easy Domain Management Powered by CloudHosti</h2>
                     <p class="mb-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                         Contact one of our friendly technical advisors now. Our team is available live chat and
                         is ready to answer any questions you may have.
@@ -616,7 +641,7 @@
                 </div>
             </div>
         </div>
-    </section><!-- /3 Step With About -->
+    </section>
 
     <!-- Faq -->
     <div class="container">
@@ -730,7 +755,7 @@
                 </div>
             </div>
         </div>
-    </div><!-- /Faq -->
+    </div>
 
     <!-- Blog -->
     <section class="pt-120 pb-120">
@@ -844,7 +869,7 @@
                 </div>
             </div>
         </div>
-    </section><!-- /Blog -->
+    </section>
 
     <!-- Footer CTA -->
     <div class="footer-cta">
@@ -877,6 +902,67 @@
     </div><!-- /Footer CTA -->
 
     <?php include('./components/footer.php') ?>
+    <script>
+        document.getElementById('domainSearchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            let domainInput = document.querySelector('.domain-name').value.trim();
+            const selectedExt = document.getElementById('extSelect').value;
+            const resultBox = document.getElementById('domainResult');
+            if (!domainInput) {
+                resultBox.innerHTML = `
+                    <div class='alert alert-danger' role='alert'><p class="text-danger mb-0" style="font-weight:bold;">
+                        Please enter a domain name.
+                    </p></div>
+                `;
+                return;
+            }
+
+            // Check if user has provided a TLD manually
+            const hasTLD = domainInput.includes(".") && !domainInput.endsWith(".");
+
+            // Final domain to search
+            const domain = hasTLD ? domainInput : domainInput + selectedExt;
+
+            // const resultBox = document.getElementById('domainResult');
+            resultBox.innerHTML = "<div class='alert alert-light' role='alert'><p class=' mb-0'>Checking domain availability...</p></div>";
+
+            fetch("includes/apis/whoisLookup.php?domain=" + encodeURIComponent(domain))
+                .then(res => res.json())
+                .then(data => {
+
+                    if (data.status === "available") {
+                        resultBox.innerHTML = `
+                             <div class='alert alert-success' role='alert'><p class="text-success mb-0 d-flex justify-content-between align-items-center" style="font-weight:bold;">
+                                ✔ ${domain} is available <a class="btn btn-sm btn-success" href="https://portal.cloudhosti.com/cart.php?a=add&domain=register&query=${domain}&promocode=20OFF">Buy Now</a>
+                            </p></div>
+                        `;
+                    }
+                    else if (data.status === "unavailable") {
+                        resultBox.innerHTML = `
+                            <div class='alert alert-danger' role='alert'><p class="text-danger mb-0" style="font-weight:bold;">
+                               Sorry, ${domain} is taken.
+                            </p></div>
+                        `;
+                    }
+                    else if (data.status === "invalid") {
+                        resultBox.innerHTML = `
+                            <div class='alert alert-danger' role='alert'><p class="text-warning mb-0" style="font-weight:bold;">
+                                Invalid domain format ⚠
+                            </p></div>
+                        `;
+                    }
+                    else {
+                        resultBox.innerHTML = `
+                            <div class='alert alert-danger' role='alert'><p class="text-white mb-0" style="font-weight:bold;">Unknown result 🤔</p></div>
+                        `;
+                    }
+                })
+                .catch(err => {
+                    resultBox.innerHTML = `<div class='alert alert-danger' role='alert'><p class="text-danger mb-0">API Error: ${err}</p></div>`;
+                });
+        });
+    </script>
 </body>
 
 </html>

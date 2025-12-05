@@ -1,6 +1,6 @@
 <?php 
 $config = [
-    "company_name" => "Cloud Hosti"
+    "company_name" => "CloudHosti"
 ];
 
 function siteName($config) {

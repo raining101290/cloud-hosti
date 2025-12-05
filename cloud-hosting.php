@@ -1,3 +1,13 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+require 'helper/utils.php';
+include 'includes/meta.php';
+
+$currentPage = basename($_SERVER['PHP_SELF'], '.php');
+$meta = getMetaData($currentPage);
+?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 
@@ -6,20 +16,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--meta-->
-    <meta name="description" content="WriteBot ai content generator and writing assistant for saas platform">
-    <meta name="author" content="ThemeTags">
-    <meta name="keywords" content="ai, ai assistant, ai content writer, ai copywriting">
+    <title><?php echo htmlspecialchars($meta['title']); ?></title>
+    <meta name="description" content="<?php echo htmlspecialchars($meta['description']); ?>">
+    <meta name="author" content="CloudHosti">
+    <meta name="keywords" content="">
     <!--favicon icon-->
     <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="16x16">
-
-    <!--title-->
-    <title>Home - Hostingard</title>
 
     <!--build:css-->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/custom.css">
     <!-- endbuild -->
+    <link href="assets/lib/@iconscout/unicons/css/line.css" type="text/css" rel="stylesheet">
+    <!-- endbuild -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body class="bg-secondary">
@@ -27,7 +37,7 @@
     <!--preloader start-->
     <div class="preloader bg-light-subtle">
         <div class="preloader-wrap">
-            <img src="assets/images/cloudhosti-logo.png" alt="Cloud Hosti logo" height="61px">
+            <img class="mb-2" src="assets/images/cloudhosti-logo.png" alt="CloudHosti logo" height="41px">
             <div class="loading-bar"></div>
         </div>
     </div>
@@ -1114,7 +1124,7 @@
                             </span>
                         </span>
                         <h2 class="mb-0 text-white">
-                            Why choose Hostingard For Your Cloud Server?
+                            Why choose CloudHosti For Your Cloud Server?
                         </h2>
                     </div>
                 </div>
@@ -1628,7 +1638,7 @@
                                     </span>
                                 </span>
                                 <h2 class="h3 mb-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                                    Why Hostingard Cloud Server Included Feature?
+                                    Why CloudHosti Cloud Server Included Feature?
                                 </h2>
                                 <p class="mb-8 max-text-56" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                                     Resources you need for your project can be challenging. With our

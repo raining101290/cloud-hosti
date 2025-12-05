@@ -30,7 +30,7 @@
                                                 <div class="col-md-6">
                                                     <ul class="contain-mega-menu__list list-unstyled">
                                                         <li>
-                                                            <a href="search-domain.php"
+                                                            <a href="https://portal.cloudhosti.com/cart.php?a=add&domain=register"
                                                                 class="contain-mega-menu__link text-decoration-none d-flex align-items-start gap-2">
                                                                 <span class="contain-mega-menu__img">
                                                                     <img src="assets/img/icon-menu-search-domain.png"
@@ -48,7 +48,7 @@
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="transfer-domain.php"
+                                                            <a href="https://portal.cloudhosti.com/cart.php?a=add&domain=transfer"
                                                                 class="contain-mega-menu__link text-decoration-none d-flex align-items-start gap-2">
                                                                 <span class="contain-mega-menu__img">
                                                                     <img src="assets/img/icon-menu-transfer-domain.png"
@@ -77,7 +77,7 @@
                                                 <div class="col-md-6">
                                                     <ul class="contain-mega-menu__list list-unstyled">
                                                         <li>
-                                                            <a href="domain-registration.php"
+                                                            <a href="https://portal.cloudhosti.com/cart.php?a=add&domain=register"
                                                                 class="contain-mega-menu__link text-decoration-none d-flex align-items-start gap-2">
                                                                 <span class="contain-mega-menu__img">
                                                                     <img src="assets/img/icon-menu-domain-reg.png"
@@ -94,7 +94,7 @@
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="transfer-domain-search.php"
+                                                            <a href="https://portal.cloudhosti.com/cart.php?a=add&domain=transfer"
                                                                 class="contain-mega-menu__link text-decoration-none d-flex align-items-start gap-2">
                                                                 <span class="contain-mega-menu__img">
                                                                     <img src="assets/img/icon-menu-ssl.png"
@@ -128,9 +128,9 @@
                                                             class="w-4 h-4 bg-success flex-shrink-0 bg-opacity-75 rounded-circle fs-10 lh-1 text-white d-flex align-items-center justify-content-center">
                                                             <i class="las la-check"></i>
                                                         </div>
-                                                        <small class="fw-bold">Up to 32 Cores</small>
+                                                        <!-- <small class="fw-bold">Up to 32 Cores</small> -->
                                                     </div>
-                                                    <a href="domain-registration.php" class="btn btn-sm btn-primary">
+                                                    <a href="https://portal.cloudhosti.com/cart.php?a=add&domain=register" class="btn btn-sm btn-primary">
                                                         Explore Now
                                                     </a>
                                                 </div>
@@ -150,7 +150,7 @@
                             Hosting
                         </a>
                         <ul class="contain-sub-1__content contain-sub-1__content-xl list-unstyled">
-                            <li>
+                            <!-- <li>
                                 <a href="wp-hosting.php"
                                     class="contain-sub-1__link text-decoration-none d-flex align-items-start gap-2">
                                     <span class="contain-sub-1__img">
@@ -174,7 +174,7 @@
                                         </span>
                                     </span>
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="shared-hosting.php"
                                     class="contain-sub-1__link text-decoration-none d-flex align-items-start gap-2">
@@ -191,7 +191,7 @@
                                     </span>
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="reseller-hosting.php"
                                     class="contain-sub-1__link text-decoration-none d-flex align-items-start gap-2">
                                     <span class="contain-sub-1__img">
@@ -222,16 +222,16 @@
                                         </span>
                                     </span>
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
-                                <a href="web-hosting.php"
+                                <a href="business-hosting.php"
                                     class="contain-sub-1__link text-decoration-none d-flex align-items-start gap-2">
                                     <span class="contain-sub-1__img">
                                         <img src="assets/img/icon-web-hosting.png" alt="image"
                                             class="img-fluid">
                                     </span>
                                     <span class="flex-grow-1">
-                                        <span class="contain-sub-1__title d-flex">Web Hosting</span>
+                                        <span class="contain-sub-1__title d-flex">Business Hosting</span>
                                         <span class="contain-sub-1__description">
                                             Web hosting is a type of web
                                             hosting a single physical
@@ -239,7 +239,7 @@
                                     </span>
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="ecommerce-hosting.php"
                                     class="contain-sub-1__link text-decoration-none d-flex align-items-start gap-2">
                                     <span class="contain-sub-1__img">
@@ -263,7 +263,7 @@
                                             class="img-fluid">
                                     </span>
                                     <span class="flex-grow-1">
-                                        <span class="contain-sub-1__title d-flex">Cloud Hosting</span>
+                                        <span class="contain-sub-1__title d-flex">CloudHosting</span>
                                         <span class="contain-sub-1__description">
                                             virtual servers running in a cloud computing environment
                                         </span>
@@ -283,10 +283,33 @@
                                         </span>
                                     </span>
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                     </li>
                     <li class="nav-item contain-sub-1">
+                        <a class="nav-link fw-bold" href="#">
+                            Business Email
+                        </a>
+                        <ul class="contain-sub-1__content list-unstyled">
+                            <li>
+                                <a href="google-workspace.php"
+                                    class="contain-sub-1__link text-decoration-none d-flex align-items-start gap-2">
+                                    <span class="contain-sub-1__img">
+                                        <img src="assets/images/google.svg" alt="google"
+                                            class="img-fluid">
+                                    </span>
+                                    <span class="flex-grow-1">
+                                        
+                                        <span class="contain-sub-1__title d-flex">Google Workspace</span>
+                                        <span class="contain-sub-1__description">
+                                             Gmail, Docs, Drive & Calendar powered by Google infrastructure.
+                                        </span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li class="nav-item contain-sub-1">
                         <a class="nav-link fw-bold" href="#">
                             Servers
                         </a>
@@ -328,12 +351,31 @@
                         <a class="nav-link fw-bold" href="price.php">
                             Pricing
                         </a>
-                    </li>
-                    <li class="nav-item">
+                    </li> -->
+                    <!-- <li class="nav-item">
                         <a href="contact.php"
                             class="link btn btn-sm btn-primary hover:bg-dark hover:border-dark fw-bold rounded-1">
                             Get Started
                         </a>
+                    </li> -->
+                    <li class="nav-item contain-sub-1 no-icon">
+                        <a class="nav-link btn-cart" href="javascript:void(0)">
+                            <i class="uil uil-shopping-cart"></i>
+                            <span id="cartCount" class="cartCount">0</span>
+                        </a>
+                        <div class="contain-sub-1__content list-unstyled p-4 bg-white shadow rounded" style="width: 300px;">
+    
+                            <div id="cartDropdownContent" class="mb-3">
+                                <!-- AJAX content loads here -->
+                            </div>
+                            <form id="whmcsCheckoutForm" action="https://portal.cloudhosti.com/cart.php" method="POST" style="display:none;">
+                                <input type="hidden" name="a" value="add">
+                            </form>
+                            <div class="text-center">
+                                <a href="https://portal.cloudhosti.com/cart.php?a=view" class="btn btn-primary btn-sm me-2">View Cart</a>
+                                <a href="javascript:void(0)" onclick="processCheckout()" class="btn btn-success btn-sm">Checkout</a>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>

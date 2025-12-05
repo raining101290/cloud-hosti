@@ -1,5 +1,6 @@
 {
   "1": {
+    "gid": 1,
     "tagline": "Perfect for beginners and small websites",
     "promo": "20OFF",
     "percentage": 20,
@@ -17,6 +18,7 @@
   },
 
   "2": {
+    "gid": 1,
     "tagline": "Perfect for medium and growing business",
     "promo": "20OFF",
     "percentage": 20,
@@ -34,6 +36,7 @@
   },
 
   "3": {
+    "gid": 1,
     "tagline": "High performance hosting + Free Domain",
     "promo": "20OFF",
     "percentage": 20,
@@ -51,7 +54,8 @@
   },
 
   "5": {
-    "tagline": "Business class hosting for small companies",
+    "gid": 3,
+    "tagline": "Business hosting + Free Domain for small companies",
     "promo": "50OFF",
     "percentage": 50,
     "features": [
@@ -67,7 +71,8 @@
   },
 
   "6": {
-    "tagline": "Standard business hosting with higher resources",
+    "gid": 3,
+    "tagline": "Standard business hosting + Free Domain with higher resources",
     "promo": "50OFF",
     "percentage": 50,
     "features": [
@@ -83,7 +88,8 @@
   },
 
   "7": {
-    "tagline": "Advanced business hosting for high-traffic websites",
+    "gid": 3,
+    "tagline": "Advanced business hosting + Free Domain for high-traffic websites",
     "promo": "50OFF",
     "percentage": 50,
     "features": [

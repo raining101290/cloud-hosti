@@ -83,7 +83,7 @@
 }
 @media (max-width: 991px){
     .logo {
-        --logo-height: 36px;
+        --logo-height: 42px;
         height: var(--logo-height);
         display: flex;
         flex-shrink: 0;
@@ -138,14 +138,18 @@
     background-color: #fcfdfe !important;
     background: linear-gradient(
         to right,
+        rgba(88, 149, 255, 0.2) 0%,
         rgba(255, 255, 255, 0.80) 50%,
         rgba(86, 151, 255, 0.8) 100% 
     );
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.6); 
     border-radius: 16px;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
+
 .blob {
   position: absolute;
   border-radius: 50%;
@@ -168,4 +172,218 @@
 }
 .mt-60{
     margin-top: 60px;
+}
+.contain-sub-1.no-icon .nav-link::after {
+    content: "";
+    display: none !important;
+    font-family: "Line Awesome Free";
+    font-weight: 900;
+    font-size: .75rem;
+    line-height: 1;
+    font-variant: normal;
+    text-rendering: auto;
+    color: inherit;
+}
+.contain-sub-1.no-icon .contain-sub-1__content{
+    left: auto;
+    right: 0px;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+}
+.cartCount{
+    background: linear-gradient(90.12deg, #E90387 -29.31%, #FC6866 100.59%);
+    width: 24px;
+    height: 24px;
+    /* position: absolute; */
+    top: -5px;
+    right: -5px;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+.navbar-nav .nav-item .nav-link.btn-cart{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+.nav-link.btn-cart i{
+    font-size: 20px;
+}
+small{
+    font-size: 12px !important;
+}
+p.sub-title{
+    line-height: 1.5rem;
+    font-size: 1rem;
+    letter-spacing: 0;
+    font-weight: 400;
+}
+h6.hanger{
+    font-size: 1rem;
+    letter-spacing: 0;
+    line-height: 1.5rem;
+    color: #1f1f1f;
+    font-weight: 500;
+}
+.bigger{
+    font-size: 1.375rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.75rem;
+    font-weight: 500;
+}
+
+.bigger small{
+    display: block;
+}
+
+
+
+.gapps-banner-animated-illustration {
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+.gapps-banner-animated-illustration .gmail-browser {
+    animation: createBox 0.5s;
+    background: url(../images/gsuite-hero-browser.png) no-repeat;
+    background-size: 659px 486px;
+    width: 659px;
+    height: 486px;
+    margin: 0 auto;
+    position: relative;
+    left: 5px;
+}
+.gapps-banner-animated-illustration .calendar {
+    background: url(../images/calendar-hero.png) no-repeat;
+    width: 170px;
+    height: 70px;
+    background-size: 170px 70px;
+    position: absolute;
+    top: 5px;
+    left: 551px;
+    animation: fadeInIcon 
+ease 2s;
+}
+.gapps-banner-animated-illustration .chat {
+    background: url(../images/chat-n-meet-pattern.png) no-repeat;
+    background-size: 327px 347px;
+    height: 347px;
+    position: absolute;
+    right: 0;
+    width: 327px;
+    bottom: -10px;
+    animation: bottomToTop 
+ease 2s;
+}
+.gapps-banner-animated-illustration .slides {
+    background: url(../images/slides-pattern.png) no-repeat;
+    width: 398px;
+    height: 111px;
+    background-size: 398px 111px;
+    position: absolute;
+    top: 58px;
+    right: -270px;
+    animation: rightToLeft 
+ease 2s;
+}
+.gapps-banner-animated-illustration .drive {
+    background: url(../images/drive-hero.png) no-repeat;
+    background-size: 116px 116px;
+    height: 116px;
+    width: 116px;
+    position: absolute;
+    top: -50px;
+    right: 135px;
+    animation: fadeInIcon 
+ease 2s;
+}
+.gapps-banner-animated-illustration .admin {
+    background: url(../images/admin-hero.png) no-repeat;
+    background-size: 92px 92px;
+    height: 92px;
+    width: 92px;
+    position: absolute;
+    top: 13px;
+    left: 71px;
+    animation: fadeInIcon 
+ease 2s;
+}
+.gapps-banner-animated-illustration .docs {
+    background: url(../images/docs-sheet-pattern.png) no-repeat;
+    width: 728px;
+    height: 294px;
+    background-size: 728px 294px;
+    position: absolute;
+    left: -355px;
+    top: 117px;
+    animation: leftToRight 
+ease 2s;
+}
+
+.package-title {
+    font-size: 2.25rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 2.75rem;
+    font-weight: 500;
+    color: var(--gm3-sys-color-on-surface, #1f1f1f);
+}
+.tagline{
+    color: #444746;
+    padding-block: .25rem;
+    -webkit-padding-start: .75rem;
+    padding-inline-start: .75rem;
+    -webkit-border-start: 2px solid var(--gm3-sys-color-primary, #0b57d0);
+    border-inline-start: 2px solid var(--gm3-sys-color-primary, #0b57d0);
+    line-height: 1.5rem;
+    font-size: 1rem;
+}
+
+.bg-gradient-primary {
+  background: -webkit-gradient(linear, right top, left top, from(rgb(96.9879518072, 64.0963855422, 145.9036144578)), to(rgb(35.6334661355, 67.1235059761, 172.3665338645)));
+  background: linear-gradient(to left, rgb(96.9879518072, 64.0963855422, 145.9036144578) 0%, rgb(35.6334661355, 67.1235059761, 172.3665338645) 100%);
+}
+
+.bg-gradient-success {
+  background: -webkit-gradient(linear, right top, left top, from(rgb(34, 197, 94)), to(rgb(16, 185, 129)));
+  background: linear-gradient(to left, rgb(34, 197, 94) 0%, rgb(16, 185, 129) 100%);
+}
+
+.timeline-slider-nav__next, .timeline-slider-nav__prev{
+    margin-top: -3px;
+    background-color: #ffffff;
+}
+
+@media (min-width: 576px) {
+    .text-sm-end {
+        text-align: right !important;
+    }
+}
+
+.list-inline-item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 5px;
+}
+.avatar.avatar-ex-sm {
+    max-height: 25px !important;
+}
+
+.payment_card {
+    margin: 3px;
+    padding: 1px;
+    border-radius: 2px;
+    background-image: linear-gradient(to bottom right, #ffffff, #dadada);
+}
+
+.monthly-price h4 span,
+.yearly-price h4 span{
+    font-size: 18px;
+    color: #666666;
 }

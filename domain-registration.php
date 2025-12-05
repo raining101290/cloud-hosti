@@ -1,6 +1,10 @@
 <?php
-require_once 'helper/utils.php';
-include_once 'includes/meta.php';
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+require 'helper/utils.php';
+include 'includes/meta.php';
+
 $currentPage = basename($_SERVER['PHP_SELF'], '.php');
 $meta = getMetaData($currentPage);
 ?>
@@ -14,7 +18,7 @@ $meta = getMetaData($currentPage);
     <!--title-->
     <title><?php echo htmlspecialchars($meta['title']); ?></title>
     <meta name="description" content="<?php echo htmlspecialchars($meta['description']); ?>">
-    <meta name="author" content="Cloud Hosti">
+    <meta name="author" content="CloudHosti">
     <meta name="keywords" content="">
     <!--favicon icon-->
     <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="16x16" />
@@ -22,6 +26,9 @@ $meta = getMetaData($currentPage);
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/custom.css">
     <!-- endbuild -->
+    <link href="assets/lib/@iconscout/unicons/css/line.css" type="text/css" rel="stylesheet">
+    <!-- endbuild -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -29,7 +36,7 @@ $meta = getMetaData($currentPage);
     <!--preloader start-->
     <div class="preloader bg-light-subtle">
         <div class="preloader-wrap">
-            <img src="assets/images/cloudhosti-logo.png" alt="Cloud Hosti logo" height="61px">
+            <img class="mb-2" src="assets/images/cloudhosti-logo.png" alt="CloudHosti logo" height="41px">
             <div class="loading-bar"></div>
         </div>
     </div>
@@ -37,11 +44,11 @@ $meta = getMetaData($currentPage);
     <?php include('./components/header.php') ?>
 
     <!-- Banner  -->
-    <section class="banner banner-security bg-dark control-panel-banner">
+    <section class="banner banner-security bg-custom-5 control-panel-banner">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <span class="fs-18 fw-semibold text-primary mb-2" data-sal="slide-up" data-sal-duration="1000"
+                    <span class="fs-18 fw-semibold text-success mb-2" data-sal="slide-up" data-sal-duration="1000"
                         data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                         Security & Technology
                     </span>
@@ -636,7 +643,7 @@ $meta = getMetaData($currentPage);
                 <div class="col-xxl-5" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                     <h2 class="h3 mb-3">
                         Why Buy Domains at
-                        Hostingard?
+                        CloudHosti?
                     </h2>
                     <p class="mb-8 max-text-48">
                         Grab a 36-month hosting plan and get a free domain for one year. You can
@@ -736,7 +743,7 @@ $meta = getMetaData($currentPage);
                                 Domain Registration FAQ’s
                             </h2>
                             <p class="mb-0 max-text-52 mx-auto">
-                                The best thing we love about Hostcity is it does two-way sync with Google us to better
+                                The best thing we love about CloudHosti is it does two-way sync with Google us to better
                                 organize & keep everything on track.
                             </p>
                         </div>

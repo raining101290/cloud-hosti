@@ -39,21 +39,23 @@ $features = file_exists($featuresFile)
     <!--title-->
     <title><?php echo htmlspecialchars($meta['title']); ?></title>
     <meta name="description" content="<?php echo htmlspecialchars($meta['description']); ?>">
-    <meta name="author" content="Cloud Hosti">
+    <meta name="author" content="CloudHosti">
     <meta name="keywords" content="">
     <!--favicon icon-->
     <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="16x16">
     <!--build:css-->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/custom.css">
+    <link href="assets/lib/@iconscout/unicons/css/line.css" type="text/css" rel="stylesheet">
     <!-- endbuild -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body class="bg-secondary">
     <!--preloader start-->
     <div class="preloader bg-light-subtle">
       <div class="preloader-wrap">
-        <img src="assets/images/cloudhosti-logo.png" alt="Cloud Hosti logo" height="61px">
+        <img class="mb-2" src="assets/images/cloudhosti-logo.png" alt="CloudHosti logo" height="41px">
         <div class="loading-bar"></div>
       </div>
     </div>
@@ -70,7 +72,7 @@ $features = file_exists($featuresFile)
                             data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                             <span><img src="assets/img/shape/bage-1.png" alt=""></span>
                             <span>
-                                Don't miss limited-time savings: <span class="text-warning">Savings 10%</span>
+                                Don't miss limited-time savings: <span class="text-warning">Savings 20%</span>
                             </span>
                         </div>
                     </div>
@@ -266,172 +268,171 @@ $features = file_exists($featuresFile)
     
     <!-- Price -->
     <section class="pt-120 pb-120">
-    <div class="pb-40">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-8">
-                    <div class="text-center">
-                        <h2>Web Hosting Plans for Your Website</h2>
-                        <p class="mb-0 max-text-56 mx-auto">
-                            Launch your website with powerful hosting optimized for speed, security, and reliability. Choose the perfect plan and get online today.
-                        </p>
-                    </div>
-
-                    <div class="d-flex align-items-center justify-content-center gap-3 mt-5">
-                        <small class="fw-semibold">Monthly</small>
-                        <div class="form-check form-switch toggle-switch">
-                            <input class="form-check-input pricing-toggle" type="checkbox" id="flexSwitchCheckDefault">
+        <div class="pb-40">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-8">
+                        <div class="text-center">
+                            <h2>Web Hosting Plans for Your Website</h2>
+                            <p class="mb-0 max-text-56 mx-auto">
+                                Launch your website with powerful hosting optimized for speed, security, and reliability. Choose the perfect plan and get online today.
+                            </p>
                         </div>
-                        <small class="fw-semibold">Yearly</small>
+
+                        <div class="d-flex align-items-center justify-content-center gap-3 mt-5">
+                            <small class="fw-semibold">Monthly</small>
+                            <div class="form-check form-switch toggle-switch">
+                                <input class="form-check-input pricing-toggle" type="checkbox" id="flexSwitchCheckDefault">
+                            </div>
+                            <small class="fw-semibold">Yearly</small>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
-    <div class="container">
-        <div class="row g-4 g-xl-0">
+        <div class="container">
+            <div class="row g-4 g-xl-0">
+                <?php foreach ($products as $product): ?>
+                    <?php
+                        $pid = $product['pid'];
 
-            <?php foreach ($products as $product): ?>
-                <?php
-                    $pid = $product['pid'];
+                        // Skip if no features for this product
+                        if (!isset($features[$pid])) continue;
 
-                    // Skip if no features for this product
-                    if (!isset($features[$pid])) continue;
+                        $f = $features[$pid];
 
-                    $f = $features[$pid];
+                        // --- Extract WHMCS values ---
+                        $title   = $product['name'] ?? 'Hosting Plan';
+                        $monthly = floatval($product['pricing']['USD']['monthly'] ?? -1);
+                        $yearly  = floatval($product['pricing']['USD']['annually'] ?? -1);
 
-                    // --- Extract WHMCS values ---
-                    $title   = $product['name'] ?? 'Hosting Plan';
-                    $monthly = floatval($product['pricing']['USD']['monthly'] ?? -1);
-                    $yearly  = floatval($product['pricing']['USD']['annually'] ?? -1);
+                        // Normal / original price (optional field inside your features JSON)
+                        $normal  = $f['normal_price'] ?? '';
 
-                    // Normal / original price (optional field inside your features JSON)
-                    $normal  = $f['normal_price'] ?? '';
+                        $discountPercent = $f['percentage'] ?? 0;
 
-                    $discountPercent = $f['percentage'] ?? 0;
+                        $monthly_discounted = ($monthly > 0)
+                            ? $monthly - (($monthly * $discountPercent) / 100)
+                            : -1;
 
-                    $monthly_discounted = ($monthly > 0)
-                        ? $monthly - (($monthly * $discountPercent) / 100)
-                        : -1;
+                        $yearly_discounted = ($yearly > 0)
+                            ? $yearly - (($yearly * $discountPercent) / 100)
+                            : -1;
+                        
+                        // Tagline from features.json
+                        $tagline = $f['tagline'] ?? '';
 
-                    $yearly_discounted = ($yearly > 0)
-                        ? $yearly - (($yearly * $discountPercent) / 100)
-                        : -1;
-                    
-                    // Tagline from features.json
-                    $tagline = $f['tagline'] ?? '';
+                        // Renewal text (optional)
+                        $renew   = $f['renew_text'] ?? '';
 
-                    // Renewal text (optional)
-                    $renew   = $f['renew_text'] ?? '';
+                        // Features list
+                        $featList = $f['features'] ?? [];
+                    ?>
 
-                    // Features list
-                    $featList = $f['features'] ?? [];
-                ?>
+                    <div class="col-xl-4 col-md-4 col-12 mb-3">
+                        <div class="price-card-item-one position-relative overflow-hidden bg-white px-7 py-9 border-end">
 
-                <div class="col-xl-4 col-md-4 col-12 mb-3">
-                    <div class="price-card-item-one position-relative overflow-hidden bg-white px-7 py-9 border-end">
+                            <!-- Optional Discount Badge -->
+                            <?php if ($discountPercent > 0): ?>
+                                <div class="discount-badge gradient-bg">
+                                    <p class="text-white fw-bold mb-0"><?= $discountPercent ?>% OFF</p>
+                                </div>
+                            <?php endif; ?>
 
-                        <!-- Optional Discount Badge -->
-                        <?php if ($discountPercent > 0): ?>
-                            <div class="discount-badge gradient-bg">
-                                <p class="text-white fw-bold mb-0"><?= $discountPercent ?>% OFF</p>
+                            <!-- Title -->
+                            <h6 class="mb-1 text-truncate"><?= htmlspecialchars($title) ?></h6>
+                            <!-- Tagline (optional) -->
+                            <?php if (!empty($tagline)): ?>
+                                <small class="d-block mb-1"><?= htmlspecialchars($tagline) ?></small>
+                            <?php endif; ?>
+                            <!-- Pricing -->
+                            <div class="mt-5">
+                                <?php if ($monthly > 0): ?>
+                                <div class="monthly-price">
+                                    <?php if ($discountPercent > 0): ?>
+                                        <!-- Discounted monthly price -->
+                                        <h4>
+                                            <span class="text-decoration-line-through">
+                                            $<?= number_format($monthly, 2) ?>
+                                            </span>
+                                            $<?= number_format($monthly_discounted, 2) ?>
+                                            <span class="fs-14 text-muted">/month</span>
+                                        </h4>
+                                        <!-- Original price -->
+                                        
+                                    <?php endif; ?>
+                                </div>
+                                <?php endif; ?>
+                                <?php if ($yearly > 0): ?>
+                                <div class="yearly-price">
+                                    <?php if ($discountPercent > 0): ?>
+                                        <!-- Discounted yearly price -->
+                                        <h4>
+                                            <span class="text-decoration-line-through">
+                                            $<?= number_format($yearly, 2) ?>
+                                            </span>
+                                            $<?= number_format($yearly_discounted, 2) ?>
+                                            <span class="fs-14 text-muted">/year</span>
+                                        </h4>
+                                        <!-- Original yearly price -->
+                                        
+                                    <?php endif; ?>
+                                </div>
+                                <?php endif; ?>
                             </div>
-                        <?php endif; ?>
-
-                        <!-- Title -->
-                        <h6 class="mb-1 text-truncate"><?= htmlspecialchars($title) ?></h6>
-                        <!-- Tagline (optional) -->
-                        <?php if (!empty($tagline)): ?>
-                            <small class="d-block mb-1"><?= htmlspecialchars($tagline) ?></small>
-                        <?php endif; ?>
-                        <!-- Pricing -->
-                        <div class="mt-5">
                             <?php if ($monthly > 0): ?>
                             <div class="monthly-price">
-                                <?php if ($discountPercent > 0): ?>
-                                    <!-- Discounted monthly price -->
-                                    <h4>
-                                        $<?= number_format($monthly_discounted, 2) ?>
-                                        <span class="fs-14 text-muted">/month</span>
-                                    </h4>
-                                    <!-- Original price -->
-                                    <h4 class="text-decoration-line-through">
-                                        Normally $<?= number_format($monthly, 2) ?>
-                                    </h4>
-                                <?php endif; ?>
+                                <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="javascript:void(0)" onClick="addToCart(<?= $pid ?>, 'monthly', '<?= $f['promo'] ?>', 'hosting')"
+                                >
+                                    <span class="btn-arrow__text">
+                                        Add to Cart
+                                        <span class="btn-arrow__icon">
+                                            <i class="las la-arrow-right"></i>
+                                        </span>
+                                    </span>
+                                </a>
                             </div>
                             <?php endif; ?>
                             <?php if ($yearly > 0): ?>
                             <div class="yearly-price">
-                                <?php if ($discountPercent > 0): ?>
-                                    <!-- Discounted yearly price -->
-                                    <h4>
-                                        $<?= number_format($yearly_discounted, 2) ?>
-                                        <span class="fs-14 text-muted">/year</span>
-                                    </h4>
-                                    <!-- Original yearly price -->
-                                    <h4 class="text-decoration-line-through">
-                                        Normally $<?= number_format($yearly, 2) ?>
-                                    </h4>
-                                <?php endif; ?>
+                                <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="javascript:void(0)" onClick="addToCart(<?= $pid ?>, 'annually', '<?= $f['promo'] ?>', 'hosting')">
+                                    <span class="btn-arrow__text">
+                                        Add to Cart
+                                        <span class="btn-arrow__icon">
+                                            <i class="las la-arrow-right"></i>
+                                        </span>
+                                    </span>
+                                </a>
                             </div>
                             <?php endif; ?>
-                        </div>
-                        <?php if ($monthly > 0): ?>
-                        <div class="monthly-price">
-                            <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="https://portal.cloudhosti.com/cart.php?a=add&pid=<?= $pid ?>&billingcycle=monthly&promocode=<?= $f['promo'] ?>">
-                                <span class="btn-arrow__text">
-                                    Add to Cart
-                                    <span class="btn-arrow__icon">
-                                        <i class="las la-arrow-right"></i>
-                                    </span>
-                                </span>
-                            </a>
-                            <!-- <small class="d-block fw-medium mt-2">$<?= $monthly ?></small> -->
-                        </div>
-                        <?php endif; ?>
-                        <?php if ($yearly > 0): ?>
-                        <div class="yearly-price">
-                            <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="https://portal.cloudhosti.com/cart.php?a=add&pid=<?= $pid ?>&billingcycle=annually&promocode=<?= $f['promo'] ?>">
-                                <span class="btn-arrow__text">
-                                    Add to Cart
-                                    <span class="btn-arrow__icon">
-                                        <i class="las la-arrow-right"></i>
-                                    </span>
-                                </span>
-                            </a>
-                            <!-- <small class="d-block fw-medium mt-2">$<?= $yearly ?></small> -->
-                        </div>
-                        <?php endif; ?>
 
-                        <!-- Features Section -->
-                        <div class="mt-6">
-                            <h6 class="mb-5">Top Featured</h6>
-                            <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+                            <!-- Features Section -->
+                            <div class="mt-6">
+                                <h6 class="mb-5">Top Featured</h6>
+                                <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
 
-                                <?php foreach ($featList as $feature): ?>
-                                    <?php if (!empty($feature)): ?>
-                                    <li class="d-flex align-items-center gap-3">
-                                        <div class="w-4 h-4 bg-success rounded-circle fs-12 text-white 
-                                            d-flex align-items-center justify-content-center flex-shrink-0">
-                                            <i class="las la-check"></i>
-                                        </div>
-                                        <small><?= htmlspecialchars($feature) ?></small>
-                                    </li>
-                                    <?php endif; ?>
-                                <?php endforeach; ?>
+                                    <?php foreach ($featList as $feature): ?>
+                                        <?php if (!empty($feature)): ?>
+                                        <li class="d-flex align-items-center gap-3">
+                                            <div class="w-4 h-4 bg-success rounded-circle fs-12 text-white 
+                                                d-flex align-items-center justify-content-center flex-shrink-0">
+                                                <i class="las la-check"></i>
+                                            </div>
+                                            <small><?= htmlspecialchars($feature) ?></small>
+                                        </li>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
 
-                            </ul>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-            <?php endforeach; ?>
-
+                <?php endforeach; ?>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     
     <!-- Why -->
@@ -441,10 +442,10 @@ $features = file_exists($featuresFile)
                 <div class="col-xl-7">
                     <h2 class="text-white" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">Why Choose CloudHosti for Your Hosting Needs?</h2>
                 </div>
-                <div class="col-xl-4">
+                <!-- <div class="col-xl-4">
                     <p class="text-white" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">SSL is industry-standard encryption! Protect important data, win visitors Pick a
                         plan from the SSL certificate</p>
-                </div>
+                </div> -->
             </div>
             <div class="mt-8">
                 <div class="row g-4">
@@ -647,7 +648,7 @@ $features = file_exists($featuresFile)
     </section><!-- Feedback -->
     
     <!-- Wp Hosting -->
-    <section class="pt-60 pb-60">
+    <!-- <section class="pt-60 pb-60">
         <div class="container">
             <div class="row align-items-center g-6">
                 <div class="col-lg-6">
@@ -695,10 +696,11 @@ $features = file_exists($featuresFile)
                 </div>
             </div>
         </div>
-    </section><!-- Wp Hosting -->
+    </section> -->
+    <!-- Wp Hosting -->
     
     <!-- Blog -->
-    <section class="bg-dark pt-120 pb-120">
+    <!-- <section class="bg-custom-5 pt-120 pb-120">
         <div class="pb-40">
             <div class="container">
                 <div class="row g-4 justify-content-between align-items-center">
@@ -861,10 +863,11 @@ $features = file_exists($featuresFile)
                 </div>
             </div>
         </div>
-    </section><!-- Blog -->
+    </section> -->
+    <!-- Blog -->
     
     <!-- Cta -->
-    <section class="mt-n10">
+    <!-- <section class="mt-n10">
         <div class="container">
             <div class="cta-wrapper-one pt-60 pb-60 px-6 rounded-3">
                 <div class="row justify-content-center">
@@ -907,7 +910,8 @@ $features = file_exists($featuresFile)
                 </div>
             </div>
         </div>
-    </section><!-- Cta -->
+    </section> -->
+    <!-- Cta -->
     
     <?php include('./components/footer.php') ?>
     <script>
@@ -970,7 +974,8 @@ $features = file_exists($featuresFile)
                     resultBox.innerHTML = `<div class='alert alert-danger' role='alert'><p class="text-danger mb-0">API Error: ${err}</p></div>`;
                 });
         });
-        </script>
+    </script>
+
 </body>
 
 </html>

@@ -1,4 +1,34 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
+require 'helper/utils.php';
+include 'includes/meta.php';
+include 'includes/apis/domainPricing.php';
+include 'includes/apis/productPricing.php';
+
+$currentPage = basename($_SERVER['PHP_SELF'], '.php');
+$meta = getMetaData($currentPage);
+
+$cacheFile       = __DIR__ . "/cache/domainPricing.json";
+$productFile     = __DIR__ . "/cache/products.json";
+$featuresFile    = __DIR__ . "/cache/productFeatures.json";
+
+// Load domain pricing
+$tlds = file_exists($cacheFile)
+    ? json_decode(file_get_contents($cacheFile), true)
+    : [];
+
+// Load WHMCS products
+$products = file_exists($productFile)
+    ? json_decode(file_get_contents($productFile), true)
+    : [];
+
+// Load your custom features JSON
+$features = file_exists($featuresFile)
+    ? json_decode(file_get_contents($featuresFile), true)
+    : [];
+?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 
@@ -7,28 +37,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--meta-->
-    <meta name="description" content="WriteBot ai content generator and writing assistant for saas platform">
-    <meta name="author" content="ThemeTags">
-    <meta name="keywords" content="ai, ai assistant, ai content writer, ai copywriting">
+    <title><?php echo htmlspecialchars($meta['title']); ?></title>
+    <meta name="description" content="<?php echo htmlspecialchars($meta['description']); ?>">
+    <meta name="author" content="CloudHosti">
+    <meta name="keywords" content="">
     <!--favicon icon-->
     <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="16x16">
-
-    <!--title-->
-    <title>Home - Hostingard</title>
 
     <!--build:css-->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/custom.css">
     <!-- endbuild -->
+    <link href="assets/lib/@iconscout/unicons/css/line.css" type="text/css" rel="stylesheet">
+    <!-- endbuild -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
-<body>
+<body class="bg-secondary">
 
     <!--preloader start-->
     <div class="preloader bg-light-subtle">
         <div class="preloader-wrap">
-            <img src="assets/images/cloudhosti-logo.png" alt="Cloud Hosti logo" height="61px">
+            <img class="mb-2" src="assets/images/cloudhosti-logo.png" alt="CloudHosti logo" height="41px">
             <div class="loading-bar"></div>
         </div>
     </div>
@@ -36,13 +66,13 @@
     <?php include('./components/header.php') ?>
 
     <!-- Banner  -->
-    <section class="banner banner-security bg-dark control-panel-banner">
+    <section class="banner banner-security bg-custom-5 control-panel-banner">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7 col-xl-6">
                     <span class="fs-18 fw-semibold text-primary mb-2" data-sal="slide-up" data-sal-duration="300"
                         data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                        Domain Registration
+                        Up to 20% off
                     </span>
                     <h1 class="text-white mb-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                         Shared Hosting
@@ -51,20 +81,20 @@
                     <p class="mb-8 text-white max-text-72 text-opacity-75" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                         Fast, secure, and affordable hosting plans for any budget
                     </p>
-                    <div class="d-flex align-items-center gap-5 flex-wrap" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                    <!-- <div class="d-flex align-items-center gap-5 flex-wrap" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                         <a href="#" class="btn btn-primary btn-arrow btn-arrow btn-arrow-md btn-lg fs-14 fw-medium rounded">
                             <span class="btn-arrow__text">
-                                Get Started
+                                Start with 
                                 <span class="btn-arrow__icon">
                                     <i class="las la-arrow-right"></i>
                                 </span>
                             </span>
                         </a>
-                        <h4 class="text-white mb-0">$24.09 <span class="fw-normal fs-16">/mo</span></h4>
-                    </div>
-                    <span class="d-block fs-14 text-white text-opacity-75 mt-2" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                        <h4 class="text-white mb-0">$1.20 <span class="fw-normal fs-16">/mo</span></h4>
+                    </div> -->
+                    <!-- <span class="d-block fs-14 text-white text-opacity-75 mt-2" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                         Worry-free - 45 Days Money Back
-                    </span>
+                    </span> -->
                 </div>
                 <div class="col-lg-5 col-xl-6 text-lg-end">
                     <img src="assets/img/shared-hosting-img.png" alt="image" class="img-fluid" data-sal="fade" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
@@ -75,7 +105,173 @@
     <!-- /Banner  -->
 
     <!-- Price  -->
-    <div class="domain-list-section position-relative pb-120">
+    <section class="pt-120 pb-120">
+        <div class="pb-40">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-8">
+                        <div class="text-center">
+                            <h2>Web Hosting Plans for Your Website</h2>
+                            <p class="mb-0 max-text-56 mx-auto">
+                                Launch your website with powerful hosting optimized for speed, security, and reliability. Choose the perfect plan and get online today.
+                            </p>
+                        </div>
+
+                        <div class="d-flex align-items-center justify-content-center gap-3 mt-5">
+                            <small class="fw-semibold">Monthly</small>
+                            <div class="form-check form-switch toggle-switch">
+                                <input class="form-check-input pricing-toggle" type="checkbox" id="flexSwitchCheckDefault">
+                            </div>
+                            <small class="fw-semibold">Yearly</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row g-4 g-xl-0">
+                <?php foreach ($products as $product): ?>
+                    <?php
+                        if ($product['gid'] != 1) continue;
+
+                        $pid = $product['pid'];
+                        if (!isset($features[$pid])) continue;
+
+                        $f = $features[$pid];
+
+                        // --- Extract WHMCS values ---
+                        $title   = $product['name'] ?? 'Hosting Plan';
+                        $monthly = floatval($product['pricing']['USD']['monthly'] ?? -1);
+                        $yearly  = floatval($product['pricing']['USD']['annually'] ?? -1);
+
+                        // Normal / original price (optional field inside your features JSON)
+                        $normal  = $f['normal_price'] ?? '';
+
+                        $discountPercent = $f['percentage'] ?? 0;
+
+                        $monthly_discounted = ($monthly > 0)
+                            ? $monthly - (($monthly * $discountPercent) / 100)
+                            : -1;
+
+                        $yearly_discounted = ($yearly > 0)
+                            ? $yearly - (($yearly * $discountPercent) / 100)
+                            : -1;
+                        
+                        // Tagline from features.json
+                        $tagline = $f['tagline'] ?? '';
+
+                        // Renewal text (optional)
+                        $renew   = $f['renew_text'] ?? '';
+
+                        // Features list
+                        $featList = $f['features'] ?? [];
+                    ?>
+
+                    <div class="col-xl-4 col-md-4 col-12 mb-3">
+                        <div class="price-card-item-one position-relative overflow-hidden bg-white px-7 py-9 border-end">
+
+                            <!-- Optional Discount Badge -->
+                            <?php if ($discountPercent > 0): ?>
+                                <div class="discount-badge gradient-bg">
+                                    <p class="text-white fw-bold mb-0"><?= $discountPercent ?>% OFF</p>
+                                </div>
+                            <?php endif; ?>
+
+                            <!-- Title -->
+                            <h6 class="mb-1 text-truncate"><?= htmlspecialchars($title) ?></h6>
+                            <!-- Tagline (optional) -->
+                            <?php if (!empty($tagline)): ?>
+                                <small class="d-block mb-1"><?= htmlspecialchars($tagline) ?></small>
+                            <?php endif; ?>
+                            <!-- Pricing -->
+                            <div class="mt-5">
+                                <?php if ($monthly > 0): ?>
+                                <div class="monthly-price">
+                                    <?php if ($discountPercent > 0): ?>
+                                        <!-- Discounted monthly price -->
+                                        <h4>
+                                            <small class="text-decoration-line-through">
+                                            $<?= number_format($monthly, 2) ?>
+                                            </small>
+                                            $<?= number_format($monthly_discounted, 2) ?>
+                                            <span class="fs-14 text-muted">/month</span>
+                                        </h4>
+                                        <!-- Original price -->
+                                        
+                                    <?php endif; ?>
+                                </div>
+                                <?php endif; ?>
+                                <?php if ($yearly > 0): ?>
+                                <div class="yearly-price">
+                                    <?php if ($discountPercent > 0): ?>
+                                        <!-- Discounted yearly price -->
+                                        <h4>
+                                            <small class="text-decoration-line-through">
+                                            $<?= number_format($yearly, 2) ?>
+                                            </small>
+                                            $<?= number_format($yearly_discounted, 2) ?>
+                                            <span class="fs-14 text-muted">/year</span>
+                                        </h4>
+                                        <!-- Original yearly price -->
+                                        
+                                    <?php endif; ?>
+                                </div>
+                                <?php endif; ?>
+                            </div>
+                            <?php if ($monthly > 0): ?>
+                            <div class="monthly-price">
+                                <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="javascript:void(0)" onClick="addToCart(<?= $pid ?>, 'monthly', '<?= $f['promo'] ?>', 'hosting')"
+                                >
+                                    <span class="btn-arrow__text">
+                                        Add to Cart
+                                        <span class="btn-arrow__icon">
+                                            <i class="las la-arrow-right"></i>
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                            <?php endif; ?>
+                            <?php if ($yearly > 0): ?>
+                            <div class="yearly-price">
+                                <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="javascript:void(0)" onClick="addToCart(<?= $pid ?>, 'annually', '<?= $f['promo'] ?>', 'hosting')">
+                                    <span class="btn-arrow__text">
+                                        Add to Cart
+                                        <span class="btn-arrow__icon">
+                                            <i class="las la-arrow-right"></i>
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                            <?php endif; ?>
+
+                            <!-- Features Section -->
+                            <div class="mt-6">
+                                <h6 class="mb-5">Top Featured</h6>
+                                <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+
+                                    <?php foreach ($featList as $feature): ?>
+                                        <?php if (!empty($feature)): ?>
+                                        <li class="d-flex align-items-center gap-3">
+                                            <div class="w-4 h-4 bg-success rounded-circle fs-12 text-white 
+                                                d-flex align-items-center justify-content-center flex-shrink-0">
+                                                <i class="las la-check"></i>
+                                            </div>
+                                            <small><?= htmlspecialchars($feature) ?></small>
+                                        </li>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+    <!-- <div class="domain-list-section position-relative pb-120">
         <div class="container">
             <div class="row g-4">
                 <div class="col-xl-3 col-md-6">
@@ -436,11 +632,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- /Price  -->
 
     <!-- Featured List  -->
-    <div class="pt-120 pb-120 bg-primary bg-opacity-5">
+    <!-- <div class="pt-120 pb-120 bg-primary bg-opacity-5">
         <div class="pb-60">
             <div class="container">
                 <div class="row justify-content-center">
@@ -549,7 +745,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- /Featured List  -->
 
     <!-- Why Choose Section  -->
@@ -801,21 +997,21 @@
                 <div class="col-xxl-5" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                     <h2 class="h3 mb-3">
                         Why Buy Domains at
-                        Hostingard?
+                        CloudHosti?
                     </h2>
                     <p class="mb-8 max-text-48">
                         Grab a 36-month hosting plan and get a free domain for one year. You can
                         get popular generic
                         top-level domain names like .com, .net, .org, and other extensions for free.
                     </p>
-                    <a href="price.php" class="btn btn-primary btn-arrow btn-arrow-lg btn-lg fs-14 fw-semibold rounded transition">
+                    <!-- <a href="price.php" class="btn btn-primary btn-arrow btn-arrow-lg btn-lg fs-14 fw-semibold rounded transition">
                         <span class="btn-arrow__text">
                             View Pricing
                             <span class="btn-arrow__icon">
                                 <i class="las la-arrow-right"></i>
                             </span>
                         </span>
-                    </a>
+                    </a> -->
                 </div>
                 <div class="col-xxl-7">
                     <div class="row g-4">
@@ -886,7 +1082,7 @@
     </div>
     <!-- /Buy Domain  -->
 
-    <div class="pt-120 pb-60">
+    <!-- <div class="pt-120 pb-60">
         <div class="pb-40">
             <div class="container">
                 <div class="row justify-content-center">
@@ -1894,10 +2090,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- FAQ  -->
-    <div class="pt-60 pb-120">
+    <div class="pt-120 pb-120">
         <div class="pb-40">
             <div class="container">
                 <div class="row justify-content-center">
@@ -1908,12 +2104,8 @@
                                 FAQ
                             </span>
                             <h2>
-                                Domain Registration FAQ’s
+                                Shared Hosting Related FAQ’s
                             </h2>
-                            <p class="mb-0 max-text-52 mx-auto">
-                                The best thing we love about CloudHosti is it does two-way sync with Google us to better
-                                organize & keep everything on track.
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -1926,58 +2118,81 @@
                         <div class="accordion-item border rounded-3 mb-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                             <h2 class="accordion-header">
                                 <button class="accordion-button bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapseOneA" aria-expanded="false" aria-controls="faq-collapseOneA">
-                                    <span class="text-body fs-16 fw-bold">What is Shared hosting?</span>
+                                    <span class="text-body fs-16 fw-bold">What kind of web hosting do I need?</span>
                                 </button>
                             </h2>
                             <div id="faq-collapseOneA" class="accordion-collapse collapse show" data-bs-parent="#accordionFaq2">
-                                <div class="accordion-body pt-0">We care about safety big time — and so do your site's
-                                    visitors. With a Shared Hosting account, you get an SSL certificate for free to add to
-                                    your site. In this day and age, having an SSL for your site is a no-brainer best
-                                    practice. Not only does an SSL help your visitors feel safe interacting with your site —
-                                    this is particularly important if you run an e-commerce site.</div>
+                                <div class="accordion-body pt-0">We offer many hosting packages on Linux OS with cPanel. Which one you need depends on what you want to do with your site, like whether you want to create a shopping cart, blog or podcast with a specific Web application. If you're not sure if you need which package, you can always call our hosting support team. We're here to help 24/7.</div>
                             </div>
                         </div>
                         <div class="accordion-item border rounded-3 mb-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                             <h2 class="accordion-header">
                                 <button class="accordion-button bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapseTwoA" aria-expanded="false" aria-controls="faq-collapseTwoA">
-                                    <span class="text-body fs-16 fw-bold">How many websites can I host?</span>
+                                    <span class="text-body fs-16 fw-bold">What can I use to build my website?</span>
                                 </button>
                             </h2>
                             <div id="faq-collapseTwoA" class="accordion-collapse collapse" data-bs-parent="#accordionFaq2">
-                                <div class="accordion-body pt-0">We care about safety big time — and so do your site's
-                                    visitors. With a Shared Hosting account, you get an SSL certificate for free to add to
-                                    your site. In this day and age, having an SSL for your site is a no-brainer best
-                                    practice. Not only does an SSL help your visitors feel safe interacting with your site —
-                                    this is particularly important if you run an e-commerce site.</div>
+                                <div class="accordion-body pt-0">You can build your website in several different ways – from hand-coding with HTML to using a website builder program. If you require a lot of functionality and versatility from your website, you’ll benefit from programs and applications that can help you build your site. Our Web hosting plans give you access to free, server-side applications that can be used to develop and customize your website, including popular Content Management System (CMS) applications like WordPress® and Joomla!®.</div>
                             </div>
                         </div>
                         <div class="accordion-item border rounded-3 mb-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                             <h2 class="accordion-header">
                                 <button class="accordion-button bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse3A" aria-expanded="false" aria-controls="faq-collapse3A">
-                                    <span class="text-body fs-16 fw-bold">Do you include SSL Certificates?</span>
+                                    <span class="text-body fs-16 fw-bold">How do I transfer my web pages to your server?</span>
                                 </button>
                             </h2>
                             <div id="faq-collapse3A" class="accordion-collapse collapse" data-bs-parent="#accordionFaq2">
-                                <div class="accordion-body pt-0">We care about safety big time — and so do your site's
-                                    visitors. With a Shared Hosting account, you get an SSL certificate for free to add to
-                                    your site. In this day and age, having an SSL for your site is a no-brainer best
-                                    practice. Not only does an SSL help your visitors feel safe interacting with your site —
-                                    this is particularly important if you run an e-commerce site.</div>
+                                <div class="accordion-body pt-0">Yes, If you’ve built your websites in a HTML editor, like Dreamweaver or Microsoft Expression Studio, you have to upload your website files via FTP (File Transfer Protocol). We have a built-in FTP File Manager that you can access in our Hosting Control Center.</div>
                             </div>
                         </div>
                         <div class="accordion-item border rounded-3 mb-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                             <h2 class="accordion-header">
                                 <button class="accordion-button bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse4A" aria-expanded="false" aria-controls="faq-collapse4A">
-                                    <span class="text-body fs-16 fw-bold">ow to use the Track Delivery feature in the
-                                        cPanel?</span>
+                                    <span class="text-body fs-16 fw-bold">What Payment method do you accept?</span>
                                 </button>
                             </h2>
                             <div id="faq-collapse4A" class="accordion-collapse collapse" data-bs-parent="#accordionFaq2">
-                                <div class="accordion-body pt-0">We care about safety big time — and so do your site's
-                                    visitors. With a Shared Hosting account, you get an SSL certificate for free to add to
-                                    your site. In this day and age, having an SSL for your site is a no-brainer best
-                                    practice. Not only does an SSL help your visitors feel safe interacting with your site —
-                                    this is particularly important if you run an e-commerce site.</div>
+                                <div class="accordion-body pt-0">We accept payment through Bangladeshi's Top payment gateway <b>SSLCommerz</b> which support all the major channels.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse8A" aria-expanded="false" aria-controls="faq-collapse8A">
+                                    <span class="text-body fs-16 fw-bold">If I already have a website, can I transfer it to your web hosting?</span>
+                                </button>
+                            </h2>
+                            <div id="faq-collapse8A" class="accordion-collapse collapse" data-bs-parent="#accordionFaq2">
+                                <div class="accordion-body pt-0">Moving your website to EyHost is a simple process. If you have access to your existing website files, you can upload them through our Hosting Control Center or via an FTP client. If you don’t have a current copy of your website, you should be able to request one from your current website hosting provider.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse5A" aria-expanded="false" aria-controls="faq-collapse5A">
+                                    <span class="text-body fs-16 fw-bold">Do I need technical knowledge to use web hosting?</span>
+                                </button>
+                            </h2>
+                            <div id="faq-collapse5A" class="accordion-collapse collapse" data-bs-parent="#accordionFaq2">
+                                <div class="accordion-body pt-0">We’ve made our web hosting services accessible for everyone. We’ve designed our control panel so that it is easy to manage your domains and web hosting in one place. The FTP feature of our web hosting services makes it simple to upload your website. If you’ve never used web hosting before, our support team are available on the phone and online to help you get started.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse6A" aria-expanded="false" aria-controls="faq-collapse6A">
+                                    <span class="text-body fs-16 fw-bold">How do I know which Web hosting package is best for me?</span>
+                                </button>
+                            </h2>
+                            <div id="faq-collapse6A" class="accordion-collapse collapse" data-bs-parent="#accordionFaq2">
+                                <div class="accordion-body pt-0">In order to choose a hosting package that will fit your needs, begin by thinking about the goals of your business. The biggest differentiators between hosting packages are the size of disk space, monthly data transfer, the number of mailboxes and tools such as open source applications and programming languages. After you determine how you plan to use your site and the amount of traffic you expect on your site, you'll be able to identify which package is best for your business.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-4" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button bg-transparent collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse7A" aria-expanded="false" aria-controls="faq-collapse7A">
+                                    <span class="text-body fs-16 fw-bold">Can I Upgrade/Downgrade My Hosting plan in future?</span>
+                                </button>
+                            </h2>
+                            <div id="faq-collapse7A" class="accordion-collapse collapse" data-bs-parent="#accordionFaq2">
+                                <div class="accordion-body pt-0">Yes, you can upgrdae or downgrade your hosting plan anytime you want.</div>
                             </div>
                         </div>
                     </div>
@@ -1987,35 +2202,6 @@
     </div>
     <!-- /FAQ  -->
 
-    <!-- Footer CTA -->
-    <div class="footer-cta">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-10">
-                    <div class="bg-primary pt-60 pb-60 px-6 px-md-12 rounded-3 overflow-hidden position-relative z-1 text-center" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                        <div class="row justify-content-center">
-                            <div class="col-md-8 col-xl-7 col-xxl-6">
-                                <h4 class="text-white mb-4">
-                                    Experience Our Service with a
-                                    7-Day Risk-Free Trial
-                                </h4>
-                                <a href="contact.php" class="btn btn-light btn-arrow btn-arrow-xl btn-lg fs-14 fw-semibold rounded">
-                                    <span class="btn-arrow__text">
-                                        Sign up - Free Trial
-                                        <span class="btn-arrow__icon">
-                                            <i class="las la-arrow-right"></i>
-                                        </span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                        <img src="assets/img/footer-cta-left.png" alt="image" class="img-fluid d-none d-md-block position-absolute top-0 start-0 z-n1 opacity-75">
-                        <img src="assets/img/footer-cta-right.png" alt="image" class="img-fluid d-none d-md-block position-absolute end-0 top-0 z-n1 opacity-75">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!-- /Footer CTA -->
 
     <?php include('./components/footer.php') ?>
 </body>

@@ -1,4 +1,13 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
+require 'helper/utils.php';
+include 'includes/meta.php';
+
+$currentPage = basename($_SERVER['PHP_SELF'], '.php');
+$meta = getMetaData($currentPage);
+?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 
@@ -7,20 +16,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--meta-->
-    <meta name="description" content="WriteBot ai content generator and writing assistant for saas platform">
-    <meta name="author" content="ThemeTags">
-    <meta name="keywords" content="ai, ai assistant, ai content writer, ai copywriting">
+    <title><?php echo htmlspecialchars($meta['title']); ?></title>
+    <meta name="description" content="<?php echo htmlspecialchars($meta['description']); ?>">
+    <meta name="author" content="CloudHosti">
+    <meta name="keywords" content="">
     <!--favicon icon-->
     <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="16x16">
-
-    <!--title-->
-    <title>Home - Hostingard</title>
 
     <!--build:css-->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/custom.css">
     <!-- endbuild -->
+    <link href="assets/lib/@iconscout/unicons/css/line.css" type="text/css" rel="stylesheet">
+    <!-- endbuild -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -28,7 +37,7 @@
     <!--preloader start-->
     <div class="preloader bg-light-subtle">
         <div class="preloader-wrap">
-            <img src="assets/images/cloudhosti-logo.png" alt="Cloud Hosti logo" height="61px">
+            <img class="mb-2" src="assets/images/cloudhosti-logo.png" alt="CloudHosti logo" height="41px">
             <div class="loading-bar"></div>
         </div>
     </div>
@@ -144,7 +153,7 @@
                                             <h5 class="text-white mb-3"><span class="counter">250</span>k VMs</h5>
                                             <div class="w-12 h-1 bg-primary mb-4"></div>
                                             <p class="text-white fw-medium text-opacity-75">Customers building with <br>
-                                                HostCity Hosting</p>
+                                                CloudHosti Hosting</p>
                                         </div>
                                     </div>
                                 </div>
@@ -214,7 +223,7 @@
                                 </h6>
                             </div>
                             <p class="mb-0">
-                                Hostcity is the strategic partner for your online journey you every step of the way.
+                                CloudHosti is the strategic partner for your online journey you every step of the way.
                             </p>
                         </div>
                     </div>
@@ -231,7 +240,7 @@
                                 </h6>
                             </div>
                             <p class="mb-0">
-                                Hostcity is the strategic partner for your online journey you every step of the way.
+                                CloudHosti is the strategic partner for your online journey you every step of the way.
                             </p>
                         </div>
                     </div>
@@ -248,7 +257,7 @@
                                 </h6>
                             </div>
                             <p class="mb-0">
-                                Hostcity is the strategic partner for your online journey you every step of the way.
+                                CloudHosti is the strategic partner for your online journey you every step of the way.
                             </p>
                         </div>
                     </div>
@@ -309,7 +318,7 @@
                                                     Hyperslice VPS SG1
                                                 </h6>
                                                 <p class="mb-0 fs-14 text-white max-text-40 text-wrap text-opacity-75">
-                                                    Hostcity is the strategic partner for your online journey.We are of the
+                                                    CloudHosti is the strategic partner for your online journey.We are of the
                                                     way. you every step of the way.
                                                 </p>
                                             </td>
@@ -395,7 +404,7 @@
                                                     Hyperslice VPS SG1
                                                 </h6>
                                                 <p class="mb-0 fs-14 text-white max-text-40 text-wrap text-opacity-75">
-                                                    Hostcity is the strategic partner for your online journey.We are of the
+                                                    CloudHosti is the strategic partner for your online journey.We are of the
                                                     way. you every step of the way.
                                                 </p>
                                             </td>
@@ -481,7 +490,7 @@
                                                     Hyperslice VPS SG1
                                                 </h6>
                                                 <p class="mb-0 fs-14 text-white max-text-40 text-wrap text-opacity-75">
-                                                    Hostcity is the strategic partner for your online journey.We are of the
+                                                    CloudHosti is the strategic partner for your online journey.We are of the
                                                     way. you every step of the way.
                                                 </p>
                                             </td>
@@ -567,7 +576,7 @@
                                                     Hyperslice VPS SG1
                                                 </h6>
                                                 <p class="mb-0 fs-14 text-white max-text-40 text-wrap text-opacity-75">
-                                                    Hostcity is the strategic partner for your online journey.We are of the
+                                                    CloudHosti is the strategic partner for your online journey.We are of the
                                                     way. you every step of the way.
                                                 </p>
                                             </td>
@@ -653,7 +662,7 @@
                                                     Hyperslice VPS SG1
                                                 </h6>
                                                 <p class="mb-0 fs-14 text-white max-text-40 text-wrap text-opacity-75">
-                                                    Hostcity is the strategic partner for your online journey.We are of the
+                                                    CloudHosti is the strategic partner for your online journey.We are of the
                                                     way. you every step of the way.
                                                 </p>
                                             </td>
@@ -739,7 +748,7 @@
                                                     Hyperslice VPS SG1
                                                 </h6>
                                                 <p class="mb-0 fs-14 text-white max-text-40 text-wrap text-opacity-75">
-                                                    Hostcity is the strategic partner for your online journey.We are of the
+                                                    CloudHosti is the strategic partner for your online journey.We are of the
                                                     way. you every step of the way.
                                                 </p>
                                             </td>
@@ -833,7 +842,7 @@
                                                     Hyperslice VPS SG1
                                                 </h6>
                                                 <p class="mb-0 fs-14 text-white max-text-40 text-wrap text-opacity-75">
-                                                    Hostcity is the strategic partner for your online journey.We are of the
+                                                    CloudHosti is the strategic partner for your online journey.We are of the
                                                     way. you every step of the way.
                                                 </p>
                                             </td>
@@ -919,7 +928,7 @@
                                                     Hyperslice VPS SG1
                                                 </h6>
                                                 <p class="mb-0 fs-14 text-white max-text-40 text-wrap text-opacity-75">
-                                                    Hostcity is the strategic partner for your online journey.We are of the
+                                                    CloudHosti is the strategic partner for your online journey.We are of the
                                                     way. you every step of the way.
                                                 </p>
                                             </td>
@@ -1005,7 +1014,7 @@
                                                     Hyperslice VPS SG1
                                                 </h6>
                                                 <p class="mb-0 fs-14 text-white max-text-40 text-wrap text-opacity-75">
-                                                    Hostcity is the strategic partner for your online journey.We are of the
+                                                    CloudHosti is the strategic partner for your online journey.We are of the
                                                     way. you every step of the way.
                                                 </p>
                                             </td>
@@ -1091,7 +1100,7 @@
                                                     Hyperslice VPS SG1
                                                 </h6>
                                                 <p class="mb-0 fs-14 text-white max-text-40 text-wrap text-opacity-75">
-                                                    Hostcity is the strategic partner for your online journey.We are of the
+                                                    CloudHosti is the strategic partner for your online journey.We are of the
                                                     way. you every step of the way.
                                                 </p>
                                             </td>
@@ -1177,7 +1186,7 @@
                                                     Hyperslice VPS SG1
                                                 </h6>
                                                 <p class="mb-0 fs-14 text-white max-text-40 text-wrap text-opacity-75">
-                                                    Hostcity is the strategic partner for your online journey.We are of the
+                                                    CloudHosti is the strategic partner for your online journey.We are of the
                                                     way. you every step of the way.
                                                 </p>
                                             </td>
@@ -1263,7 +1272,7 @@
                                                     Hyperslice VPS SG1
                                                 </h6>
                                                 <p class="mb-0 fs-14 text-white max-text-40 text-wrap text-opacity-75">
-                                                    Hostcity is the strategic partner for your online journey.We are of the
+                                                    CloudHosti is the strategic partner for your online journey.We are of the
                                                     way. you every step of the way.
                                                 </p>
                                             </td>
@@ -1357,7 +1366,7 @@
                                                     Hyperslice VPS SG1
                                                 </h6>
                                                 <p class="mb-0 fs-14 text-white max-text-40 text-wrap text-opacity-75">
-                                                    Hostcity is the strategic partner for your online journey.We are of the
+                                                    CloudHosti is the strategic partner for your online journey.We are of the
                                                     way. you every step of the way.
                                                 </p>
                                             </td>
@@ -1443,7 +1452,7 @@
                                                     Hyperslice VPS SG1
                                                 </h6>
                                                 <p class="mb-0 fs-14 text-white max-text-40 text-wrap text-opacity-75">
-                                                    Hostcity is the strategic partner for your online journey.We are of the
+                                                    CloudHosti is the strategic partner for your online journey.We are of the
                                                     way. you every step of the way.
                                                 </p>
                                             </td>
@@ -1529,7 +1538,7 @@
                                                     Hyperslice VPS SG1
                                                 </h6>
                                                 <p class="mb-0 fs-14 text-white max-text-40 text-wrap text-opacity-75">
-                                                    Hostcity is the strategic partner for your online journey.We are of the
+                                                    CloudHosti is the strategic partner for your online journey.We are of the
                                                     way. you every step of the way.
                                                 </p>
                                             </td>
@@ -1615,7 +1624,7 @@
                                                     Hyperslice VPS SG1
                                                 </h6>
                                                 <p class="mb-0 fs-14 text-white max-text-40 text-wrap text-opacity-75">
-                                                    Hostcity is the strategic partner for your online journey.We are of the
+                                                    CloudHosti is the strategic partner for your online journey.We are of the
                                                     way. you every step of the way.
                                                 </p>
                                             </td>
@@ -1701,7 +1710,7 @@
                                                     Hyperslice VPS SG1
                                                 </h6>
                                                 <p class="mb-0 fs-14 text-white max-text-40 text-wrap text-opacity-75">
-                                                    Hostcity is the strategic partner for your online journey.We are of the
+                                                    CloudHosti is the strategic partner for your online journey.We are of the
                                                     way. you every step of the way.
                                                 </p>
                                             </td>
@@ -1787,7 +1796,7 @@
                                                     Hyperslice VPS SG1
                                                 </h6>
                                                 <p class="mb-0 fs-14 text-white max-text-40 text-wrap text-opacity-75">
-                                                    Hostcity is the strategic partner for your online journey.We are of the
+                                                    CloudHosti is the strategic partner for your online journey.We are of the
                                                     way. you every step of the way.
                                                 </p>
                                             </td>
@@ -1896,7 +1905,7 @@
                         <div class="text-center" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                             <h2 class="mb-2">Our Technology Partners</h2>
                             <p class="mb-0 max-text-52 mx-auto">With over two decades of experience in high-quality,
-                                secure web hosting HostCity Strategic.</p>
+                                secure web hosting CloudHosti Strategic.</p>
                         </div>
                     </div>
                 </div>
@@ -2151,7 +2160,7 @@
                                 Take a Fast Glance at Our VPS Features
                             </h2>
                             <p class="mb-8 text-white text-opacity-75">
-                                With over two decades of experience in high-quality, secure web hosting HostCity Strategic
+                                With over two decades of experience in high-quality, secure web hosting CloudHosti Strategic
                                 experts will migrate.
                             </p>
                             <a href="control-panel.html" class="btn btn-primary btn-arrow btn-lg fs-14 fw-medium rounded">
@@ -2356,7 +2365,7 @@
                                         </h6>
                                     </div>
                                     <p class="fs-14 text-white text-opacity-75 mb-6 max-text-40">
-                                        Hostcity is the strategic partner for your online journey. We
+                                        CloudHosti is the strategic partner for your online journey. We
                                         are of the way. you every step of the way.
                                     </p>
                                     <div class="row g-2">
@@ -2389,7 +2398,7 @@
                                         </h6>
                                     </div>
                                     <p class="fs-14 text-white text-opacity-75 mb-6 max-text-40">
-                                        Hostcity is the strategic partner for your online journey. We
+                                        CloudHosti is the strategic partner for your online journey. We
                                         are of the way. you every step of the way.
                                     </p>
                                     <div class="row g-2">
@@ -2422,7 +2431,7 @@
                                         </h6>
                                     </div>
                                     <p class="fs-14 text-white text-opacity-75 mb-6 max-text-40">
-                                        Hostcity is the strategic partner for your online journey. We
+                                        CloudHosti is the strategic partner for your online journey. We
                                         are of the way. you every step of the way.
                                     </p>
                                     <div class="row g-2">
@@ -5890,7 +5899,7 @@
                                         <img src="assets/img/feedback-5-user-1.png" alt="img" class="img-fluid">
                                         <img src="assets/img/feedback-5-logo-1.png" alt="img" class="img-fluid">
                                     </div>
-                                    <p class="fs-16 fw-semibold mb-6">“Hostcity has been instrumental in helping me plan for
+                                    <p class="fs-16 fw-semibold mb-6">“CloudHosti has been instrumental in helping me plan for
                                         my retirement. Their expert financial advisors provided personalized guidance, and I
                                         feel confident about my financial future.”</p>
                                     <div>
@@ -5906,7 +5915,7 @@
                                         <img src="assets/img/feedback-5-user-2.png" alt="img" class="img-fluid">
                                         <img src="assets/img/feedback-5-logo-2.png" alt="img" class="img-fluid">
                                     </div>
-                                    <p class="fs-16 fw-semibold mb-6">“Hostcity has been instrumental in helping me plan for
+                                    <p class="fs-16 fw-semibold mb-6">“CloudHosti has been instrumental in helping me plan for
                                         my retirement. Their expert financial advisors provided personalized guidance, and I
                                         feel confident about my financial future.”</p>
                                     <div>
@@ -5922,7 +5931,7 @@
                                         <img src="assets/img/feedback-5-user-1.png" alt="img" class="img-fluid">
                                         <img src="assets/img/feedback-5-logo-1.png" alt="img" class="img-fluid">
                                     </div>
-                                    <p class="fs-16 fw-semibold mb-6">“Hostcity has been instrumental in helping me plan for
+                                    <p class="fs-16 fw-semibold mb-6">“CloudHosti has been instrumental in helping me plan for
                                         my retirement. Their expert financial advisors provided personalized guidance, and I
                                         feel confident about my financial future.”</p>
                                     <div>

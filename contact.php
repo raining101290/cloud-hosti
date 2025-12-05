@@ -1,3 +1,13 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+require 'helper/utils.php';
+include 'includes/meta.php';
+
+$currentPage = basename($_SERVER['PHP_SELF'], '.php');
+$meta = getMetaData($currentPage);
+?>
 
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
@@ -7,20 +17,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--meta-->
-    <meta name="description" content="WriteBot ai content generator and writing assistant for saas platform">
-    <meta name="author" content="ThemeTags">
-    <meta name="keywords" content="ai, ai assistant, ai content writer, ai copywriting">
+    <title><?php echo htmlspecialchars($meta['title']); ?></title>
+    <meta name="description" content="<?php echo htmlspecialchars($meta['description']); ?>">
+    <meta name="author" content="CloudHosti">
+    <meta name="keywords" content="">
     <!--favicon icon-->
     <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="16x16">
-
-    <!--title-->
-    <title>Home - Hostingard</title>
 
     <!--build:css-->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/custom.css">
     <!-- endbuild -->
+    <link href="assets/lib/@iconscout/unicons/css/line.css" type="text/css" rel="stylesheet">
+    <!-- endbuild -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -28,7 +38,7 @@
     <!--preloader start-->
     <div class="preloader bg-light-subtle">
         <div class="preloader-wrap">
-            <img src="assets/images/cloudhosti-logo.png" alt="Cloud Hosti logo" height="61px">
+            <img class="mb-2" src="assets/images/cloudhosti-logo.png" alt="CloudHosti logo" height="41px">
             <div class="loading-bar"></div>
         </div>
     </div>
@@ -36,19 +46,32 @@
     <?php include('./components/header.php') ?>
 
     <!-- Breadcrumb -->
-    <section class="banner-bg bg-dark">
+    <section class="banner-bg bg-custom-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="text-center">
-                        <span class="fs-18 fw-bold text-primary mb-2" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">Contact Now</span>
-                        <h1 class="text-white mb-3" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                            Let’s Connect & Navigate Your Financial Goals
+                        <span class="fs-18 fw-bold text-primary mb-2 sal-animate" 
+                            data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" 
+                            data-sal-easing="ease-in-out-sine">
+                            Contact Us
+                        </span>
+
+                        <h1 class="text-white mb-3 sal-animate" 
+                            data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" 
+                            data-sal-easing="ease-in-out-sine">
+                            Let’s Connect &amp; Build Your Digital Success Together
                         </h1>
-                        <p class="text-white mb-0 max-text-60 mx-auto text-opacity-75" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                            With worldwide annual spend on digital advertising surpassing $325 billion, it’s no ache's to online marketing are becoming available.
+
+                        <p class="text-white mb-0 max-text-60 mx-auto text-opacity-75 sal-animate" 
+                        data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" 
+                        data-sal-easing="ease-in-out-sine">
+                            Whether you need reliable hosting, expert guidance, or a solution tailored to your business, 
+                            our team at CloudHosti is here to help. Reach out anytime and let’s take your online presence 
+                            to the next level.
                         </p>
                     </div>
+
                 </div>
             </div>
             <div class="pt-80">
@@ -60,7 +83,7 @@
                         </div>
                         <ul class="list-unstyled d-flex flex-column gap-1 mb-0">
                             <li>
-                                <p class="text-white text-opacity-75 fw-medium mb-0">Head Office : Cloud Hosti</p>
+                                <p class="text-white text-opacity-75 fw-medium mb-0">Head Office : CloudHosti</p>
                             </li>
                             <li>
                                 <p class="text-white text-opacity-75 fw-medium mb-0">House# 27/1/B, Road# 3, Shyamoli</p>
@@ -78,17 +101,12 @@
                         <ul class="list-unstyled d-flex flex-column gap-1 mb-0">
                             <li>
                                 <a href="#" class="text-decoration-none">
-                                    <p class="text-white text-opacity-75 fw-medium mb-0">+88 09614 101010</p>
+                                    <p class="text-white text-opacity-75 fw-medium mb-0">+88 01312 448800</p>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="text-decoration-none">
-                                    <p class="text-white text-opacity-75 fw-medium mb-0">+88 01883 855555</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-decoration-none">
-                                    <p class="text-white text-opacity-75 fw-medium mb-0">+88 01619 474927</p>
+                                    <p class="text-white text-opacity-75 fw-medium mb-0">+88 01670 225611</p>
                                 </a>
                             </li>
                             <li>
@@ -112,6 +130,11 @@
                             <li>
                                 <a href="https://www.linkedin.com/company/cloud-hosti" class="text-decoration-none text-white text-opacity-75 hover:text-primary fw-medium">
                                     Linkedin
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://instagram.com/cloudhosti" class="text-decoration-none text-white text-opacity-75 hover:text-primary fw-medium">
+                                    Instagram
                                 </a>
                             </li>
                         </ul>
@@ -152,7 +175,7 @@
                                 <textarea class="form-control px-6 py-4 border h-30 bg-white bg-opacity-50"></textarea>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-dark btn-arrow btn-arrow-lg btn-lg fs-14 fw-medium rounded mt-6" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                        <button type="submit" class="btn btn-primary btn-arrow btn-arrow-lg btn-lg fs-14 fw-medium rounded mt-6" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                             <span class="btn-arrow__text">
                                 Post Comment
                                 <span class="btn-arrow__icon">
@@ -163,42 +186,12 @@
                     </form>
                 </div>
                 <div class="col-lg-6">
-                    <img src="assets/img/contact.png" alt="image" class="img-fluid" data-sal="fade" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
+                    <img src="assets/images/contact.svg" alt="image" class="img-fluid" data-sal="fade" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
                 </div>
             </div>
         </div>
     </section>
     <!-- /Contact Form -->
-
-    <!-- Footer CTA -->
-    <div class="footer-cta">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-10">
-                    <div class="bg-primary pt-60 pb-60 px-6 px-md-12 rounded-3 overflow-hidden position-relative z-1 text-center" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
-                        <div class="row justify-content-center">
-                            <div class="col-md-8 col-xl-7 col-xxl-6">
-                                <h4 class="text-white mb-4">
-                                    Experience Our Service with a
-                                    7-Day Risk-Free Trial
-                                </h4>
-                                <a href="contact.php" class="btn btn-light btn-arrow btn-arrow-xl btn-lg fs-14 fw-semibold rounded">
-                                    <span class="btn-arrow__text">
-                                        Sign up - Free Trial
-                                        <span class="btn-arrow__icon">
-                                            <i class="las la-arrow-right"></i>
-                                        </span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                        <img src="assets/img/footer-cta-left.png" alt="image" class="img-fluid d-none d-md-block position-absolute top-0 start-0 z-n1 opacity-75">
-                        <img src="assets/img/footer-cta-right.png" alt="image" class="img-fluid d-none d-md-block position-absolute end-0 top-0 z-n1 opacity-75">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!-- /Footer CTA -->
 
     <?php include('./components/footer.php') ?>
 </body>
