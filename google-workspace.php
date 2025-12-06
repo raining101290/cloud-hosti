@@ -83,16 +83,89 @@ $meta = getMetaData($currentPage);
         <div class="pb-40">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-12">
-                        <div class="gapps-banner-animated-illustration">
-                            <div class="gmail-browser">&nbsp;</div>
-                            <div class="calendar">&nbsp;</div>
-                            <div class="chat">&nbsp;</div>
-                            <div class="slides">&nbsp;</div>
-                            <div class="drive">&nbsp;</div>
-                            <div class="admin">&nbsp;</div>
-                            <div class="docs">&nbsp;</div>
-                        </div>
+                    <div class="col-md-12 mb-8">
+                        <svg width="100%" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Gmail Browser -->
+                            <image 
+                                x="180" 
+                                y="70" 
+                                width="659" 
+                                height="486"
+                                opacity="0"
+                                xlink:href="assets/images/gsuite-hero-browser.png">
+                                <animate attributeName="opacity" from="0" to="1" dur="0.5s" fill="freeze" />
+                            </image>
+
+                            <!-- Calendar -->
+                            <image
+                                x="551"
+                                y="5"
+                                width="170"
+                                height="70"
+                                opacity="0"
+                                xlink:href="assets/images/calendar-hero.png">
+                                <animate attributeName="opacity" from="0" to="1" dur="1.5s" begin="0.3s" fill="freeze"/>
+                            </image>
+
+                            <!-- Chat -->
+                            <image
+                                x="670"
+                                y="160"
+                                width="327"
+                                height="347"
+                                opacity="0"
+                                xlink:href="assets/images/chat-n-meet-pattern.png">
+                                <animate attributeName="opacity" from="0" to="1" dur="1.5s" begin="0.3s" fill="freeze"/>
+                                <animate attributeName="y" from="500" to="160" dur="2s" begin="0.2s" fill="freeze"/>
+                            </image>
+
+                            <!-- Slides -->
+                            <image
+                                x="750"
+                                y="58"
+                                width="398"
+                                height="111"
+                                opacity="0"
+                                xlink:href="assets/images/slides-pattern.png">
+                                <animate attributeName="opacity" from="0" to="1" dur="1.5s" begin="0.2s" fill="freeze"/>
+                                <animate attributeName="x" from="1200" to="750" dur="2s" begin="0.2s" fill="freeze"/>
+                            </image>
+
+                            <!-- Drive -->
+                            <image
+                                x="865"
+                                y="20"
+                                width="116"
+                                height="116"
+                                opacity="0"
+                                xlink:href="assets/images/drive-hero.png">
+                                <animate attributeName="opacity" from="0" to="1" dur="1.5s" begin="0.3s" fill="freeze"/>
+                            </image>
+
+                            <!-- Admin -->
+                            <image
+                                x="71"
+                                y="13"
+                                width="92"
+                                height="92"
+                                opacity="0"
+                                xlink:href="assets/images/admin-hero.png">
+                                <animate attributeName="opacity" from="0" to="1" dur="1.5s" begin="0.3s" fill="freeze"/>
+                            </image>
+
+                            <!-- Docs -->
+                            <image
+                                x="-355"
+                                y="117"
+                                width="728"
+                                height="294"
+                                opacity="0"
+                                xlink:href="assets/images/docs-sheet-pattern.png">
+                                <animate attributeName="opacity" from="0" to="1" dur="1.5s" begin="0.2s" fill="freeze"/>
+                                <animate attributeName="x" from="-800" to="-355" dur="2s" begin="0.2s" fill="freeze"/>
+                            </image>
+
+                        </svg>
                     </div>
                     <div class="col-xl-7">
                         <div class="text-center" data-sal="slide-up" data-sal-duration="300" data-sal-delay="300" data-sal-easing="ease-in-out-sine">
@@ -424,7 +497,7 @@ $meta = getMetaData($currentPage);
                                         <div class="yearly-price">
                                             <h4>$551.28 </h4>
                                             <p class="sub-title">/user per year</p>
-                                            <small class="fw-bold">Normally $628.80 <small>/month</small></small>
+                                            <small class="fw-bold">Normally $628.80 <small>/year</small></small>
                                         </div>
                                     </div>
                                     <div class="monthly-price">

@@ -1,5 +1,5 @@
 <!-- Header -->
-<div class="navbar-overlay glass-box">
+<div class="navbar-overlay menu-box">
     <!-- Primary Header -->
     <nav class="navbar navbar-expand-lg py-5 py-lg-0 navbar-box">
         <div class="container">

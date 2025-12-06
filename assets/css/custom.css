@@ -127,14 +127,39 @@
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out
 }
-.glass-box {
-  background: rgba(255, 255, 255, 0.50);  
-  backdrop-filter: blur(25px);            
-  -webkit-backdrop-filter: blur(25px);    
-  border: 1px solid rgba(255, 255, 255, 0.6); 
-  border-radius: 16px;
+.menu-box {
+    background: linear-gradient(-45deg, #8eb9ff, #fc8cb7, #8be0ff, #88f9de);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    backdrop-filter: blur(25px);            
+    -webkit-backdrop-filter: blur(25px);    
+    border: 1px solid rgba(255, 255, 255, 0.6); 
+    border-radius: 16px;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
-.navbar-sticky-init .navbar-overlay{
+.glass-box {
+    background: rgba(255, 255, 255, 0.50);  
+    backdrop-filter: blur(25px);            
+    -webkit-backdrop-filter: blur(25px);    
+    border: 1px solid rgba(255, 255, 255, 0.6); 
+    border-radius: 16px;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/* .navbar-sticky-init .navbar-overlay{
+    background: linear-gradient(-45deg, #8eb9ff, #fc8cb7, #8be0ff, #88f9de);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
     background-color: #fcfdfe !important;
     background: linear-gradient(
         to right,
@@ -148,7 +173,7 @@
     border-radius: 16px;
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
-}
+} */
 
 .blob {
   position: absolute;
@@ -194,9 +219,9 @@
     background: linear-gradient(90.12deg, #E90387 -29.31%, #FC6866 100.59%);
     width: 24px;
     height: 24px;
-    /* position: absolute; */
-    top: -5px;
-    right: -5px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
     border-radius: 50%;
     color: #fff;
     display: flex;
@@ -205,8 +230,8 @@
     font-size: 12px;
 }
 .navbar-nav .nav-item .nav-link.btn-cart{
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
     background: rgba(255, 255, 255, 0.50);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
@@ -241,90 +266,6 @@ h6.hanger{
 
 .bigger small{
     display: block;
-}
-
-
-
-.gapps-banner-animated-illustration {
-    width: 1000px;
-    margin: 0 auto;
-    position: relative;
-}
-.gapps-banner-animated-illustration .gmail-browser {
-    animation: createBox 0.5s;
-    background: url(../images/gsuite-hero-browser.png) no-repeat;
-    background-size: 659px 486px;
-    width: 659px;
-    height: 486px;
-    margin: 0 auto;
-    position: relative;
-    left: 5px;
-}
-.gapps-banner-animated-illustration .calendar {
-    background: url(../images/calendar-hero.png) no-repeat;
-    width: 170px;
-    height: 70px;
-    background-size: 170px 70px;
-    position: absolute;
-    top: 5px;
-    left: 551px;
-    animation: fadeInIcon 
-ease 2s;
-}
-.gapps-banner-animated-illustration .chat {
-    background: url(../images/chat-n-meet-pattern.png) no-repeat;
-    background-size: 327px 347px;
-    height: 347px;
-    position: absolute;
-    right: 0;
-    width: 327px;
-    bottom: -10px;
-    animation: bottomToTop 
-ease 2s;
-}
-.gapps-banner-animated-illustration .slides {
-    background: url(../images/slides-pattern.png) no-repeat;
-    width: 398px;
-    height: 111px;
-    background-size: 398px 111px;
-    position: absolute;
-    top: 58px;
-    right: -270px;
-    animation: rightToLeft 
-ease 2s;
-}
-.gapps-banner-animated-illustration .drive {
-    background: url(../images/drive-hero.png) no-repeat;
-    background-size: 116px 116px;
-    height: 116px;
-    width: 116px;
-    position: absolute;
-    top: -50px;
-    right: 135px;
-    animation: fadeInIcon 
-ease 2s;
-}
-.gapps-banner-animated-illustration .admin {
-    background: url(../images/admin-hero.png) no-repeat;
-    background-size: 92px 92px;
-    height: 92px;
-    width: 92px;
-    position: absolute;
-    top: 13px;
-    left: 71px;
-    animation: fadeInIcon 
-ease 2s;
-}
-.gapps-banner-animated-illustration .docs {
-    background: url(../images/docs-sheet-pattern.png) no-repeat;
-    width: 728px;
-    height: 294px;
-    background-size: 728px 294px;
-    position: absolute;
-    left: -355px;
-    top: 117px;
-    animation: leftToRight 
-ease 2s;
 }
 
 .package-title {
@@ -386,4 +327,11 @@ ease 2s;
 .yearly-price h4 span{
     font-size: 18px;
     color: #666666;
+}
+.why-area-one::after{
+    background-image: none !important;
+}
+.video-area-one::after{
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-custom-5-rgb), var(--bs-bg-opacity)) !important;
 }

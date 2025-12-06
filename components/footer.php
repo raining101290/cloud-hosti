@@ -1,6 +1,6 @@
 
     <!-- Footer -->
-    <footer class="footer-2-area pt-120 pb-5 bg-dark position-relative z-1">
+    <footer class="footer-2-area pt-120 pb-5 bg-custom-5 position-relative z-1">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
@@ -17,22 +17,19 @@
                         <a href="https://instagram.com/cloudhosti" class="social-icon w-9 h-9 d-inline-flex align-items-center justify-content-center rounded-circle border border-light border-opacity-10">
                             <span class="text-white"><i class="lab la-instagram"></i></span>
                         </a>
+                        <a href="https://x.com/cloudhosti" class="social-icon w-9 h-9 d-inline-flex align-items-center justify-content-center rounded-circle border border-light border-opacity-10">
+                            <span class="text-white"><i class="lab la-twitter"></i></span>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="ps-xl-10">
                         <h6 class="text-white fs-16 mt-3 mb-8">Product & Solutions</h6>
                         <ul class="list-unstyled d-flex flex-column gap-2">
-                            <li><a href="#" class="footer-2-link">Shared
+                            <li><a href="shared-hosting.php" class="footer-2-link">Shared
                                     Hosting</a></li>
-                            <li><a href="#" class="footer-2-link">WordPress
-                                    Hosting</a></li>
-                            <li><a href="#" class="footer-2-link">VPS
-                                    Hosting</a></li>
-                            <li><a href="#" class="footer-2-link">Cloud
-                                    Servers</a></li>
-                            <li><a href="#" class="footer-2-link">Dedicated
-                                    Servers</a></li>
+                            <li><a href="business-hosting.php" class="footer-2-link">Business
+                                    Hosting</a></li>                            
                         </ul>
                     </div>
                 </div>
@@ -59,9 +56,9 @@
                         <ul class="list-unstyled d-flex flex-column gap-2">
                             <li><a href="about.php" class="footer-2-link">About
                                     Us</a></li>
-                            <li><a href="#" class="footer-2-link">Partners</a>
+                            <li><a href="https://portal.cloudhosti.com/announcements" class="footer-2-link">Announcements</a>
                             </li>
-                            <li><a href="#" class="footer-2-link">Knowledgebase</a>
+                            <li><a href="https://portal.cloudhosti.com/knowledgebase" class="footer-2-link">Knowledgebase</a>
                             </li>
                             <li><a href="contact.php" class="footer-2-link">Contact
                                     Us</a></li>

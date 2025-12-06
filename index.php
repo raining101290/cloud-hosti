@@ -384,7 +384,7 @@ $features = file_exists($featuresFile)
                             </div>
                             <?php if ($monthly > 0): ?>
                             <div class="monthly-price">
-                                <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="javascript:void(0)" onClick="addToCart(<?= $pid ?>, 'monthly', '<?= $f['promo'] ?>', 'hosting')"
+                                <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="javascript:void(0)" onClick="addToCart(<?= $pid ?>, 'annually', '<?= $f['promo'] ?>', 'hosting')"
                                 >
                                     <span class="btn-arrow__text">
                                         Add to Cart
@@ -436,7 +436,7 @@ $features = file_exists($featuresFile)
 
     
     <!-- Why -->
-    <section class="why-area-one bg-dark pt-120 pb-120 position-relative z-1">
+    <section class="why-area-one bg-custom-5 pt-120 pb-120 position-relative z-1">
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-xl-7">

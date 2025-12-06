@@ -22,7 +22,7 @@ function getMetaData($page) {
             'description' => 'Search and register your perfect domain name with CloudHosti. Affordable pricing, instant activation, and free DNS management.',
         ],
         'google-workspace' => [
-            'title' => 'Buy Google Workspace in Bangladesh | Trusted Google Workspace Partner - CloudHosti',
+            'title' => 'Buy Google Workspace for Your Business in Bangladesh – Verified Partner & Best Support | CloudHosti',
             'keywords'=> 'Google Workspace Bangladesh, Buy Google Workspace Bangladesh, CloudHosti Google Workspace Partner, Business Email Bangladesh, Google Workspace for Business, Workspace Reseller Bangladesh',
             'description' => 'Buy Google Workspace in Bangladesh from CloudHosti, your trusted Google Workspace partner. Enjoy secure business email, cloud storage, and advanced collaboration tools for your team.',
         ],
