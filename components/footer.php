@@ -33,7 +33,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <!-- <div class="col-lg-3 col-md-6">
                     <div class="ps-xl-5">
                         <h6 class="text-white fs-16 mt-3 mb-8">CloudHosti Feature</h6>
                         <ul class="list-unstyled d-flex flex-column gap-2">
@@ -49,7 +49,7 @@
                                     Protection</a></li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-lg-2 col-md-6">
                     <div class="ps-xl-5">
                         <h6 class="text-white fs-16 mt-3 mb-8">Company Info</h6>
@@ -65,6 +65,25 @@
                             <li><a href="#" class="footer-2-link">News</a>
                             </li>
                         </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="ps-xl-5">
+                        <h6 class="text-white fs-16 mt-3 mb-8">24/7 Support</h6>
+                        <ul class="list-unstyled d-flex flex-column gap-2">
+                            <li>
+                                <a href="#" class="footer-2-link">+88 01312 448800</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer-2-link">sales@cloudhosti.com</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer-2-link">support@cloudhosti.com</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer-2-link">Head Office : CloudHosti, House# 27/1/B, Road# 3, Shyamoli, Dhaka, Bangladesh</a>
+                            </li>
+                        </ul> 
                     </div>
                 </div>
             </div>

@@ -67,7 +67,7 @@ $meta = getMetaData($currentPage);
                         <div id="nav-id-1" class="pt-5">
                             <!-- STANDARD REFUND TERMS -->
                             <h5>Standard Refund Terms</h5>
-                            <p>Products purchased from CloudHosti may be refunded only if they are canceled within <b>30 days</b> from the date of the transaction.</p>
+                            <p>Products purchased from CloudHosti are eligible for a refund if the service is canceled within <b>30 days</b> of the original transaction date. Once a refund request is approved, the refund will be processed within <b>7–10 business days</b>.</p>
 
                             <p><strong>Note:</strong> Payments made using cryptocurrencies, tokens, or any digital assets are non-refundable due to their irreversible nature and highly volatile exchange rates. CloudHosti is not responsible for any market or exchange-related risks.</p>
 

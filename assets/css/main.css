@@ -49549,6 +49549,7 @@ a {
 
 .contain-mega-menu__content {
     display: none;
+    border-radius: .5rem;
     background-color: var(--bs-body-bg);
     max-height: 250px;
     overflow-y: auto;
@@ -49571,7 +49572,7 @@ a {
         max-height:650px;
         display: block;
         position: absolute;
-        top: calc(100% + 1rem);
+        top: calc(100% + 0px);
         left: 0;
         right: 0;
         visibility: hidden;
