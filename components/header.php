@@ -1,3 +1,12 @@
+<?php
+if (isset($_POST['currency'])) {
+    setCurrency($_POST['currency']);
+    header("Location: " . $_SERVER['REQUEST_URI']);
+    exit;
+}
+
+$currency = $_SESSION['currency'] ?? 'USD';
+?>
 <!-- Header -->
 <div class="navbar-overlay menu-box">
     <!-- Primary Header -->
@@ -377,9 +386,18 @@
                             </div>
                         </div>
                     </li>
+                    <li>
+                        <form method="post" id="currencyForm">
+                            <select name="currency" class="form-select" onchange="document.getElementById('currencyForm').submit()">
+                                <option value="USD" <?php echo ($currency=='USD'?'selected':''); ?>>USD</option>
+                                <option value="BDT" <?php echo ($currency=='BDT'?'selected':''); ?>>BDT</option>
+                                <option value="INR" <?php echo ($currency=='INR'?'selected':''); ?>>INR</option>
+                                <option value="AED" <?php echo ($currency=='AED'?'selected':''); ?>>AED</option>
+                            </select>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- /Primary Header -->
 </div><!-- Header -->

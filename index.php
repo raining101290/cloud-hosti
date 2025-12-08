@@ -132,23 +132,32 @@ $features = file_exists($featuresFile)
                                     <div class="d-flex align-items-center justify-content-center gap-4 flex-wrap flex-xl-nowrap mt-6">
                                         <?php foreach ($featuredTLDs as $tld => $color): ?>
                                             <?php 
-                                                $oldPrice = $tlds[$tld]['register'][1] ?? null; 
-                                                $newPrice = $discounts[$tld] ?? $oldPrice;
-                                                if (!$oldPrice) continue;
+                                                $usdPrice = floatval($tlds[$tld]['register'][1] ?? 0);
+                                                if ($usdPrice <= 0) continue;
+
+                                                // Convert ONLY ONCE
+                                                $converted = formatPrice($usdPrice, $currencyRates, $currencySymbols);
+
+                                                // Discount (if you have discounts array)
+                                                $usdDiscount = $discounts[$tld] ?? $usdPrice;
+                                                $convertedDiscount = formatPrice($usdDiscount, $currencyRates, $currencySymbols);
+
+                                                $hasDiscount = ($usdDiscount < $usdPrice);
                                             ?>
                                             
                                             <button type="button"
                                                 class="btn btn-sm btn-light d-inline-flex align-items-center gap-2 border border-gray-100">
 
                                                 <span class="h6 mb-1 <?= $color ?> d-inline-block">.<?= $tld ?></span>
-                                                <?php if ($newPrice < $oldPrice): ?>
+
+                                                <?php if ($hasDiscount): ?>
                                                     <small class="fw-medium d-inline-block">
-                                                        <s class="text-danger">$<?= number_format($oldPrice, 2) ?></s>
-                                                        <span class="text-success fw-bold">$<?= number_format($newPrice, 2) ?></span>/Year
+                                                        <s class="text-danger"><?= formatPrice($usdPrice, $currencyRates, $currencySymbols) ?></s>
+                                                        <span class="text-success fw-bold"><?= $convertedDiscount ?></span>/Year
                                                     </small>
                                                 <?php else: ?>
                                                     <small class="fw-medium d-inline-block">
-                                                        $<?= number_format($oldPrice, 2) ?>/Year
+                                                        <?= $converted ?>/Year
                                                     </small>
                                                 <?php endif; ?>
                                             </button>
@@ -305,14 +314,19 @@ $features = file_exists($featuresFile)
 
                         // --- Extract WHMCS values ---
                         $title   = $product['name'] ?? 'Hosting Plan';
-                        $monthly = floatval($product['pricing']['USD']['monthly'] ?? -1);
-                        $yearly  = floatval($product['pricing']['USD']['annually'] ?? -1);
+                        $usdMonthly = floatval($product['pricing']['USD']['monthly'] ?? 0);
+                        $monthly = $usdMonthly;
 
-                        // Normal / original price (optional field inside your features JSON)
+                        $usdYearly = floatval($product['pricing']['USD']['annually'] ?? 0);
+                        $yearly = $usdYearly;
                         $normal  = $f['normal_price'] ?? '';
 
                         $discountPercent = $f['percentage'] ?? 0;
 
+                        $monthly_discounted = $monthly - ($monthly * $discountPercent / 100);
+                        $yearly_discounted  = $yearly  - ($yearly  * $discountPercent / 100);
+
+                        // Normal / original price (optional field inside your features JSON)
                         $monthly_discounted = ($monthly > 0)
                             ? $monthly - (($monthly * $discountPercent) / 100)
                             : -1;
@@ -351,34 +365,32 @@ $features = file_exists($featuresFile)
                             <div class="mt-5">
                                 <?php if ($monthly > 0): ?>
                                 <div class="monthly-price">
-                                    <?php if ($discountPercent > 0): ?>
-                                        <!-- Discounted monthly price -->
-                                        <h4>
+                                    <h4>
+                                        <?php if ($discountPercent > 0): ?>
                                             <span class="text-decoration-line-through">
-                                            $<?= number_format($monthly, 2) ?>
+                                                <?= formatPrice($monthly, $currencyRates, $currencySymbols) ?>
                                             </span>
-                                            $<?= number_format($monthly_discounted, 2) ?>
-                                            <span class="fs-14 text-muted">/month</span>
-                                        </h4>
-                                        <!-- Original price -->
-                                        
-                                    <?php endif; ?>
+                                            <?= formatPrice($monthly_discounted, $currencyRates, $currencySymbols) ?>
+                                        <?php else: ?>
+                                            <?= formatPrice($monthly, $currencyRates, $currencySymbols) ?>
+                                        <?php endif; ?>
+                                        <span class="fs-14 text-muted">/month</span>
+                                    </h4>
                                 </div>
                                 <?php endif; ?>
                                 <?php if ($yearly > 0): ?>
                                 <div class="yearly-price">
-                                    <?php if ($discountPercent > 0): ?>
-                                        <!-- Discounted yearly price -->
-                                        <h4>
+                                    <h4>
+                                        <?php if ($discountPercent > 0): ?>
                                             <span class="text-decoration-line-through">
-                                            $<?= number_format($yearly, 2) ?>
+                                                <?= formatPrice($yearly, $currencyRates, $currencySymbols) ?>
                                             </span>
-                                            $<?= number_format($yearly_discounted, 2) ?>
-                                            <span class="fs-14 text-muted">/year</span>
-                                        </h4>
-                                        <!-- Original yearly price -->
-                                        
-                                    <?php endif; ?>
+                                            <?= formatPrice($yearly_discounted, $currencyRates, $currencySymbols) ?>
+                                        <?php else: ?>
+                                            <?= formatPrice($yearly, $currencyRates, $currencySymbols) ?>
+                                        <?php endif; ?>
+                                        <span class="fs-14 text-muted">/year</span>
+                                    </h4>
                                 </div>
                                 <?php endif; ?>
                             </div>
