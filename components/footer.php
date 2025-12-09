@@ -228,6 +228,7 @@
         .then(res => res.json())
         .then(data => {
             document.getElementById("cartCount").innerText = data.count;
+            document.getElementById("cartCountMobile").innerText = data.count;
             loadCartDropdown();
         });
     }
@@ -240,6 +241,7 @@
             .then(res => res.json())
             .then(data => {
                 document.getElementById("cartCount").innerText = data.count;
+                document.getElementById("cartCountMobile").innerText = data.count;
                 document.getElementById("cartDropdownContent").innerHTML = data.html;
             });
     }
@@ -258,6 +260,15 @@
     INIT ON PAGE LOAD
     ------------------------------*/
     document.addEventListener("DOMContentLoaded", loadCartDropdown);
+
+    function setCurrency(cur) {
+        document.getElementById('currencyInput').value = cur;
+        document.getElementById('currencyForm').submit();
+    }
+    function setCurrencyMobile(cur) {
+        document.getElementById('currencyInputMobile').value = cur;
+        document.getElementById('currencyFormMobile').submit();
+    }
     </script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">

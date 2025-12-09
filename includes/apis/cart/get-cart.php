@@ -1,6 +1,8 @@
 <?php
-session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
+require_once __DIR__ . '/../../../helper/utils.php';
 $cart = $_SESSION['cart'] ?? [];
 
 /* ==================================================
@@ -44,10 +46,13 @@ foreach ($cart as $index => $item) {
         $domain = $item["domain"];
         $tld = strtolower(pathinfo($domain, PATHINFO_EXTENSION));
 
-        $price = isset($domainPricing[$tld]['register']['1'])
+        $priceUSD = isset($domainPricing[$tld]['register']['1'])
             ? floatval($domainPricing[$tld]['register']['1'])
             : 0;
-
+        // $price = isset($domainPricing[$tld]['register']['1'])
+        //     ? floatval($domainPricing[$tld]['register']['1'])
+        //     : 0;
+        $formattedPrice = formatPrice($priceUSD, $currencyRates, $currencySymbols);
         $html .= '
             <div class="d-flex align-items-center justify-content-between border-bottom py-2">
 
@@ -55,7 +60,7 @@ foreach ($cart as $index => $item) {
                     <div class="fw-bold">Domain Registration</div>
                     <small class="text-muted">'.$domain.'</small>
 
-                    <div class="text-dark fw-bold">$'.number_format($price, 2).'</div>
+                    <div class="text-dark fw-bold">'.$formattedPrice.'</div>
                 </div>
 
                 <button onclick="removeCartItem('.$index.')" 
@@ -82,15 +87,13 @@ foreach ($cart as $index => $item) {
     }
 
     // Get hosting price
-    $price = 0;
-    $currency = "";
+    $priceUSD = 0;
     if ($productData && isset($productData['pricing']['USD'][$cycle])) {
-        $price = floatval($productData['pricing']['USD'][$cycle]);
-        $currency = $productData['pricing']['USD']['prefix']; // "$"
+        $priceUSD = floatval($productData['pricing']['USD'][$cycle]);
     }
 
     // Promo discount (percentage)
-    $discountedPrice = $price;
+    $discountedUSD = $priceUSD;
     $discountText = "";
 
     if (!empty($item['promo'])) {
@@ -98,8 +101,8 @@ foreach ($cart as $index => $item) {
         $discountPercent = isset($m[1]) ? intval($m[1]) : 0;
 
         if ($discountPercent > 0) {
-            $discountAmount = ($price * $discountPercent) / 100;
-            $discountedPrice = $price - $discountAmount;
+            $discountAmount = ($priceUSD * $discountPercent) / 100;
+            $discountedUSD = $priceUSD - $discountAmount;
 
             $discountText = '
                 <div>
@@ -110,13 +113,21 @@ foreach ($cart as $index => $item) {
             ';
         }
     }
+    $priceFormatted = formatPrice($priceUSD, $currencyRates, $currencySymbols);
+    $discountFormatted = formatPrice($discountedUSD, $currencyRates, $currencySymbols);
 
     $priceHtml = '
         <div class="text-dark fw-bold">
-            '.$currency . number_format($price, 2).'
-            <span class="text-success"> → '.$currency.number_format($discountedPrice, 2).'</span>
+            '.$priceFormatted.'
+            <span class="text-success"> → '.$discountFormatted.'</span>
         </div>
     ';
+    // $priceHtml = '
+    //     <div class="text-dark fw-bold">
+    //         '.$currency . number_format($price, 2).'
+    //         <span class="text-success"> → '.$currency.number_format($discountedPrice, 2).'</span>
+    //     </div>
+    // ';
 
     $html .= '
         <div class="d-flex align-items-center justify-content-between border-bottom py-2">

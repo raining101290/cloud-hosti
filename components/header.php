@@ -16,6 +16,25 @@ $currency = $_SESSION['currency'] ?? 'USD';
                 <img src="assets/images/cloudhosti-logo.png" alt="image" class="logo__img">
                 <img src="assets/images/cloudhosti-logo.png" alt="image" class="logo__img logo__sticky">
             </a>
+            <div class="mobile-actions d-lg-none d-flex align-items-center justify-content-right gap-3 ms-auto">
+                <!-- Cart Icon -->
+                <a class="nav-link btn-cart position-relative" onclick="processCheckout()" href="javascript:void(0)">
+                    <i class="uil uil-shopping-cart"></i>
+                    <span id="cartCountMobile" class="cartCount">0</span>
+                </a>
+
+                <!-- Currency Dropdown -->
+                <form method="post" id="currencyFormMobile" class="currency-form">
+                    <select name="currency" class="form-select form-select-sm currency-mobile"
+                        onchange="document.getElementById('currencyFormMobile').submit()">
+                        <option value="USD" <?php echo ($currency=='USD'?'selected':''); ?>>USD</option>
+                        <option value="BDT" <?php echo ($currency=='BDT'?'selected':''); ?>>BDT</option>
+                        <option value="INR" <?php echo ($currency=='INR'?'selected':''); ?>>INR</option>
+                        <option value="AED" <?php echo ($currency=='AED'?'selected':''); ?>>AED</option>
+                    </select>
+                </form>
+            </div>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primaryMenu"
                 aria-expanded="false">
                 <span class="navbar-toggler-icon"></span>
@@ -367,7 +386,7 @@ $currency = $_SESSION['currency'] ?? 'USD';
                             Get Started
                         </a>
                     </li> -->
-                    <li class="nav-item contain-sub-1 no-icon">
+                    <li class="nav-item contain-sub-1 no-icon d-none d-lg-block">
                         <a class="nav-link btn-cart" href="javascript:void(0)">
                             <i class="uil uil-shopping-cart"></i>
                             <span id="cartCount" class="cartCount">0</span>
@@ -386,18 +405,61 @@ $currency = $_SESSION['currency'] ?? 'USD';
                             </div>
                         </div>
                     </li>
-                    <li>
-                        <form method="post" id="currencyForm">
-                            <select name="currency" class="form-select" onchange="document.getElementById('currencyForm').submit()">
-                                <option value="USD" <?php echo ($currency=='USD'?'selected':''); ?>>USD</option>
-                                <option value="BDT" <?php echo ($currency=='BDT'?'selected':''); ?>>BDT</option>
-                                <option value="INR" <?php echo ($currency=='INR'?'selected':''); ?>>INR</option>
-                                <option value="AED" <?php echo ($currency=='AED'?'selected':''); ?>>AED</option>
-                            </select>
-                        </form>
+                    <li class="nav-item contain-sub-1 no-icon d-none d-lg-block">
+                        <a class="nav-link btn-cart" href="javascript:void(0)">
+                            <span class="flag-icon" style="line-height: 30px;">
+                                <?php if ($currency == 'USD') echo "🇺🇸"; ?>
+                                <?php if ($currency == 'BDT') echo "🇧🇩"; ?>
+                                <?php if ($currency == 'INR') echo "🇮🇳"; ?>
+                                <?php if ($currency == 'AED') echo "🇦🇪"; ?>
+                            </span>
+                            <?= $currency ?>
+                        </a>
+
+                        <div class="contain-sub-1__content list-unstyled p-4 bg-white shadow rounded" style="width: 93px;">
+                            <form method="post" id="currencyForm">
+                                <input type="hidden" name="currency" id="currencyInput">
+
+                                <ul class="list-unstyled m-0 p-0">
+
+                                    <li>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-1" 
+                                        href="javascript:void(0)" 
+                                        onclick="setCurrency('USD')">
+                                            🇺🇸 <span>USD</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-1"
+                                        href="javascript:void(0)"
+                                        onclick="setCurrency('BDT')">
+                                            🇧🇩 <span>BDT</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-1"
+                                        href="javascript:void(0)"
+                                        onclick="setCurrency('INR')">
+                                            🇮🇳 <span>INR</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-1"
+                                        href="javascript:void(0)"
+                                        onclick="setCurrency('AED')">
+                                            🇦🇪 <span>AED</span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </form>
+                        </div>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-</div><!-- Header -->
+</div>

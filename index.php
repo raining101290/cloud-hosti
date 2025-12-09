@@ -106,7 +106,7 @@ $features = file_exists($featuresFile)
                 <div class="col-xl-10">
                     <div class="card rounded-4 glass-box">
                         <div class="card-body pt-60 pb-60">
-                            <div class="row justify-content-center">
+                            <div class="row g-3 justify-content-center mt-6">
                                 <div class="col-lg-8">
                                     <h2 class="text-center h4 text-white" data-sal="slide-up" data-sal-duration="300"
                                         data-sal-delay="300" data-sal-easing="ease-in-out-sine">
@@ -128,45 +128,43 @@ $features = file_exists($featuresFile)
                                         </div>
                                         <div id="domainResult" class="mt-4"></div>
                                     </form>
-
-                                    <div class="d-flex align-items-center justify-content-center gap-4 flex-wrap flex-xl-nowrap mt-6">
-                                        <?php foreach ($featuredTLDs as $tld => $color): ?>
-                                            <?php 
-                                                $usdPrice = floatval($tlds[$tld]['register'][1] ?? 0);
-                                                if ($usdPrice <= 0) continue;
-
-                                                // Convert ONLY ONCE
-                                                $converted = formatPrice($usdPrice, $currencyRates, $currencySymbols);
-
-                                                // Discount (if you have discounts array)
-                                                $usdDiscount = $discounts[$tld] ?? $usdPrice;
-                                                $convertedDiscount = formatPrice($usdDiscount, $currencyRates, $currencySymbols);
-
-                                                $hasDiscount = ($usdDiscount < $usdPrice);
-                                            ?>
-                                            
-                                            <button type="button"
-                                                class="btn btn-sm btn-light d-inline-flex align-items-center gap-2 border border-gray-100">
-
-                                                <span class="h6 mb-1 <?= $color ?> d-inline-block">.<?= $tld ?></span>
-
-                                                <?php if ($hasDiscount): ?>
-                                                    <small class="fw-medium d-inline-block">
-                                                        <s class="text-danger"><?= formatPrice($usdPrice, $currencyRates, $currencySymbols) ?></s>
-                                                        <span class="text-success fw-bold"><?= $convertedDiscount ?></span>/Year
-                                                    </small>
-                                                <?php else: ?>
-                                                    <small class="fw-medium d-inline-block">
-                                                        <?= $converted ?>/Year
-                                                    </small>
-                                                <?php endif; ?>
-                                            </button>
-                                        <?php endforeach; ?>
-                                    </div>
-
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center gap-4 flex-wrap flex-lg-nowrap mt-6">
+                        <?php foreach ($featuredTLDs as $tld => $color): ?>
+                            <?php 
+                                $usdPrice = floatval(value: $tlds[$tld]['register'][1] ?? 0);
+                                if ($usdPrice <= 0) continue;
+
+                                // Convert ONLY ONCE
+                                $converted = formatPrice($usdPrice, $currencyRates, $currencySymbols);
+
+                                // Discount (if you have discounts array)
+                                $usdDiscount = $discounts[$tld] ?? $usdPrice;
+                                $convertedDiscount = formatPrice($usdDiscount, $currencyRates, $currencySymbols);
+
+                                $hasDiscount = ($usdDiscount < $usdPrice);
+                            ?>
+                            
+                            <button type="button"
+                                class="btn btn-sm btn-light d-inline-flex align-items-center gap-2 border border-gray-100">
+
+                                <span class="h6 mb-1 <?= $color ?> d-inline-block">.<?= $tld ?></span>
+
+                                <?php if ($hasDiscount): ?>
+                                    <small class="fw-medium d-inline-block">
+                                        <s class="text-danger"><?= formatPrice($usdPrice, $currencyRates, $currencySymbols) ?></s>
+                                        <span class="text-success fw-bold"><?= $convertedDiscount ?></span>/Year
+                                    </small>
+                                <?php else: ?>
+                                    <small class="fw-medium d-inline-block">
+                                        <?= $converted ?>/Year
+                                    </small>
+                                <?php endif; ?>
+                            </button>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
