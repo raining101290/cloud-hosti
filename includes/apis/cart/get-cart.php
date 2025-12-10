@@ -58,12 +58,12 @@ foreach ($cart as $index => $item) {
 
                 <div>
                     <div class="fw-bold">Domain Registration</div>
-                    <small class="text-muted">'.$domain.'</small>
+                    <small class="text-muted">' . $domain . '</small>
 
-                    <div class="text-dark fw-bold">'.$formattedPrice.'</div>
+                    <div class="text-dark fw-bold">' . $formattedPrice . '</div>
                 </div>
 
-                <button onclick="removeCartItem('.$index.')" 
+                <button onclick="removeCartItem(' . $index . ')" 
                     class="btn btn-sm btn-danger">X</button>
             </div>
         ';
@@ -107,7 +107,7 @@ foreach ($cart as $index => $item) {
             $discountText = '
                 <div>
                     <small class="text-success fw-bold">
-                        Promo: '.$item['promo'].' ('.$discountPercent.'% Off)
+                        Promo: ' . $item['promo'] . ' (' . $discountPercent . '% Off)
                     </small>
                 </div>
             ';
@@ -118,8 +118,8 @@ foreach ($cart as $index => $item) {
 
     $priceHtml = '
         <div class="text-dark fw-bold">
-            '.$priceFormatted.'
-            <span class="text-success"> → '.$discountFormatted.'</span>
+            ' . $priceFormatted . '
+            <span class="text-success"> → ' . $discountFormatted . '</span>
         </div>
     ';
     // $priceHtml = '
@@ -133,14 +133,14 @@ foreach ($cart as $index => $item) {
         <div class="d-flex align-items-center justify-content-between border-bottom py-2">
 
             <div>
-                <div class="fw-bold">'.htmlspecialchars($prodName).'</div>
-                <small class="text-muted">'.ucfirst($item['billingcycle']).'</small>
+                <div class="fw-bold">' . htmlspecialchars($prodName) . '</div>
+                <small class="text-muted">' . ucfirst($item['billingcycle']) . '</small>
 
-                '.$priceHtml.'
-                '.$discountText.'
+                ' . $priceHtml . '
+                ' . $discountText . '
             </div>
 
-            <button onclick="removeCartItem('.$index.')" 
+            <button onclick="removeCartItem(' . $index . ')" 
                 class="btn btn-sm btn-danger">X</button>
         </div>
     ';

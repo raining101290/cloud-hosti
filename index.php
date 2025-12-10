@@ -32,6 +32,7 @@ $features = file_exists($featuresFile)
 
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
+
 <head>
     <!--required meta tags-->
     <meta charset="utf-8">
@@ -51,17 +52,17 @@ $features = file_exists($featuresFile)
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
-<body class="bg-secondary">
+<body class="bg-secondary" data-current-currency="<?= $_SESSION['currency'] ?? 'USD' ?>">
     <!--preloader start-->
     <div class="preloader bg-light-subtle">
-      <div class="preloader-wrap">
-        <img class="mb-2" src="assets/images/cloudhosti-logo.png" alt="CloudHosti logo" height="41px">
-        <div class="loading-bar"></div>
-      </div>
+        <div class="preloader-wrap">
+            <img class="mb-2" src="assets/images/cloudhosti-logo.png" alt="CloudHosti logo" height="41px">
+            <div class="loading-bar"></div>
+        </div>
     </div>
-    <!--preloader end-->    
+    <!--preloader end-->
     <?php include('./components/header.php') ?>
-    
+
     <!-- Hero -->
     <section class="hero-1 pb-32 bg-gradient-primary position-relative z-1 overflow-hidden">
         <div class="container">
@@ -83,12 +84,12 @@ $features = file_exists($featuresFile)
                         <span class="text-warning d-inline-block">.</span>
                         Stable
                         <span class="text-warning d-inline-block">.</span>
-                        
+
                         Web Hosting
                     </h1>
                     <p class="text-white mt-5 max-text-68 mb-8" data-sal="fade" data-sal-duration="300" data-sal-delay="300"
                         data-sal-easing="ease-in-out-sine">Save time & money with simple and reliable cloud
-                        hosting trusted by <span class="text-success">3,000+ Customers,</span>  that demand high performance from their websites!</p>
+                        hosting trusted by <span class="text-success">3,000+ Customers,</span> that demand high performance from their websites!</p>
                 </div>
                 <div class="col-xl-5">
                     <div class="position-relative z-1">
@@ -134,20 +135,20 @@ $features = file_exists($featuresFile)
                     </div>
                     <div class="d-flex align-items-center justify-content-center gap-4 flex-wrap flex-lg-nowrap mt-6">
                         <?php foreach ($featuredTLDs as $tld => $color): ?>
-                            <?php 
-                                $usdPrice = floatval(value: $tlds[$tld]['register'][1] ?? 0);
-                                if ($usdPrice <= 0) continue;
+                            <?php
+                            $usdPrice = floatval(value: $tlds[$tld]['register'][1] ?? 0);
+                            if ($usdPrice <= 0) continue;
 
-                                // Convert ONLY ONCE
-                                $converted = formatPrice($usdPrice, $currencyRates, $currencySymbols);
+                            // Convert ONLY ONCE
+                            $converted = formatPrice($usdPrice, $currencyRates, $currencySymbols);
 
-                                // Discount (if you have discounts array)
-                                $usdDiscount = $discounts[$tld] ?? $usdPrice;
-                                $convertedDiscount = formatPrice($usdDiscount, $currencyRates, $currencySymbols);
+                            // Discount (if you have discounts array)
+                            $usdDiscount = $discounts[$tld] ?? $usdPrice;
+                            $convertedDiscount = formatPrice($usdDiscount, $currencyRates, $currencySymbols);
 
-                                $hasDiscount = ($usdDiscount < $usdPrice);
+                            $hasDiscount = ($usdDiscount < $usdPrice);
                             ?>
-                            
+
                             <button type="button"
                                 class="btn btn-sm btn-light d-inline-flex align-items-center gap-2 border border-gray-100">
 
@@ -170,7 +171,7 @@ $features = file_exists($featuresFile)
             </div>
         </div>
     </section>
-    
+
     <!-- <div class="pt-120 pb-60">
         <div class="container">
             <div class="row justify-content-center">
@@ -215,7 +216,7 @@ $features = file_exists($featuresFile)
             </div>
         </div>
     </div> -->
-    
+
     <!-- Service -->
     <!-- <section class="service-area pt-60">
         <div class="pb-40">
@@ -231,11 +232,11 @@ $features = file_exists($featuresFile)
             <div class="row g-4">
                 <?php foreach ($products as $product): ?>
                     <?php
-                        if ($product['type'] === 'server') {
-                            continue;
-                        }
-                        $price = $product['pricing']['USD']['annually']/12;
-                        $formattedPrice = ($price > 0) ? "$" . $price . " /month" : "Contact Us";
+                    if ($product['type'] === 'server') {
+                        continue;
+                    }
+                    $price = $product['pricing']['USD']['annually'] / 12;
+                    $formattedPrice = ($price > 0) ? "$" . $price . " /month" : "Contact Us";
                     ?>
                     <div class="col-lg-6 col-xl-4">
                         <div class="card service-card-item shadow-sm rounded-3 h-100 price-card-item-one" data-sal="slide-up"
@@ -247,15 +248,14 @@ $features = file_exists($featuresFile)
                                         <img src="assets/img/service-icon-2.png" alt="">
                                     </div>
                                     <div>
-                                        <p><?= nl2br(htmlspecialchars(strip_tags
-                                        ($product['description']))) ?></p>
+                                        <p><?= nl2br(htmlspecialchars(strip_tags($product['description']))) ?></p>
 
                                         <div class="monthly-price">
                                             <span>Starting at: </span>
                                             <h4><?= $formattedPrice ?></h4>
                                         </div>
 
-                                        <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="<?= htmlspecialchars($product['product_url']).'?promocode=20OFF' ?>">
+                                        <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="<?= htmlspecialchars($product['product_url']) . '?promocode=20OFF' ?>">
                                             <span class="btn-arrow__text">
                                                 Buy Now
                                                 <span class="btn-arrow__icon">
@@ -272,7 +272,7 @@ $features = file_exists($featuresFile)
             </div>
         </div>
     </section> -->
-    
+
     <!-- Price -->
     <section class="pt-120 pb-120">
         <div class="pb-40">
@@ -303,44 +303,44 @@ $features = file_exists($featuresFile)
             <div class="row g-4 g-xl-0">
                 <?php foreach ($products as $product): ?>
                     <?php
-                        $pid = $product['pid'];
+                    $pid = $product['pid'];
 
-                        // Skip if no features for this product
-                        if (!isset($features[$pid])) continue;
+                    // Skip if no features for this product
+                    if (!isset($features[$pid])) continue;
 
-                        $f = $features[$pid];
+                    $f = $features[$pid];
 
-                        // --- Extract WHMCS values ---
-                        $title   = $product['name'] ?? 'Hosting Plan';
-                        $usdMonthly = floatval($product['pricing']['USD']['monthly'] ?? 0);
-                        $monthly = $usdMonthly;
+                    // --- Extract WHMCS values ---
+                    $title   = $product['name'] ?? 'Hosting Plan';
+                    $usdMonthly = floatval($product['pricing']['USD']['monthly'] ?? 0);
+                    $monthly = $usdMonthly;
 
-                        $usdYearly = floatval($product['pricing']['USD']['annually'] ?? 0);
-                        $yearly = $usdYearly;
-                        $normal  = $f['normal_price'] ?? '';
+                    $usdYearly = floatval($product['pricing']['USD']['annually'] ?? 0);
+                    $yearly = $usdYearly;
+                    $normal  = $f['normal_price'] ?? '';
 
-                        $discountPercent = $f['percentage'] ?? 0;
+                    $discountPercent = $f['percentage'] ?? 0;
 
-                        $monthly_discounted = $monthly - ($monthly * $discountPercent / 100);
-                        $yearly_discounted  = $yearly  - ($yearly  * $discountPercent / 100);
+                    $monthly_discounted = $monthly - ($monthly * $discountPercent / 100);
+                    $yearly_discounted  = $yearly  - ($yearly  * $discountPercent / 100);
 
-                        // Normal / original price (optional field inside your features JSON)
-                        $monthly_discounted = ($monthly > 0)
-                            ? $monthly - (($monthly * $discountPercent) / 100)
-                            : -1;
+                    // Normal / original price (optional field inside your features JSON)
+                    $monthly_discounted = ($monthly > 0)
+                        ? $monthly - (($monthly * $discountPercent) / 100)
+                        : -1;
 
-                        $yearly_discounted = ($yearly > 0)
-                            ? $yearly - (($yearly * $discountPercent) / 100)
-                            : -1;
-                        
-                        // Tagline from features.json
-                        $tagline = $f['tagline'] ?? '';
+                    $yearly_discounted = ($yearly > 0)
+                        ? $yearly - (($yearly * $discountPercent) / 100)
+                        : -1;
 
-                        // Renewal text (optional)
-                        $renew   = $f['renew_text'] ?? '';
+                    // Tagline from features.json
+                    $tagline = $f['tagline'] ?? '';
 
-                        // Features list
-                        $featList = $f['features'] ?? [];
+                    // Renewal text (optional)
+                    $renew   = $f['renew_text'] ?? '';
+
+                    // Features list
+                    $featList = $f['features'] ?? [];
                     ?>
 
                     <div class="col-xl-4 col-md-4 col-12 mb-3">
@@ -362,60 +362,59 @@ $features = file_exists($featuresFile)
                             <!-- Pricing -->
                             <div class="mt-5">
                                 <?php if ($monthly > 0): ?>
-                                <div class="monthly-price">
-                                    <h4>
-                                        <?php if ($discountPercent > 0): ?>
-                                            <span class="text-decoration-line-through">
+                                    <div class="monthly-price">
+                                        <h4>
+                                            <?php if ($discountPercent > 0): ?>
+                                                <span class="text-decoration-line-through">
+                                                    <?= formatPrice($monthly, $currencyRates, $currencySymbols) ?>
+                                                </span>
+                                                <?= formatPrice($monthly_discounted, $currencyRates, $currencySymbols) ?>
+                                            <?php else: ?>
                                                 <?= formatPrice($monthly, $currencyRates, $currencySymbols) ?>
-                                            </span>
-                                            <?= formatPrice($monthly_discounted, $currencyRates, $currencySymbols) ?>
-                                        <?php else: ?>
-                                            <?= formatPrice($monthly, $currencyRates, $currencySymbols) ?>
-                                        <?php endif; ?>
-                                        <span class="fs-14 text-muted">/month</span>
-                                    </h4>
-                                </div>
+                                            <?php endif; ?>
+                                            <span class="fs-14 text-muted">/month</span>
+                                        </h4>
+                                    </div>
                                 <?php endif; ?>
                                 <?php if ($yearly > 0): ?>
-                                <div class="yearly-price">
-                                    <h4>
-                                        <?php if ($discountPercent > 0): ?>
-                                            <span class="text-decoration-line-through">
+                                    <div class="yearly-price">
+                                        <h4>
+                                            <?php if ($discountPercent > 0): ?>
+                                                <span class="text-decoration-line-through">
+                                                    <?= formatPrice($yearly, $currencyRates, $currencySymbols) ?>
+                                                </span>
+                                                <?= formatPrice($yearly_discounted, $currencyRates, $currencySymbols) ?>
+                                            <?php else: ?>
                                                 <?= formatPrice($yearly, $currencyRates, $currencySymbols) ?>
-                                            </span>
-                                            <?= formatPrice($yearly_discounted, $currencyRates, $currencySymbols) ?>
-                                        <?php else: ?>
-                                            <?= formatPrice($yearly, $currencyRates, $currencySymbols) ?>
-                                        <?php endif; ?>
-                                        <span class="fs-14 text-muted">/year</span>
-                                    </h4>
-                                </div>
+                                            <?php endif; ?>
+                                            <span class="fs-14 text-muted">/year</span>
+                                        </h4>
+                                    </div>
                                 <?php endif; ?>
                             </div>
                             <?php if ($monthly > 0): ?>
-                            <div class="monthly-price">
-                                <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="javascript:void(0)" onClick="addToCart(<?= $pid ?>, 'annually', '<?= $f['promo'] ?>', 'hosting')"
-                                >
-                                    <span class="btn-arrow__text">
-                                        Add to Cart
-                                        <span class="btn-arrow__icon">
-                                            <i class="las la-arrow-right"></i>
+                                <div class="monthly-price">
+                                    <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="javascript:void(0)" onClick="addToCart(<?= $pid ?>, 'annually', '<?= $f['promo'] ?>', 'hosting')">
+                                        <span class="btn-arrow__text">
+                                            Add to Cart
+                                            <span class="btn-arrow__icon">
+                                                <i class="las la-arrow-right"></i>
+                                            </span>
                                         </span>
-                                    </span>
-                                </a>
-                            </div>
+                                    </a>
+                                </div>
                             <?php endif; ?>
                             <?php if ($yearly > 0): ?>
-                            <div class="yearly-price">
-                                <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="javascript:void(0)" onClick="addToCart(<?= $pid ?>, 'annually', '<?= $f['promo'] ?>', 'hosting')">
-                                    <span class="btn-arrow__text">
-                                        Add to Cart
-                                        <span class="btn-arrow__icon">
-                                            <i class="las la-arrow-right"></i>
+                                <div class="yearly-price">
+                                    <a class="btn btn-dark btn-arrow btn-lg w-100 fs-14 fw-bolder rounded mt-6" href="javascript:void(0)" onClick="addToCart(<?= $pid ?>, 'annually', '<?= $f['promo'] ?>', 'hosting')">
+                                        <span class="btn-arrow__text">
+                                            Add to Cart
+                                            <span class="btn-arrow__icon">
+                                                <i class="las la-arrow-right"></i>
+                                            </span>
                                         </span>
-                                    </span>
-                                </a>
-                            </div>
+                                    </a>
+                                </div>
                             <?php endif; ?>
 
                             <!-- Features Section -->
@@ -425,13 +424,13 @@ $features = file_exists($featuresFile)
 
                                     <?php foreach ($featList as $feature): ?>
                                         <?php if (!empty($feature)): ?>
-                                        <li class="d-flex align-items-center gap-3">
-                                            <div class="w-4 h-4 bg-success rounded-circle fs-12 text-white 
+                                            <li class="d-flex align-items-center gap-3">
+                                                <div class="w-4 h-4 bg-success rounded-circle fs-12 text-white 
                                                 d-flex align-items-center justify-content-center flex-shrink-0">
-                                                <i class="las la-check"></i>
-                                            </div>
-                                            <small><?= htmlspecialchars($feature) ?></small>
-                                        </li>
+                                                    <i class="las la-check"></i>
+                                                </div>
+                                                <small><?= htmlspecialchars($feature) ?></small>
+                                            </li>
                                         <?php endif; ?>
                                     <?php endforeach; ?>
 
@@ -444,7 +443,7 @@ $features = file_exists($featuresFile)
         </div>
     </section>
 
-    
+
     <!-- Why -->
     <section class="why-area-one bg-custom-5 pt-120 pb-120 position-relative z-1">
         <div class="container">
@@ -528,7 +527,7 @@ $features = file_exists($featuresFile)
             </div>
         </div>
     </section><!-- Why -->
-    
+
     <!-- Video -->
     <section class="video-area-one pt-120 pb-60 position-relative z-0">
         <div class="pb-40">
@@ -563,7 +562,7 @@ $features = file_exists($featuresFile)
             </div>
         </div>
     </section><!-- Video -->
-    
+
     <!-- Feedback -->
     <section class="pt-60 pb-60">
         <div class="container">
@@ -581,9 +580,9 @@ $features = file_exists($featuresFile)
                                     <img src="assets/img/feedback-brand-1.png" alt="iamge" class="img-fluid">
                                     <img src="assets/img/shape/feedback-quate.png" alt="iamge" class="img-fluid">
                                 </div>
-                                <h6 class="mt-5">The Most Creative Designer 
+                                <h6 class="mt-5">The Most Creative Designer
                                     Highly Recommended.</h6>
-                                <p class="mt-3">The best thing we love about CloudHosti is it does two way sync with Google Apps. It has helped us to better organize  everything on track.</p>
+                                <p class="mt-3">The best thing we love about CloudHosti is it does two way sync with Google Apps. It has helped us to better organize everything on track.</p>
                                 <div class="d-flex align-items-center gap-4 mt-7">
                                     <img src="assets/img/user-img-1.png" alt="image" class="img-fluid">
                                     <div>
@@ -599,9 +598,9 @@ $features = file_exists($featuresFile)
                                     <img src="assets/img/feedback-brand-2.png" alt="iamge" class="img-fluid">
                                     <img src="assets/img/shape/feedback-quate.png" alt="iamge" class="img-fluid">
                                 </div>
-                                <h6 class="mt-5">The Most Creative Designer 
+                                <h6 class="mt-5">The Most Creative Designer
                                     Highly Recommended.</h6>
-                                <p class="mt-3">The best thing we love about CloudHosti is it does two way sync with Google Apps. It has helped us to better organize  everything on track.</p>
+                                <p class="mt-3">The best thing we love about CloudHosti is it does two way sync with Google Apps. It has helped us to better organize everything on track.</p>
                                 <div class="d-flex align-items-center gap-4 mt-7">
                                     <img src="assets/img/user-img-3.png" alt="image" class="img-fluid">
                                     <div>
@@ -617,9 +616,9 @@ $features = file_exists($featuresFile)
                                     <img src="assets/img/feedback-brand-3.png" alt="iamge" class="img-fluid">
                                     <img src="assets/img/shape/feedback-quate.png" alt="iamge" class="img-fluid">
                                 </div>
-                                <h6 class="mt-5">The Most Creative Designer 
+                                <h6 class="mt-5">The Most Creative Designer
                                     Highly Recommended.</h6>
-                                <p class="mt-3">The best thing we love about CloudHosti is it does two way sync with Google Apps. It has helped us to better organize  everything on track.</p>
+                                <p class="mt-3">The best thing we love about CloudHosti is it does two way sync with Google Apps. It has helped us to better organize everything on track.</p>
                                 <div class="d-flex align-items-center gap-4 mt-7">
                                     <img src="assets/img/user-img-4.png" alt="image" class="img-fluid">
                                     <div>
@@ -635,9 +634,9 @@ $features = file_exists($featuresFile)
                                     <img src="assets/img/feedback-brand-3.png" alt="iamge" class="img-fluid">
                                     <img src="assets/img/shape/feedback-quate.png" alt="iamge" class="img-fluid">
                                 </div>
-                                <h6 class="mt-5">The Most Creative Designer 
+                                <h6 class="mt-5">The Most Creative Designer
                                     Highly Recommended.</h6>
-                                <p class="mt-3">The best thing we love about CloudHosti is it does two way sync with Google Apps. It has helped us to better organize  everything on track.</p>
+                                <p class="mt-3">The best thing we love about CloudHosti is it does two way sync with Google Apps. It has helped us to better organize everything on track.</p>
                                 <div class="d-flex align-items-center gap-4 mt-7">
                                     <img src="assets/img/user-img-5.png" alt="image" class="img-fluid">
                                     <div>
@@ -656,7 +655,7 @@ $features = file_exists($featuresFile)
             </div>
         </div>
     </section><!-- Feedback -->
-    
+
     <!-- Wp Hosting -->
     <!-- <section class="pt-60 pb-60">
         <div class="container">
@@ -708,7 +707,7 @@ $features = file_exists($featuresFile)
         </div>
     </section> -->
     <!-- Wp Hosting -->
-    
+
     <!-- Blog -->
     <!-- <section class="bg-custom-5 pt-120 pb-120">
         <div class="pb-40">
@@ -875,7 +874,7 @@ $features = file_exists($featuresFile)
         </div>
     </section> -->
     <!-- Blog -->
-    
+
     <!-- Cta -->
     <!-- <section class="mt-n10">
         <div class="container">
@@ -922,7 +921,7 @@ $features = file_exists($featuresFile)
         </div>
     </section> -->
     <!-- Cta -->
-    
+
     <?php include('./components/footer.php') ?>
     <script>
         document.getElementById('domainSearchForm').addEventListener('submit', function(e) {
@@ -959,22 +958,19 @@ $features = file_exists($featuresFile)
                                 ✔ ${domain} is available <a class="btn btn-sm btn-success" href="https://portal.cloudhosti.com/cart.php?a=add&domain=register&query=${domain}&promocode=20OFF">Buy Now</a>
                             </p></div>
                         `;
-                    }
-                    else if (data.status === "unavailable") {
+                    } else if (data.status === "unavailable") {
                         resultBox.innerHTML = `
                             <div class='alert alert-danger' role='alert'><p class="text-danger mb-0" style="font-weight:bold;">
                                Sorry, ${domain} is taken.
                             </p></div>
                         `;
-                    }
-                    else if (data.status === "invalid") {
+                    } else if (data.status === "invalid") {
                         resultBox.innerHTML = `
                             <div class='alert alert-danger' role='alert'><p class="text-warning mb-0" style="font-weight:bold;">
                                 Invalid domain format ⚠
                             </p></div>
                         `;
-                    }
-                    else {
+                    } else {
                         resultBox.innerHTML = `
                             <div class='alert alert-danger' role='alert'><p class="text-white mb-0" style="font-weight:bold;">Unknown result 🤔</p></div>
                         `;

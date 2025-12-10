@@ -27,10 +27,8 @@ $currency = $_SESSION['currency'] ?? 'USD';
                 <form method="post" id="currencyFormMobile" class="currency-form">
                     <select name="currency" class="form-select form-select-sm currency-mobile"
                         onchange="document.getElementById('currencyFormMobile').submit()">
-                        <option value="USD" <?php echo ($currency=='USD'?'selected':''); ?>>USD</option>
-                        <option value="BDT" <?php echo ($currency=='BDT'?'selected':''); ?>>BDT</option>
-                        <option value="INR" <?php echo ($currency=='INR'?'selected':''); ?>>INR</option>
-                        <option value="AED" <?php echo ($currency=='AED'?'selected':''); ?>>AED</option>
+                        <option value="USD" <?php echo ($currency == 'USD' ? 'selected' : ''); ?>>USD</option>
+                        <option value="BDT" <?php echo ($currency == 'BDT' ? 'selected' : ''); ?>>BDT</option>
                     </select>
                 </form>
             </div>
@@ -327,10 +325,10 @@ $currency = $_SESSION['currency'] ?? 'USD';
                                             class="img-fluid">
                                     </span>
                                     <span class="flex-grow-1">
-                                        
+
                                         <span class="contain-sub-1__title d-flex">Google Workspace</span>
                                         <span class="contain-sub-1__description">
-                                             Gmail, Docs, Drive & Calendar powered by Google infrastructure.
+                                            Gmail, Docs, Drive & Calendar powered by Google infrastructure.
                                         </span>
                                     </span>
                                 </a>
@@ -392,7 +390,7 @@ $currency = $_SESSION['currency'] ?? 'USD';
                             <span id="cartCount" class="cartCount">0</span>
                         </a>
                         <div class="contain-sub-1__content list-unstyled p-4 bg-white shadow rounded" style="width: 300px;">
-    
+
                             <div id="cartDropdownContent" class="mb-3">
                                 <!-- AJAX content loads here -->
                             </div>
@@ -410,8 +408,6 @@ $currency = $_SESSION['currency'] ?? 'USD';
                             <span class="flag-icon" style="line-height: 30px;">
                                 <?php if ($currency == 'USD') echo "🇺🇸"; ?>
                                 <?php if ($currency == 'BDT') echo "🇧🇩"; ?>
-                                <?php if ($currency == 'INR') echo "🇮🇳"; ?>
-                                <?php if ($currency == 'AED') echo "🇦🇪"; ?>
                             </span>
                             <?= $currency ?>
                         </a>
@@ -419,41 +415,21 @@ $currency = $_SESSION['currency'] ?? 'USD';
                         <div class="contain-sub-1__content list-unstyled p-4 bg-white shadow rounded" style="width: 93px;">
                             <form method="post" id="currencyForm">
                                 <input type="hidden" name="currency" id="currencyInput">
-
                                 <ul class="list-unstyled m-0 p-0">
-
                                     <li>
-                                        <a class="dropdown-item d-flex align-items-center gap-2 py-1" 
-                                        href="javascript:void(0)" 
-                                        onclick="setCurrency('USD')">
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-1"
+                                            href="javascript:void(0)"
+                                            onclick="setCurrency('USD')">
                                             🇺🇸 <span>USD</span>
                                         </a>
                                     </li>
-
                                     <li>
                                         <a class="dropdown-item d-flex align-items-center gap-2 py-1"
-                                        href="javascript:void(0)"
-                                        onclick="setCurrency('BDT')">
+                                            href="javascript:void(0)"
+                                            onclick="setCurrency('BDT')">
                                             🇧🇩 <span>BDT</span>
                                         </a>
                                     </li>
-
-                                    <li>
-                                        <a class="dropdown-item d-flex align-items-center gap-2 py-1"
-                                        href="javascript:void(0)"
-                                        onclick="setCurrency('INR')">
-                                            🇮🇳 <span>INR</span>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a class="dropdown-item d-flex align-items-center gap-2 py-1"
-                                        href="javascript:void(0)"
-                                        onclick="setCurrency('AED')">
-                                            🇦🇪 <span>AED</span>
-                                        </a>
-                                    </li>
-
                                 </ul>
                             </form>
                         </div>

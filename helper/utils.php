@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 $config = [
     "company_name" => "CloudHosti"
@@ -7,18 +7,21 @@ $config = [
 /* ============================
    BASIC SITE HELPERS
 ============================ */
-function siteName($config) {
+function siteName($config)
+{
     return $config["company_name"];
 }
 
-function currentYear() {
+function currentYear()
+{
     return date("Y");
 }
 
-function copyrightYear($startYear) {
+function copyrightYear($startYear)
+{
     $currentYear = date("Y");
-    return $startYear == $currentYear 
-        ? $startYear 
+    return $startYear == $currentYear
+        ? $startYear
         : $startYear . "–" . $currentYear;
 }
 
@@ -34,6 +37,13 @@ $currencyRates = [
     "AED" => 3.68
 ];
 
+$whmcsCurrencyMap = [
+    "USD" => 1,
+    "BDT" => 2,
+    "INR" => 3,
+    "AED" => 4
+];
+
 // Currency symbols
 $currencySymbols = [
     "USD" => "$",
@@ -45,21 +55,24 @@ $currencySymbols = [
 /**
  * Get active currency (from session or default USD)
  */
-function getCurrency() {
+function getCurrency()
+{
     return $_SESSION['currency'] ?? 'USD';
 }
 
 /**
  * Set currency from user selection
  */
-function setCurrency($cur) {
+function setCurrency($cur)
+{
     $_SESSION['currency'] = $cur;
 }
 
 /**
  * Convert USD → selected currency
  */
-function convertPrice($amount, $currencyRates) {
+function convertPrice($amount, $currencyRates)
+{
     $currency = getCurrency();
     return isset($currencyRates[$currency])
         ? $amount * $currencyRates[$currency]
@@ -69,12 +82,11 @@ function convertPrice($amount, $currencyRates) {
 /**
  * Format price with symbol
  */
-function formatPrice($amount, $currencyRates, $currencySymbols) {
+function formatPrice($amount, $currencyRates, $currencySymbols)
+{
     $currency = getCurrency();
     $converted = convertPrice($amount, $currencyRates);
     $symbol = $currencySymbols[$currency] ?? '$';
 
     return $symbol . number_format($converted, 2);
 }
-
-?>
