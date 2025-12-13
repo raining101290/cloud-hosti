@@ -1,10 +1,4 @@
 <?php
-if (isset($_POST['currency'])) {
-    setCurrency($_POST['currency']);
-    header("Location: " . $_SERVER['REQUEST_URI']);
-    exit;
-}
-
 $currency = $_SESSION['currency'] ?? 'USD';
 ?>
 <!-- Header -->

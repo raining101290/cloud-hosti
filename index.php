@@ -3,6 +3,13 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 require 'helper/utils.php';
+
+if (isset($_POST['currency'])) {
+    setCurrency($_POST['currency']);
+    header("Location: " . $_SERVER['REQUEST_URI']);
+    exit;
+}
+
 include 'includes/meta.php';
 include 'includes/apis/domainPricing.php';
 include 'includes/apis/productPricing.php';
@@ -54,12 +61,12 @@ $features = file_exists($featuresFile)
 
 <body class="bg-secondary" data-current-currency="<?= $_SESSION['currency'] ?? 'USD' ?>">
     <!--preloader start-->
-    <div class="preloader bg-light-subtle">
+    <!-- <div class="preloader bg-light-subtle">
         <div class="preloader-wrap">
             <img class="mb-2" src="assets/images/cloudhosti-logo.png" alt="CloudHosti logo" height="41px">
             <div class="loading-bar"></div>
         </div>
-    </div>
+    </div> -->
     <!--preloader end-->
     <?php include('./components/header.php') ?>
 
@@ -117,13 +124,11 @@ $features = file_exists($featuresFile)
                                             placeholder="Domain Name">
                                         <div class="domain-submit-box d-flex align-items-center gap-3 position-absolute">
                                             <select id="extSelect" class="tld-dropdown form-control">
-                                                <option value=".com">.com</option>
-                                                <option value=".net">.net</option>
-                                                <option value=".org">.org</option>
-                                                <option value=".info">.info</option>
-                                                <option value=".biz">.biz</option>
-                                                <option value=".me">.me</option>
-                                                <option value=".xyz">.xyz</option>
+                                                <?php foreach (getAvailableTLDs() as $tld): ?>
+                                                    <option value="<?= htmlspecialchars($tld) ?>">
+                                                        <?= htmlspecialchars($tld) ?>
+                                                    </option>
+                                                <?php endforeach; ?>
                                             </select>
                                             <button class="btn btn-primary rounded-2 fw-bold" type="submit">Search</button>
                                         </div>

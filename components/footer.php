@@ -1,9 +1,14 @@
+<?php
+$sessionCurrency = $_SESSION['currency'] ?? null;
+$whmcsCurrencyId = $whmcsCurrencyMap[$sessionCurrency] ?? 1;
+?>
+
 <!-- Footer -->
-<footer class="footer-2-area pt-120 pb-5 bg-custom-5 position-relative z-1">
+<footer class="footer-5 pt-120 pb-5 bg-custom-6 position-relative z-1">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-6">
-                <img src="assets/images/cloudhosti-logo.png" alt="image" class="logo__img" height="51">
+                <img src="assets/images/cloudhosti-logo-light.png" alt="image" class="logo__img" height="51">
                 <p class="text-white text-opacity-75 mt-8">Welcome to CoudHosti, The trusted provider of high-performance web hosting solutions designed to help your website succeed. Whether you're a small business owner, a blogger, or a growing enterprise, we offer secure, reliable, and scalable hosting.</p>
                 <h6 class="text-white mt-6 mb-4 fs-16">Social Media</h6>
                 <div class="d-inline-flex align-items-center justify-content-center gap-2">
@@ -144,8 +149,7 @@
             </div>
         </div>
     </div>
-    </div>
-</footer><!-- /Footer -->
+</footer>
 
 <div class="scroll-top scroll-to-target bg-primary text-white" data-target="html">
     <span class="las la-hand-point-up"></span>
@@ -262,6 +266,26 @@
                 document.getElementById("cartDropdownContent").innerHTML = data.html;
             });
     }
+    /* -----------------------------
+    INIT ON PAGE LOAD
+    ------------------------------*/
+    document.addEventListener("DOMContentLoaded", loadCartDropdown);
+
+    window.setCurrency = function(cur) {
+        var preloader = document.querySelector(".preloader");
+        if (preloader) preloader.style.display = "none";
+
+        document.getElementById('currencyInput').value = cur;
+        document.getElementById('currencyForm').submit();
+    };
+
+    window.setCurrencyMobile = function(cur) {
+        var preloader = document.querySelector(".preloader");
+        if (preloader) preloader.style.display = "none";
+
+        document.getElementById('currencyInputMobile').value = cur;
+        document.getElementById('currencyFormMobile').submit();
+    };
 
     function processCheckout() {
         fetch("includes/apis/cart/get-cart-raw.php")
@@ -269,26 +293,11 @@
             .then(data => {
                 const encodedCart = btoa(JSON.stringify(data.cart));
                 const selectedCurrency = document.body.getAttribute("data-current-currency");
-                const whmcsCurrencyId = "<?php echo $whmcsCurrencyMap[$_SESSION['currency']] ?? 1; ?>";
-                // console.log("Selected Currency: ", "https://portal.cloudhosti.com/cart-bridge.php?data=" + encodedCart + "&currency=" + whmcsCurrencyId);
+                const whmcsCurrencyId = "<?php echo $whmcsCurrencyMap[$_SESSION['currency'] ?? 'USD'] ?? 1; ?>";
+
                 window.location.href =
                     "https://portal.cloudhosti.com/cart-bridge.php?data=" + encodedCart + "&currency=" + whmcsCurrencyId;
             });
-    }
-
-    /* -----------------------------
-    INIT ON PAGE LOAD
-    ------------------------------*/
-    document.addEventListener("DOMContentLoaded", loadCartDropdown);
-
-    function setCurrency(cur) {
-        document.getElementById('currencyInput').value = cur;
-        document.getElementById('currencyForm').submit();
-    }
-
-    function setCurrencyMobile(cur) {
-        document.getElementById('currencyInputMobile').value = cur;
-        document.getElementById('currencyFormMobile').submit();
     }
 </script>
 <!--Start of Tawk.to Script-->
@@ -299,7 +308,7 @@
         var s1 = document.createElement("script"),
             s0 = document.getElementsByTagName("script")[0];
         s1.async = true;
-        s1.src = 'https://embed.tawk.to/6909efd0fc108c1951c55d73/1j97d1j81';
+        s1.src = 'https://embed.tawk.to/6909f0ae9fb50819524ee68e/1j97d8bdb';
         s1.charset = 'UTF-8';
         s1.setAttribute('crossorigin', '*');
         s0.parentNode.insertBefore(s1, s0);

@@ -356,3 +356,7 @@ h6.hanger{
 .currency-mobile{
     border: 1px solid rgb(106, 96, 125, 0.5);
 }
+.bg-custom-6 {
+    --bs-bg-opacity: 1;
+    background-color: #f1f5f9 !important;
+}  

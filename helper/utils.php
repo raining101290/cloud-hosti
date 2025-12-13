@@ -90,3 +90,20 @@ function formatPrice($amount, $currencyRates, $currencySymbols)
 
     return $symbol . number_format($converted, 2);
 }
+
+
+function getAvailableTLDs()
+{
+    return [
+        '.com',
+        '.net',
+        '.org',
+        '.info',
+        '.biz',
+        '.me',
+        '.xyz',
+        '.com.bd',
+        '.বাংলা',
+        '.shop',
+    ];
+}
